@@ -1,69 +1,149 @@
-<!doctype html><html    lang="es">  <head><script data-source-attribution="shopify.event_observer.bootstrap">(function(){let e=navigator,t=`prototype`,n=`sendBeacon`,r=e[n],i=fetch,a=XMLHttpRequest[t],{open:o,send:s}=a,c=`EventListener`,l=`add${c}`,u=`remove${c}`,d=EventTarget[t],f=d[l],p=d[u],m=e=>Error((e=document.currentScript)&&[e?.src,e?.id||e?.dataset?.sourceAttribution]),h=(e=[],t=0)=>(e.p=n=>e[t++%1e3]=n,[e,t=>(e.forEach(e.p=t),e.length=0)]),[g,_]=h(),[v,y]=h(),b,x=new WeakMap,S=e=>e&&g.p([e,b||[m()]]);d[l]=function(e,t,n){let r=this,i=t?.handleEvent||t,a=x.get(t),o=m();i?.call&&!a&&x.set(t,a=function(e){b=[o,e.type];try{i.call(t==i?this:t,e)}finally{b=null}}),v.p([e,o,a,r?.tagName||r+``,r?.id]),f.call(r,e,a||t,n)},d[u]=function(e,t,n){p.call(this,e,x.get(t)||t,n)},a.open=function(e,t){x.set(this,[t+``,e]),o.apply(this,arguments)},a.send=function(e){S(x.get(this)),s.call(this,e)},fetch=(e,t)=>(S([(e?.url||e)+``,t?.method]),i(e,t)),e[n]=(t,n)=>(S([t+``,``]),r.call(e,t,n)),setTimeout(()=>import("//saludmultydrink.com/cdn/shopifycloud/storefront/assets/storefront/event_observer_reporter-de731130.js").then(e=>e.$(_,y,f,i,`71699759194`)))})();//# sourceURL=event-observer-collector.js</script><link        rel="icon"        type="image/png"        href="//saludmultydrink.com/cdn/shop/files/1771518664Rapi-Bundles-CANT1.jpg?crop=center&height=32&v=1771518666&width=32"      >    <meta charset="utf-8"><meta  http-equiv="X-UA-Compatible"  content="IE=edge"><meta  name="viewport"  content="width=device-width,initial-scale=1"><meta  name="view-transition"  content="same-origin"><meta  name="theme-color"  content="">
-<meta  property="og:site_name"  content="Salud Multydrink"><meta  property="og:url"  content="https://saludmultydrink.com/"><meta  property="og:title"  content="Salud MultyDrink"><meta  property="og:type"  content="website"><meta  property="og:description"  content="Una fuente concentrada de antioxidantes naturales, diseñada para acompañarte donde sea que tu vida te lleve. Cada gota de MultyDrink combina ciencia, naturaleza y conveniencia para potenciar tu vitalidad cada día."><meta    property="og:image"    content="http://saludmultydrink.com/cdn/shop/files/magnific_teniendo-en-cuenta-la-ima_2928228594_9aa6846e-2981-4742-b225-9258735d1591.png?v=1778022743"  >  <meta    property="og:image:secure_url"    content="https://saludmultydrink.com/cdn/shop/files/magnific_teniendo-en-cuenta-la-ima_2928228594_9aa6846e-2981-4742-b225-9258735d1591.png?v=1778022743"  >  <meta    property="og:image:width"    content="1226"  >  <meta    property="og:image:height"    content="584"  ><meta  name="twitter:card"  content="summary_large_image"><meta  name="twitter:title"  content="Salud MultyDrink"><meta  name="twitter:description"  content="Una fuente concentrada de antioxidantes naturales, diseñada para acompañarte donde sea que tu vida te lleve. Cada gota de MultyDrink combina ciencia, naturaleza y conveniencia para potenciar tu vitalidad cada día.">
-<title>  Salud MultyDrink &ndash; Salud Multydrink</title>
-<link  rel="canonical"  href="https://saludmultydrink.com/">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud MultyDrink - Pedidos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2e7d32;
+            margin: 0;
+        }
+        .combo-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #fff;
+            position: relative;
+        }
+        .combo-card.popular {
+            border-color: #ff9800;
+            background-color: #fffde7;
+        }
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 15px;
+            background: #ff9800;
+            color: white;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .combo-info h3 {
+            margin: 0 0 5px 0;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1b5e20;
+            margin: 5px 0;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+        }
+        .btn-whatsapp {
+            display: block;
+            text-align: center;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        /* Botón flotante opcional */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 15px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
 
-  <meta    name="description"    content="Una fuente concentrada de antioxidantes naturales, diseñada para acompañarte donde sea que tu vida te lleve. Cada gota de MultyDrink combina ciencia, naturaleza y conveniencia para potenciar tu vitalidad cada día."  >
-<link href="//saludmultydrink.com/cdn/shop/t/1/assets/overflow-list.css?v=78235234226353326431771209367" as="style" rel="preload"><link href="//saludmultydrink.com/cdn/shop/t/1/assets/base.css?v=143605426757437778521771209367" rel="stylesheet" type="text/css" media="all" />
-<link    rel="preload"    as="font"    href="//saludmultydrink.com/cdn/fonts/montserrat/montserrat_n9.680ded1be351aa3bf3b3650ac5f6df485af8a07c.woff2"    type="font/woff2"    crossorigin    fetchpriority="low"  ><link    rel="preload"    as="font"    href="//saludmultydrink.com/cdn/fonts/inter/inter_n5.d7101d5e168594dd06f56f290dd759fba5431d97.woff2"    type="font/woff2"    crossorigin    fetchpriority="low"  ><link    rel="preload"    as="font"    href="//saludmultydrink.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2"    type="font/woff2"    crossorigin    fetchpriority="low"  ><link    rel="preload"    as="font"    href="//saludmultydrink.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2"    type="font/woff2"    crossorigin    fetchpriority="low"  ><script type="importmap">  {    "imports": {      "@theme/overflow-list": "//saludmultydrink.com/cdn/shop/t/1/assets/overflow-list.js?v=46858356770684902511771209367",      "@theme/product-title": "//saludmultydrink.com/cdn/shop/t/1/assets/product-title-truncation.js?v=81744426891537421781771209367",      "@theme/component": "//saludmultydrink.com/cdn/shop/t/1/assets/component.js?v=184240237101443119871771209367",      "@theme/dialog": "//saludmultydrink.com/cdn/shop/t/1/assets/dialog.js?v=150888536568694194021771209367",      "@theme/events": "//saludmultydrink.com/cdn/shop/t/1/assets/events.js?v=147926035229139604561771209367",      "@theme/focus": "//saludmultydrink.com/cdn/shop/t/1/assets/focus.js?v=60436577539430446401771209367",      "@theme/morph": "//saludmultydrink.com/cdn/shop/t/1/assets/morph.js?v=102085577784545683451771209367",      "@theme/paginated-list": "//saludmultydrink.com/cdn/shop/t/1/assets/paginated-list.js?v=95298315036233333871771209367",      "@theme/performance": "//saludmultydrink.com/cdn/shop/t/1/assets/performance.js?v=171015751390534793081771209367",      "@theme/product-form": "//saludmultydrink.com/cdn/shop/t/1/assets/product-form.js?v=37993400097492174081771209367",      "@theme/recently-viewed-products": "//saludmultydrink.com/cdn/shop/t/1/assets/recently-viewed-products.js?v=94729125001750262651771209367",      "@theme/scrolling": "//saludmultydrink.com/cdn/shop/t/1/assets/scrolling.js?v=162288454571026455011771209367",      "@theme/section-renderer": "//saludmultydrink.com/cdn/shop/t/1/assets/section-renderer.js?v=152586934315572818121771209367",      "@theme/section-hydration": "//saludmultydrink.com/cdn/shop/t/1/assets/section-hydration.js?v=108434990705342316311771209367",      "@theme/money-formatting": "//saludmultydrink.com/cdn/shop/t/1/assets/money-formatting.js?v=182191346160333327151771209367",      "@theme/utilities": "//saludmultydrink.com/cdn/shop/t/1/assets/utilities.js?v=137979405375850297411771209367",      "@theme/variant-picker": "//saludmultydrink.com/cdn/shop/t/1/assets/variant-picker.js?v=124079696159966615681771209367",      "@theme/media-gallery": "//saludmultydrink.com/cdn/shop/t/1/assets/media-gallery.js?v=14624021005636302161771209367",      "@theme/quick-add": "//saludmultydrink.com/cdn/shop/t/1/assets/quick-add.js?v=8173316780029216301771209367",      "@theme/paginated-list-aspect-ratio": "//saludmultydrink.com/cdn/shop/t/1/assets/paginated-list-aspect-ratio.js?v=25254270272143792451771209367",      "@theme/popover-polyfill": "//saludmultydrink.com/cdn/shop/t/1/assets/popover-polyfill.js?v=119029313658895111201771209367",      "@theme/component-quantity-selector": "//saludmultydrink.com/cdn/shop/t/1/assets/component-quantity-selector.js?v=67906657287482036641771209367",      "@theme/comparison-slider": "//saludmultydrink.com/cdn/shop/t/1/assets/comparison-slider.js?v=106705562947035711941771209367",      "@theme/sticky-add-to-cart": "//saludmultydrink.com/cdn/shop/t/1/assets/sticky-add-to-cart.js?v=48956925339276737091771209367",      "@theme/fly-to-cart": "//saludmultydrink.com/cdn/shop/t/1/assets/fly-to-cart.js?v=48483246440248933081771209367"    }  }</script>
-<script  src="//saludmultydrink.com/cdn/shop/t/1/assets/view-transitions.js?v=7106414069516106341771209367"  async  ></script>
-<link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/utilities.js?v=137979405375850297411771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/component.js?v=184240237101443119871771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/section-renderer.js?v=152586934315572818121771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/section-hydration.js?v=108434990705342316311771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/morph.js?v=102085577784545683451771209367"  fetchpriority="low">
+<div class="container">
+    <div class="header">
+        <h1>Salud MultyDrink</h1>
+        <p>LLÉVALO EN COMBO Y AHORRA</p>
+    </div>
 
+    <div class="combo-card">
+        <div class="combo-info">
+            <h3>1 CAJA (21 SOBRES)</h3>
+            <p>Envío nacional $18.500</p>
+            <div class="price">$149.900,00</div>
+        </div>
+        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+    </div>
 
-<link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/focus.js?v=60436577539430446401771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/recently-viewed-products.js?v=94729125001750262651771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/scrolling.js?v=162288454571026455011771209367"  fetchpriority="low"><link  rel="modulepreload"  href="//saludmultydrink.com/cdn/shop/t/1/assets/events.js?v=147926035229139604561771209367"  fetchpriority="low"><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/popover-polyfill.js?v=119029313658895111201771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/overflow-list.js?v=46858356770684902511771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/quick-add.js?v=8173316780029216301771209367"  type="module"  fetchpriority="low"></script>
-  <script    src="//saludmultydrink.com/cdn/shop/t/1/assets/cart-discount.js?v=107077853990124422021771209367"    type="module"    fetchpriority="low"  ></script>
+    <div class="combo-card">
+        <div class="combo-info">
+            <h3>2 CAJAS (42 SOBRES)</h3>
+            <p>Envío nacional $18.500</p>
+            <div class="price"><span class="old-price">$299.800,00</span> $239.900,00</div>
+        </div>
+        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+    </div>
 
-<script  src="//saludmultydrink.com/cdn/shop/t/1/assets/dialog.js?v=150888536568694194021771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/variant-picker.js?v=124079696159966615681771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/product-card.js?v=124402285637860180781771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/product-form.js?v=37993400097492174081771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/fly-to-cart.js?v=48483246440248933081771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/accordion-custom.js?v=97588419883090888471771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/media.js?v=37825095869491791421771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/product-price.js?v=164492227269745550161771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/product-sku.js?v=121804655373531320511771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/product-title-truncation.js?v=81744426891537421781771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/product-inventory.js?v=81520546963552472391771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/show-more.js?v=94563802205717136101771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/slideshow.js?v=17868446697736367161771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/layered-slideshow.js?v=30135417790894624731771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/anchored-popover.js?v=95953304814728754461771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/floating-panel.js?v=151277338116891310371771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/video-background.js?v=25237992823806706551771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/component-quantity-selector.js?v=67906657287482036641771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/media-gallery.js?v=14624021005636302161771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/rte-formatter.js?v=40306132146590816021771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/volume-pricing.js?v=15442793518842484731771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/price-per-item.js?v=144512917617120124431771209367"  type="module"  fetchpriority="low"></script><script  src="//saludmultydrink.com/cdn/shop/t/1/assets/volume-pricing-info.js?v=94479640769665442661771209367"  type="module"  fetchpriority="low"></script>
+    <div class="combo-card popular">
+        <div class="badge">OFERTA + POPULAR</div>
+        <div class="combo-info">
+            <h3>3 CAJAS (63 SOBRES)</h3>
+            <p>AHORRA $119.800 + ENVÍO NAL. GRATIS</p>
+            <div class="price"><span class="old-price">$449.700,00</span> $329.900,00</div>
+        </div>
+        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+    </div>
+</div>
 
-<script  src="//saludmultydrink.com/cdn/shop/t/1/assets/auto-close-details.js?v=58350291535404441581771209367"  defer="defer"></script>
-<script>  const Theme = {    translations: {      placeholder_image: `Imagen marcadora de posición`,      added: `Agregada`,      recipient_form_fields_visible: `Los campos de destinatario en el formulario ya son visibles`,      recipient_form_fields_hidden: `Los campos de destinatario en el formulario ya no son visibles`,      recipient_form_error: `Hubo un error al enviar el formulario`,      items_added_to_cart_one: `Se agregó un artículo al carrito`,      items_added_to_cart_other: `Se agregaron {{ count }} artículos al carrito`,    },    routes: {      cart_add_url: '/cart/add.js',      cart_change_url: '/cart/change',      cart_update_url: '/cart/update',      cart_url: '/cart',      predictive_search_url: '/search/suggest',      search_url: '/search',    },    template: {      name: 'index',    },  };</script><style data-shopify>@font-face {  font-family: Montserrat;  font-weight: 900;  font-style: normal;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_n9.680ded1be351aa3bf3b3650ac5f6df485af8a07c.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_n9.0cc5aaeff26ef35c23b69a061997d78c9697a382.woff") format("woff");}@font-face {  font-family: Montserrat;  font-weight: 700;  font-style: normal;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_n7.3c434e22befd5c18a6b4afadb1e3d77c128c7939.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_n7.5d9fa6e2cae713c8fb539a9876489d86207fe957.woff") format("woff");}@font-face {  font-family: Montserrat;  font-weight: 900;  font-style: italic;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_i9.cd566e55c5982a3a39b3949665a79c881e095b14.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_i9.b18527943b7f5bc1488b82e39deb595a73d3e645.woff") format("woff");}@font-face {  font-family: Montserrat;  font-weight: 700;  font-style: italic;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_i7.a0d4a463df4f146567d871890ffb3c80408e7732.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/montserrat/montserrat_i7.f6ec9f2a0681acc6f8152c40921d2a4d2e1a2c78.woff") format("woff");}@font-face {  font-family: Inter;  font-weight: 500;  font-style: normal;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/inter/inter_n5.d7101d5e168594dd06f56f290dd759fba5431d97.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/inter/inter_n5.5332a76bbd27da00474c136abb1ca3cbbf259068.woff") format("woff");}@font-face {  font-family: Inter;  font-weight: 700;  font-style: normal;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");}@font-face {  font-family: Inter;  font-weight: 500;  font-style: italic;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/inter/inter_i5.4474f48e6ab2b1e01aa2b6d942dd27fa24f2d99f.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/inter/inter_i5.493dbd6ee8e49f4ad722ebb68d92f201af2c2f56.woff") format("woff");}@font-face {  font-family: Inter;  font-weight: 700;  font-style: italic;  font-display: swap;  src: url("//saludmultydrink.com/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),       url("//saludmultydrink.com/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");}
+<a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." class="whatsapp-float" target="_blank">
+    💬 ¡Pide el tuyo aquí!
+</a>
 
-  :root {    /* Page Layout */    --sidebar-width: 25rem;    --narrow-content-width: 36rem;    --normal-content-width: 42rem;    --wide-content-width: 46rem;    --narrow-page-width: 90rem;    --normal-page-width: 120rem;    --wide-page-width: 150rem;
-    /* Section Heights */    --section-height-small: 15rem;    --section-height-medium: 25rem;    --section-height-large: 35rem;
-    @media screen and (min-width: 40em) {      --section-height-small: 40svh;      --section-height-medium: 55svh;      --section-height-large: 70svh;    }
-    @media screen and (min-width: 60em) {      --section-height-small: 50svh;      --section-height-medium: 65svh;      --section-height-large: 80svh;    }
-    /* Letter spacing */    --letter-spacing-sm: 0.06em;    --letter-spacing-md: 0.13em;
-    /* Font families */    --font-body--family: Montserrat, sans-serif;    --font-body--style: normal;    --font-body--weight: 900;    --font-subheading--family: Inter, sans-serif;    --font-subheading--style: normal;    --font-subheading--weight: 500;    --font-heading--family: Inter, sans-serif;    --font-heading--style: normal;    --font-heading--weight: 700;    --font-accent--family: Inter, sans-serif;    --font-accent--style: normal;    --font-accent--weight: 700;
-    /* Margin sizes */    --font-h1--spacing: 0.25em;    --font-h2--spacing: 0.25em;    --font-h3--spacing: 0.25em;    --font-h4--spacing: 0.25em;    --font-h5--spacing: 0.25em;    --font-h6--spacing: 0.25em;    --font-paragraph--spacing: 0.5em;
-    /* Heading colors */    --font-h1--color: var(--color-foreground-heading);    --font-h2--color: var(--color-foreground-heading);    --font-h3--color: var(--color-foreground-heading);    --font-h4--color: var(--color-foreground-heading);    --font-h5--color: var(--color-foreground-heading);    --font-h6--color: var(--color-foreground-heading);
-    /** Z-Index / Layering */    --layer-section-background: -2;    --layer-lowest: -1;    --layer-base: 0;    --layer-flat: 1;    --layer-raised: 2;    --layer-heightened: 4;    --layer-sticky: 8;    --layer-window-overlay: 10;    --layer-header-menu: 12;    --layer-overlay: 16;    --layer-menu-drawer: 18;    --layer-temporary: 20;
-    /* Max-width / Measure */    --max-width--body-normal: 32.5em;    --max-width--body-narrow: 22.75em;
-    --max-width--heading-normal: 32.5em;    --max-width--heading-narrow: 19.5em;
-    --max-width--display-normal: 13em;    --max-width--display-narrow: 9.75em;    --max-width--display-tight: 3.25em;
-    /* Letter-spacing / Tracking */    --letter-spacing--display-tight: -0.03em;    --letter-spacing--display-normal: 0em;    --letter-spacing--display-loose: 0.03em;
-    --letter-spacing--heading-tight: -0.03em;    --letter-spacing--heading-normal: 0em;    --letter-spacing--heading-loose: 0.03em;
-    --letter-spacing--body-tight: -0.03em;    --letter-spacing--body-normal: 0em;    --letter-spacing--body-loose: 0.03em;
-    /* Line height / Leading */    --line-height: 1;
-    --line-height--display-tight: 1;    --line-height--display-normal: 1.1;    --line-height--display-loose: 1.2;
-    --line-height--heading-tight: 1.15;    --line-height--heading-normal: 1.25;    --line-height--heading-loose: 1.35;
-    --line-height--body-tight: 1.2;    --line-height--body-normal: 1.4;    --line-height--body-loose: 1.6;
-    /* Typography presets */    --font-size--paragraph: 0.875rem;--font-size--h1: clamp(3.0rem, 7.2vw, 4.5rem);--font-size--h2: clamp(2.25rem, 4.8vw, 3.0rem);--font-size--h3: 2.0rem;--font-size--h4: 1.5rem;--font-size--h5: 0.875rem;--font-size--h6: 0.75rem;--font-paragraph--weight: 400;--font-paragraph--letter-spacing: var(--letter-spacing--body-normal);--font-paragraph--size: var(--font-size--paragraph);--font-paragraph--family: var(--font-body--family);--font-paragraph--style: var(--font-body--style);--font-paragraph--case: ;--font-paragraph--line-height: var(--line-height--body-loose);--font-h1--weight: var(--font-heading--weight);--font-h1--letter-spacing: var(--letter-spacing--heading-normal);--font-h1--size: var(--font-size--h1);--font-h1--family: var(--font-heading--family);--font-h1--style: var(--font-heading--style);--font-h1--case: none;--font-h1--line-height: var(--line-height--display-tight);--font-h2--weight: var(--font-heading--weight);--font-h2--letter-spacing: var(--letter-spacing--heading-normal);--font-h2--size: var(--font-size--h2);--font-h2--family: var(--font-heading--family);--font-h2--style: var(--font-heading--style);--font-h2--case: none;--font-h2--line-height: var(--line-height--display-tight);--font-h3--weight: var(--font-heading--weight);--font-h3--letter-spacing: var(--letter-spacing--heading-normal);--font-h3--size: var(--font-size--h3);--font-h3--family: var(--font-heading--family);--font-h3--style: var(--font-heading--style);--font-h3--case: none;--font-h3--line-height: var(--line-height--display-normal);--font-h4--weight: var(--font-heading--weight);--font-h4--letter-spacing: var(--letter-spacing--heading-normal);--font-h4--size: var(--font-size--h4);--font-h4--family: var(--font-heading--family);--font-h4--style: var(--font-heading--style);--font-h4--case: none;--font-h4--line-height: var(--line-height--display-tight);--font-h5--weight: var(--font-subheading--weight);--font-h5--letter-spacing: var(--letter-spacing--heading-normal);--font-h5--size: var(--font-size--h5);--font-h5--family: var(--font-subheading--family);--font-h5--style: var(--font-subheading--style);--font-h5--case: none;--font-h5--line-height: var(--line-height--display-loose);--font-h6--weight: var(--font-subheading--weight);--font-h6--letter-spacing: var(--letter-spacing--heading-normal);--font-h6--size: var(--font-size--h6);--font-h6--family: var(--font-subheading--family);--font-h6--style: var(--font-subheading--style);--font-h6--case: none;--font-h6--line-height: var(--line-height--display-loose);
-    /* Hardcoded font sizes */    --font-size--3xs: 0.625rem;    --font-size--2xs: 0.75rem;    --font-size--xs: 0.8125rem;    --font-size--sm: 0.875rem;    --font-size--md: 1rem;    --font-size--lg: 1.125rem;    --font-size--xl: 1.25rem;    --font-size--2xl: 1.5rem;    --font-size--3xl: 2rem;    --font-size--4xl: 2.5rem;    --font-size--5xl: 3rem;    --font-size--6xl: 3.5rem;
-    /* Menu font sizes */    --menu-font-sm--size: 0.875rem;    --menu-font-sm--line-height: calc(1.1 + 0.5 * min(16 / 14));    --menu-font-md--size: 1rem;    --menu-font-md--line-height: calc(1.1 + 0.5 * min(16 / 16));    --menu-font-lg--size: 1.125rem;    --menu-font-lg--line-height: calc(1.1 + 0.5 * min(16 / 18));    --menu-font-xl--size: 1.25rem;    --menu-font-xl--line-height: calc(1.1 + 0.5 * min(16 / 20));    --menu-font-2xl--size: 1.75rem;    --menu-font-2xl--line-height: calc(1.1 + 0.5 * min(16 / 28));
-    /* Colors */    --color-error: #8B0000;    --color-success: #006400;    --color-white: #FFFFFF;    --color-white-rgb: 255 255 255;    --color-black: #000000;    --color-instock: #3ED660;    --color-lowstock: #EE9441;    --color-outofstock: #C8C8C8;
-    /* Opacity */    --opacity-5: 0.05;    --opacity-8: 0.08;    --opacity-10: 0.1;    --opacity-15: 0.15;    --opacity-20: 0.2;    --opacity-25: 0.25;    --opacity-30: 0.3;    --opacity-40: 0.4;    --opacity-50: 0.5;    --opacity-60: 0.6;    --opacity-70: 0.7;    --opacity-80: 0.8;    --opacity-85: 0.85;    --opacity-90: 0.9;    --opacity-subdued-text: var(--opacity-70);
-    --shadow-button: 0 2px 3px rgb(0 0 0 / 20%);    --gradient-image-overlay: linear-gradient(to top, rgb(0 0 0 / 0.5), transparent);
-    /* Spacing */    --margin-3xs: 0.125rem;    --margin-2xs: 0.3rem;    --margin-xs: 0.5rem;    --margin-sm: 0.7rem;    --margin-md: 0.8rem;    --margin-lg: 1rem;    --margin-xl: 1.25rem;    --margin-2xl: 1.5rem;    --margin-3xl: 1.75rem;    --margin-4xl: 2rem;    --margin-5xl: 3rem;    --margin-6xl: 5rem;
-    --scroll-margin: 50px;
-    --padding-3xs: 0.125rem;    --padding-2xs: 0.25rem;    --padding-xs: 0.5rem;    --padding-sm: 0.7rem;    --padding-md: 0.8rem;    --padding-lg: 1rem;    --padding-xl: 1.25rem;    --padding-2xl: 1.5rem;    --padding-3xl: 1.75rem;    --padding-4xl: 2rem;    --padding-5xl: 3rem;    --padding-6xl: 4rem;
-    --gap-3xs: 0.125rem;    --gap-2xs: 0.3rem;    --gap-xs: 0.5rem;    --gap-sm: 0.7rem;    --gap-md: 0.9rem;    --gap-lg: 1rem;    --gap-xl: 1.25rem;    --gap-2xl: 2rem;    --gap-3xl: 3rem;
-    --spacing-scale-sm: 0.6;    --spacing-scale-md: 0.7;    --spacing-scale-default: 1.0;
-    /* Checkout buttons gap */    --checkout-button-gap: 10px;
-    /* Borders */    --style-border-width: 1px;    --style-border-radius-xs: 0.2rem;    --style-border-radius-sm: 0.6rem;    --style-border-radius-md: 0.8rem;    --style-border-radius-50: 50%;    --style-border-radius-lg: 1rem;    --style-border-radius-pills: 40px;    --style-border-radius-inputs: 4px;    --style-border-radius-buttons-primary: 14px;    --style-border-radius-buttons-secondary: 14px;    --style-border-width-primary: 0px;    --style-border-width-secondary: 1px;    --style-border-width-inputs: 1px;    --style-border-radius-popover: 14px;    --style-border-popover: 1px none rgb(var(--color-border-rgb) / 50%);    --style-border-drawer: 1px none rgb(var(--color-border-rgb) / 50%);    --style-border-swatch-opacity: 10%;    --style-border-swatch-width: 1px;    --style-border-swatch-style: solid;
-    /* Animation */    --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);    --ease-out-quad: cubic-bezier(0.32, 0.72, 0, 1);    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);    --animation-speed-fast: 0.0625s;    --animation-speed: 0.125s;    --animation-speed-slow: 0.2s;    --animation-speed-medium: 0.15s;    --animation-easing: ease-in-out;    --animation-slideshow-easing: cubic-bezier(0.4, 0, 0.2, 1);    --drawer-animation-speed: 0.2s;    --animation-values-slow: var(--animation-speed-slow) var(--animation-easing);    --animation-values: var(--animation-speed) var(--animation-easing);    --animation-values-fast: var(--animation-speed-fast) var(--animation-easing);    --animation-values-allow-discrete: var(--animation-speed) var(--animation-easing) allow-discrete;    --animation-timing-hover: cubic-bezier(0.25, 0.46, 0.45, 0.94);    --animation-timing-active: cubic-bezier(0.5, 0, 0.75, 0);    --animation-timing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);    --animation-timing-default: cubic-bezier(0, 0, 0.2, 1);    --animation-timing-fade-in: cubic-bezier(0.16, 1, 0.3, 1);    --animation-timing-fade-out: cubic-bezier(0.4, 0, 0.2, 1);    /* Spring definitions suffixed with perceptual duration (d<ms>) and bounce (b<%>)*/    --spring-d300-b0-easing: linear(0, 0.0033 0.81%, 0.027 2.42%, 0.0916 4.84%, 0.4745 15.32%, 0.6422 20.97%, 0.7175, 0.7789, 0.8283 30.64%, 0.876, 0.9111 38.71%, 0.941, 0.9611 48.39%, 0.9707, 0.978 54.84%, 0.9885 62.1%, 0.9949 70.97%, 0.9982 82.26%, 0.9997 100%);    --spring-d300-b0-duration: 0.4980s;    --spring-d280-b0-easing: linear(0, 0.0044, 0.0164 1.85%, 0.085 4.63%, 0.4571 14.81%, 0.575 18.52%, 0.6505, 0.7148 24.07%, 0.7849, 0.8393, 0.8809 35.18%, 0.9189, 0.9453 44.44%, 0.9662, 0.9793 55.55%, 0.9894 62.95%, 0.995 71.28%, 0.9982 82.39%, 0.9997 99.98%);    --spring-d280-b0-duration: 0.4648s;    --spring-d260-b0-easing: linear(0, 0.0058, 0.0216 2.15%, 0.0748 4.29%, 0.4646 15.03%, 0.5673, 0.655, 0.7279, 0.7872, 0.8349, 0.8727 34.36%, 0.9107, 0.9379 42.95%, 0.9609 48.31%, 0.9778 54.76%, 0.9887 62.27%, 0.9948 70.86%, 0.9983 82.67%, 0.9997 99.85%);    --spring-d260-b0-duration: 0.4316s;    --spring-d220-b0-easing: linear(      0,      0.0093 1.37%,      0.0696 4.12%,      0.4667 15.09%,      0.6322 20.58%,      0.6986 23.32%,      0.7793 27.44%,      0.8219 30.18%,      0.8721,      0.9089 38.42%,      0.9427,      0.9644,      0.978 54.88%,      0.9881 61.74%,      0.9944 69.97%,      0.998 80.95%,      0.9996 98.78%    );    --spring-d220-b0-duration: 0.3818s;    --spring-d180-b0-easing: linear(0, 0.0234, 0.0805 4.48%, 0.4865 15.68%, 0.6211 20.16%, 0.7696 26.88%, 0.8064 29.12%, 0.8646, 0.9063, 0.9358, 0.9563 47.04%, 0.9757, 0.9867 60.48%, 0.9941 69.44%, 0.9979 80.64%, 0.9996 98.56%);    --spring-d180-b0-duration: 0.2988s;
-    /* View transitions */    /* View transition old */    --view-transition-old-main-content: var(--animation-speed) var(--animation-easing) both fadeOut;
-    /* View transition new */    --view-transition-new-main-content: var(--animation-speed) var(--animation-easing) both fadeIn, var(--animation-speed) var(--animation-easing) both slideInTopViewTransition;
-    /* Focus */    --focus-outline-width: 0.09375rem;    --focus-outline-offset: 0.2em;
-    /* Badges */    --badge-blob-padding-block: 1px;    --badge-blob-padding-inline: 12px 8px;    --badge-rectangle-padding-block: 1px;    --badge-rectangle-padding-inline: 6px;    @media screen and (min-width: 750px) {      --badge-blob-padding-block: 4px;      --badge-blob-padding-inline: 16px 12px;      --badge-rectangle-padding-block: 4px;      --badge-rectangle-padding-inline: 10px;    }
-    /* Icons */    --icon-size-2xs: 0.6rem;    --icon-size-xs: 0.85rem;    --icon-size-sm: 1.25rem;    --icon-size-md: 1.375rem;    --icon-size-lg: 1.5rem;    --icon-stroke-width: 1.5px;
-    /* Input */    --input-email-min-width: 200px;    --input-search-max-width: 650px;    --input-padding-y: 0.8rem;    --input-padding-x: 0.8rem;    --input-padding: var(--input-padding-y) var(--input-padding-x);    --input-box-shadow-width: var(--style-border-width-inputs);    --input-box-shadow: 0 0 0 var(--input-box-shadow-width) var(--color-input-border);    --input-box-shadow-focus: 0 0 0 calc(var(--input-box-shadow-width) + 0.5px) var(--color-input-border);    --input-disabled-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));    --input-disabled-border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));    --input-disabled-text-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));    --input-textarea-min-height: 55px;
-    /* Checkbox */    --checkbox-size: 22px;    --checkbox-border-radius: 7px;    --checkbox-border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-35-55));    --checkbox-label-padding: 8px;
-    @media screen and (min-width: 750px) {      --checkbox-size: 16px;      --checkbox-border-radius: 5px;      --checkbox-label-padding: 6px;    }
-    /* Button size */    --button-size-sm: 30px;    --button-size-md: 36px;    --button-size: var(--minimum-touch-target);    --button-padding-inline: 24px;    --button-padding-block: 16px;
-    /* Button font-family */    --button-font-family-primary: var(--font-body--family);    --button-font-family-secondary: var(--font-body--family);
-    /* Button text case */    --button-text-case: ;    --_
-  </head>
-  <body>
-    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank">Contactar por WhatsApp</a>
-  </body>
+</body>
 </html>
