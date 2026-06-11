@@ -1,635 +1,159 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ES">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MultyDrink | Bebida Botánica Natural con Envío a toda Latinoamérica</title>
-    <meta name="description" content="MultyDrink es una bebida botánica en formato práctico con 5 ingredientes naturales: Mucílago de Café, Ganoderma, Té Negro, Miel de Agave y Extracto de Uva. Compra ahora por WhatsApp.">
-    <meta name="keywords" content="MultyDrink, bebida botánica, suplemento natural, ganoderma, mucílago de café, té negro, miel de agave, extracto de uva, salud natural">
-    <meta property="og:title" content="MultyDrink | Bebida Botánica Natural">
-    <meta property="og:description" content="Descubre MultyDrink: 5 ingredientes botánicos en un práctico sachet para tu bienestar diario.">
-    <meta property="og:image" content="https://www.multydrinklatam.com/RECURSOS/IMAGENES/Pack_energia.webp">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="RECURSOS/IMAGENES/favicon.png" type="image/png">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-green': '#10B981', /* Vibrant Emerald */
-                        'brand-green-dark': '#064E3B', /* Deep Professional Green */
-                        'brand-green-light': '#34D399',
-                        'brand-gold': '#F59E0B', /* Brilliant Amber/Gold */
-                        'brand-gold-light': '#FBBF24',
-                        'brand-cream': '#FAF8F0',
-                        'brand-gray': '#111827', /* Darker Gray */
-                        'brand-gray-light': '#4B5563',
-                    },
-                    boxShadow: {
-                        'premium': '0 25px 60px -15px rgba(0, 0, 0, 0.3)',
-                        'floating': '0 35px 80px -20px rgba(0, 0, 0, 0.45)',
-                    },
-                    fontFamily: {
-                        'heading': ['Poppins', 'sans-serif'],
-                        'body': ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <title>ÚNETE A MULTYHEALTH – Comparte y Gana - MultyHealth</title>
+    <link rel="pingback" href="https://multyhealth.com/xmlrpc.php" />
+    <link rel="canonical" href="https://multyhealth.com/unete-a-multyhealth/" />
+    
+    <script type="text/javascript">
+        document.documentElement.className = 'js';
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #111827;
-            overflow-x: hidden;
-            background-color: #FAF8F0;
-        }
-
-        .text-white {
-            color: #FFFFFF !important;
-        }
-
-        .text-brand-gold {
-            color: #F59E0B !important;
-            text-shadow: 0 0 1px rgba(245, 158, 11, 0.2);
-        }
-
-        .text-brand-gray-light {
-            color: #4B5563 !important;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FAF8F0;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2D6A4F;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1B4332;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.85);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(45, 106, 79, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(45, 106, 79, 0.6); }
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .animate-on-scroll.from-left {
-            transform: translateX(-40px);
-        }
-        .animate-on-scroll.from-left.visible {
-            transform: translateX(0);
-        }
-
-        .animate-on-scroll.from-right {
-            transform: translateX(40px);
-        }
-        .animate-on-scroll.from-right.visible {
-            transform: translateX(0);
-        }
-
-        .animate-on-scroll.scale-in {
-            transform: scale(0.85);
-        }
-        .animate-on-scroll.scale-in.visible {
-            transform: scale(1);
-        }
-
-        .float-animation {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .shimmer-btn {
-            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
-            background-size: 200% 100%;
-            animation: shimmer 2.5s ease-in-out infinite;
-        }
-
-        .gradient-animated {
-            background-size: 200% 200%;
-            animation: gradient-shift 6s ease infinite;
-        }
-
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        /* Glass effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .glass-dark {
-            background: rgba(27, 67, 50, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* WhatsApp button floating */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 999;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        /* Ingredient card hover */
-        .ingredient-card {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .ingredient-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(45, 106, 79, 0.15);
-        }
-
-        /* Problem card */
-        .problem-card {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .problem-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.35);
-        }
-
-        /* Video container */
-        .video-container {
-            position: relative;
-            padding-bottom: 177.78%; /* 9:16 aspect ratio for shorts */
-            height: 0;
-            overflow: hidden;
-            border-radius: 16px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: 16px;
-        }
-
-        /* CTA button style */
-        .cta-btn {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            text-transform: uppercase !important;
-            font-weight: 900 !important;
-            color: white !important;
-            letter-spacing: 0.05em;
-        }
-        .cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
-            transition: left 0.5s ease;
-        }
-        .cta-btn:hover::before {
-            left: 100%;
-        }
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(45, 106, 79, 0.35);
-        }
-
-        /* Benefit icon container */
-        .benefit-icon {
-            transition: all 0.3s ease;
-        }
-        .benefit-icon:hover {
-            transform: rotate(5deg) scale(1.1);
-        }
-
-        /* Navbar */
-        .navbar {
-            transition: all 0.3s ease;
-        }
-        .navbar.scrolled {
-            background: rgba(27, 67, 50, 0.95) !important;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Section divider */
-        .section-divider {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #2D6A4F, #D4A843);
-            border-radius: 2px;
-            margin: 0 auto;
-        }
-
-        /* Particle dots decoration */
-        .dot-pattern {
-            background-image: radial-gradient(circle, rgba(45, 106, 79, 0.1) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        /* FAQ icon rotation */
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style id="et-builder-googlefonts-cached-inline">
+        /* Google Fonts pre-cargadas */
+        @font-face {font-family: 'Lato';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjxAwWA.woff) format('woff');}
+        @font-face {font-family: 'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlEw.woff) format('woff');}
+        @font-face {font-family: 'Playfair Display';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDZbtU.woff) format('woff');}
     </style>
 
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1667354304620331');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1667354304620331&ev=PageView&noscript=1"
-    /></noscript>
-    </head>
-<body class="bg-brand-cream font-body">
+    <style id='divi-style-inline-inline-css' type='text/css'>
+        /* --- ESTILOS DE LA PÁGINA PRINCIPAL --- */
+        a,abbr,acronym,address,body,div,dl,dt,em,fieldset,footer,form,h1,h2,h3,h4,h5,h6,html,img,li,ol,p,pre,span,strong,ul{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+        body{font-family:Open Sans,Arial,sans-serif;font-size:14px;color:#666;background-color:#fff;line-height:1.7em;font-weight:500;-webkit-font-smoothing:antialiased}
+        a{color:#2ea3f2;text-decoration:none}
+        h1,h2,h3,h4,h5,h6{color:#333;padding-bottom:10px;line-height:1em;font-weight:500}
+        .container{width:80%; margin: 0 auto;}
+        #main-content{background-color:#fff; padding: 40px 0;}
 
-    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="whatsapp-float" aria-label="Contacto por WhatsApp">
-        <i class="fab fa-whatsapp text-white text-3xl"></i>
-    </a>
+        /* --- ESTILOS DE LA NUEVA SUBPÁGINA (INTEGRADOS SIN CONFLICTO) --- */
+        .mh-subpage-root html { scroll-behavior: smooth; }
+        .mh-subpage-root { font-family: 'Inter', sans-serif; color: #111827; background-color: #FAF8F0; }
+        .mh-subpage-root .text-white { color: #FFFFFF !important; }
+        .mh-subpage-root .text-brand-gold { color: #F59E0B !important; text-shadow: 0 0 1px rgba(245, 158, 11, 0.2); }
+        .mh-subpage-root .text-brand-gray-light { color: #4B5563 !important; }
+        .mh-subpage-root h1, .mh-subpage-root h2, .mh-subpage-root h3, .mh-subpage-root h4, .mh-subpage-root h5, .mh-subpage-root h6 { font-family: 'Poppins', sans-serif; }
+        
+        /* Animaciones y Efectos de la Subpágina */
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .mh-subpage-root .float-animation { animation: float 4s ease-in-out infinite; }
+        .mh-subpage-root .shimmer-btn { 
+            background: linear-gradient(120deg, #2D6A4F 0%, #52B788 50%, #2D6A4F 100%); 
+            background-size: 200% 100%; animation: shimmer 2.5s ease-in-out infinite; color: white; border: none; cursor: pointer;
+        }
+        .mh-subpage-root .glass-dark { background: rgba(27, 67, 50, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6); }
 
-    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <img src="RECURSOS/IMAGENES/logo.png" alt="MultyDrink" class="h-10 md:h-12 w-auto">
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#beneficios" class="text-white/80 hover:text-brand-gold transition-colors text-sm font-medium tracking-wide">Beneficios</a>
-                <a href="#ingredientes" class="text-white/80 hover:text-brand-gold transition-colors text-sm font-medium tracking-wide">Ingredientes</a>
-                <a href="#testimonios" class="text-white/80 hover:text-brand-gold transition-colors text-sm font-medium tracking-wide">Testimonios</a>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-semibold py-2.5 px-6 rounded-md text-sm transition-all hover:-translate-y-1 shadow-lg pulse-glow flex items-center">
-                    <i class="fas fa-tags mr-2"></i>Comprar Ahora
-                </a>
+        /* Estilos del Contenedor de la Subpágina (Modal de pantalla completa) */
+        #subpage-modal-container {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background-color: #FAF8F0; z-index: 1000000; overflow-y: auto; box-sizing: border-box;
+            animation: fadeInUp 0.4s ease-out;
+        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Botón de Acceso en el Menú */
+        .menu-unete-link { background: #2D6A4F; color: white !important; padding: 8px 16px; border-radius: 20px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+        .menu-unete-link:hover { background: #1B4332; }
+    </style>
+</head>
+
+<body>
+
+    <header style="background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <a href="#" style="font-size: 22px; font-weight: bold; color: #333;">MultyHealth</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
+            <nav>
+                <ul style="display: flex; gap: 20px; list-style: none; align-items: center;">
+                    <li><a href="#" style="color: #666;">Inicio</a></li>
+                    <li><a href="#" style="color: #666;">Productos</a></li>
+                    <li><span class="menu-unete-link" onclick="abrirSubpagina()">Únete y Gana</span></li>
+                </ul>
+            </nav>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-green-dark border border-brand-gold/20 rounded-2xl p-6 shadow-2xl">
-            <div class="flex flex-col gap-4">
-                <a href="#beneficios" class="text-white/90 hover:text-brand-gold transition-colors text-sm font-medium" onclick="closeMobileMenu()">Beneficios</a>
-                <a href="#ingredientes" class="text-white/90 hover:text-brand-gold transition-colors text-sm font-medium" onclick="closeMobileMenu()">Ingredientes</a>
-                <a href="#testimonios" class="text-white/90 hover:text-brand-gold transition-colors text-sm font-medium" onclick="closeMobileMenu()">Testimonios</a>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" onclick="closeMobileMenu()" class="bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center text-sm text-center transition-all pulse-glow hover:-translate-y-1">
-                    <i class="fas fa-tags mr-2"></i>Comprar Ahora
-                </a>
-            </div>
-        </div>
-    </nav>
+    </header>
 
-    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-green-dark via-brand-green to-brand-green-dark gradient-animated"></div>
-        <div class="absolute inset-0 dot-pattern opacity-30"></div>
-        <div class="absolute top-20 left-10 w-72 h-72 bg-brand-green-light/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full pt-24 pb-16">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left order-2 lg:order-1">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full py-2 px-4 mb-6">
-                        <span class="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
-                        <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">100% Natural</span>
-                    </div>
-
-                    <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-tight mb-6">
-                        Potencia tu
-                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-brand-gold-light whitespace-nowrap">Energía Natural</span>
-                    </h1>
-
-                    <p class="text-white/75 text-base md:text-lg lg:text-xl max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
-                        Descubre <strong class="text-white">MultyDrink</strong>: 5 ingredientes botánicos en un práctico sachet para transformar tu bienestar diario.
-                    </p>
-
-                    <div class="w-full mt-4">
-                        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-6 px-8 rounded-md text-lg sm:text-xl md:text-3xl shadow-floating transition-all hover:-translate-y-1 pulse-glow uppercase tracking-wide border-b-4 border-brand-gold-light/40">
-                            <i class="fas fa-tags text-lg sm:text-xl md:text-3xl"></i>
-                            VER OPCIONES DE COMPRA
-                        </a>
-                    </div>
-
-                    <div class="flex items-center justify-center lg:justify-start gap-6 mt-10">
-                        <div class="flex items-center gap-2 text-white/50 text-xs">
-                            <i class="fas fa-leaf text-brand-green-light"></i>
-                            <span>Natural</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-white/50 text-xs">
-                            <i class="fas fa-truck-fast text-brand-green-light"></i>
-                            <span>Envío Nacional</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-white/50 text-xs">
-                            <i class="fas fa-shield-halved text-brand-green-light"></i>
-                            <span>Producto Seguro</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="order-1 lg:order-2 flex justify-center relative">
-                    <div class="absolute inset-0 bg-brand-gold/25 rounded-full blur-3xl scale-75"></div>
-                    <img src="RECURSOS/IMAGENES/nueva_imagen_hero.webp" alt="MultyDrink Producto Principal"
-                         class="relative z-10 w-64 md:w-80 lg:w-[420px] float-animation drop-shadow-2xl filter brightness-110">
-                </div>
+    <div id="main-content">
+        <div class="container">
+            <h2 style="font-size: 36px; margin-bottom: 15px; color: #2D6A4F;">Bienvenido a MultyHealth</h2>
+            <p style="font-size: 16px; margin-bottom: 30px;">Aquí se encuentra todo el contenido nativo original de tu landing page o sitio web construido con Divi.</p>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <button onclick="abrirSubpagina()" style="padding: 15px 35px; font-size: 18px; font-weight: bold; background: #D4A843; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    🚀 Conoce nuestro plan: Únete y Gana
+                </button>
             </div>
         </div>
-
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-1">
-                <div class="w-1.5 h-3 bg-white/60 rounded-full animate-bounce"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-28 bg-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green via-brand-gold to-brand-green"></div>
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="text-center mb-16 animate-on-scroll">
-                <span class="inline-block text-brand-green font-semibold text-sm tracking-widest uppercase mb-3">¿Te identificas?</span>
-                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-4">
-                    Tu cuerpo te pide un <span class="text-brand-green">cambio</span>
-                </h2>
-                <div class="section-divider mt-4 mb-6"></div>
-                <p class="text-brand-gray-light text-base md:text-lg max-w-2xl mx-auto">
-                    Millones de personas enfrentan estos problemas diarios. MultyDrink fue diseñado para ayudarte.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="problem-card animate-on-scroll bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 text-center border border-red-100/50 shadow-premium" data-delay="0">
-                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-3 shadow-sm">
-                        <i class="fas fa-battery-quarter text-red-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-brand-gray mb-3">Falta de Energía</h3>
-                    <p class="text-brand-gray-light text-sm leading-relaxed">Te sientes agotado antes de que termine el día y dependes del café para funcionar.</p>
-                </div>
-
-                <div class="problem-card animate-on-scroll bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8 text-center border border-yellow-100/50 shadow-premium" data-delay="100">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-5 -rotate-3 shadow-sm">
-                        <i class="fas fa-brain text-yellow-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-brand-gray mb-3">Estrés Oxidativo</h3>
-                    <p class="text-brand-gray-light text-sm leading-relaxed">El envejecimiento prematuro y el daño celular afectan tu vitalidad y apariencia.</p>
-                </div>
-
-                <div class="problem-card animate-on-scroll bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 text-center border border-orange-100/50 shadow-premium" data-delay="200">
-                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-3 shadow-sm">
-                        <i class="fas fa-fire-flame-curved text-orange-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-brand-gray mb-3">Mala Digestión</h3>
-                    <p class="text-brand-gray-light text-sm leading-relaxed">Hinchazón, pesadez y malestar estomacal que afectan tu calidad de vida.</p>
-                </div>
-
-                <div class="problem-card animate-on-scroll bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center border border-blue-100/50 shadow-premium" data-delay="300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5 -rotate-3 shadow-sm">
-                        <i class="fas fa-shield-virus text-blue-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-brand-gray mb-3">Baja Inmunidad</h3>
-                    <p class="text-brand-gray-light text-sm leading-relaxed">Tu sistema inmune debilitado te hace vulnerable a enfermedades constantes.</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-14 animate-on-scroll">
-                <p class="text-brand-green font-heading font-semibold text-lg md:text-xl">
-                    <i class="fas fa-arrow-down text-brand-gold mr-2 animate-bounce"></i>
-                    La solución está en la naturaleza
-                    <i class="fas fa-arrow-down text-brand-gold ml-2 animate-bounce"></i>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="md:hidden px-4 py-6 bg-white">
-        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-5 px-6 rounded-xl text-xl shadow-xl shadow-brand-gold/20 transition-all active:scale-95 uppercase tracking-wide">
-            <i class="fas fa-shopping-cart text-xl"></i>
-            ¡QUIERO MI MULTYDRINK!
-        </a>
     </div>
 
-    <section class="py-20 md:py-28 bg-brand-cream relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-green/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="animate-on-scroll from-left relative flex justify-center">
-                    <div class="absolute inset-0 bg-gradient-to-br from-brand-green/15 to-brand-gold/15 rounded-3xl blur-2xl scale-95"></div>
-                    <img src="RECURSOS/IMAGENES/life style1.jpg" alt="MultyDrink con ingredientes naturales"
-                         class="relative z-10 w-full max-w-md lg:max-w-lg rounded-3xl shadow-floating transform transition-transform duration-500 hover:scale-[1.03]">
-                </div>
 
-                <div class="animate-on-scroll from-right">
-                    <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">Conoce el producto</span>
-                    <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-6">
-                        ¿Qué es <span class="text-brand-green">MultyDrink</span>?
-                    </h2>
-                    <div class="section-divider !mx-0 mb-6"></div>
-                    <p class="text-brand-gray-light text-base md:text-lg leading-relaxed mb-8">
-                        Una <strong class="text-brand-gray">bebida botánica en formato sachet</strong> que combina 5 ingredientes de origen natural, diseñada para que complementes tu alimentación diaria de manera práctica y deliciosa.
-                    </p>
+    <div id="subpage-modal-container" class="mh-subpage-root">
+        
+        <div style="background: #1B4332; padding: 15px; position: sticky; top: 0; z-index: 1000001; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            <span style="color: white; font-family: 'Poppins', sans-serif; font-weight: bold;">MultyHealth - Área de Afiliados</span>
+            <button onclick="cerrarSubpagina()" style="background: #D4A843; color: white; border: none; padding: 8px 18px; font-weight: bold; border-radius: 5px; cursor: pointer; transition: 0.2s;">
+                ✕ Volver al Inicio
+            </button>
+        </div>
 
-                    <div class="space-y-4 mb-10">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-brand-green text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-semibold text-brand-gray text-base">Formato práctico en sachets</h4>
-                                <p class="text-brand-gray-light text-sm">Llévalo contigo a donde vayas, fácil de preparar.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-brand-green text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-semibold text-brand-gray text-base">5 ingredientes botánicos</h4>
-                                <p class="text-brand-gray-light text-sm">Fórmula respaldada por investigación científica.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-brand-green/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-brand-green text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-semibold text-brand-gray text-base">De origen 100% natural</h4>
-                                <p class="text-brand-gray-light text-sm">Sin químicos artificiales, sin conservantes dañinos.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; box-sizing: border-box;">
+            
+            <div style="text-align: center; margin-bottom: 50px;" class="float-animation">
+                <h1 style="font-size: 42px; color: #2D6A4F; font-weight: 800; margin-bottom: 15px;">ÚNETE A MULTYHEALTH</h1>
+                <p style="font-size: 20px; color: #4B5563;" class="text-brand-gray-light">Comparte bienestar, construye tu red y gana comisiones de forma natural.</p>
+            </div>
 
-                    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-8 rounded-md text-xl md:text-2xl shadow-xl shadow-brand-green/20 transition-all hover:-translate-y-1 pulse-glow">
-                        <i class="fas fa-tags text-2xl"></i>
-                        QUIERO MI MultyDrink
+            <div class="glass-dark" style="padding: 35px; border-radius: 16px; color: white; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(27, 67, 50, 0.2);">
+                <h2 class="text-brand-gold" style="font-size: 26px; margin-bottom: 15px;">¿Por qué formar parte?</h2>
+                <p style="line-height: 1.8; margin-bottom: 20px;">Al unirte a nuestro modelo de negocio, accedes a un sistema diseñado para recompensar tu recomendación de productos saludables de alta calidad.</p>
+                
+                <div style="text-align: center; margin-top: 25px;">
+                    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa,%20me%20interesa%20adquirir%20el%20kit." target="_blank" style="text-decoration: none;">
+                        <button class="shimmer-btn" style="padding: 16px 32px; font-size: 16px; font-weight: bold; border-radius: 8px; text-transform: uppercase;">
+                            QUIERO MI MultyDrink
+                        </button>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="beneficios" class="py-20 md:py-28 bg-gradient-to-b from-brand-green-dark to-brand-green relative overflow-hidden">
-        <div class="absolute inset-0 dot-pattern opacity-10"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-            <div class="text-center mb-16 animate-on-scroll">
-                <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">¿Por qué elegirlo?</span>
-                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
-                    Beneficios que <span class="text-brand-gold">transforman</span>
-                </h2>
-                <div class="section-divider mt-4"></div>
+            <div style="margin-top: 30px; background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #E5E7EB;">
+                <h3 style="color: #2D6A4F; margin-bottom: 10px;">Preguntas Frecuentes</h3>
+                <p style="color: #4B5563;">¿Cómo recibo mis comisiones? El proceso se gestiona directamente mediante tu panel de control una vez completado el registro del kit.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="0">
-                    <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
-                        <i class="fas fa-bolt text-brand-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-white mb-3">Energía Natural</h3>
-                    <p class="text-white/80 text-sm leading-relaxed">Activa tu metabolismo y mantén tu vitalidad durante todo el día sin estimulantes artificiales.</p>
-                </div>
-
-                <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="100">
-                    <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
-                        <i class="fas fa-shield-halved text-brand-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-white mb-3">Sistema Inmune Fuerte</h3>
-                    <p class="text-white/80 text-sm leading-relaxed">Fortalece tus defensas naturales con Ganoderma Lucidum y componentes bioactivos.</p>
-                </div>
-
-                <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="200">
-                    <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
-                        <i class="fas fa-brain text-brand-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-lg text-white mb-3">Función Cognitiva</h3>
-                    <p class="text-white/80 text-sm leading-relaxed">Mejora el enfoque, la concentración y la claridad mental gracias a sus poderosos antioxidantes botánicos.</p>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
+
+    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa,%20me%20interesa%20adquirir%20el%20kit." class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.288 1.498 4.86 1.499 5.418 0 9.822-4.385 9.825-9.773a9.715 9.715 0 0 0-2.876-6.919A9.75 9.75 0 0 0 12.008 1.15c-5.424 0-9.832 4.387-9.835 9.777-.001 1.637.478 3.237 1.385 4.673l-.999 3.65 3.743-.974-.255-.142z"/>
+        </svg>
+    </a>
+
+    <script type="text/javascript">
+        // Función para activar y mostrar la subpágina en pantalla completa
+        function abrirSubpagina() {
+            var contenedor = document.getElementById('subpage-modal-container');
+            contenedor.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Bloquea el scroll de la página de atrás
+        }
+
+        // Función para ocultar la subpágina y regresar al inicio
+        function cerrarSubpagina() {
+            var contenedor = document.getElementById('subpage-modal-container');
+            contenedor.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura el scroll de la página principal
+        }
+    </script>
 
 </body>
 </html>
