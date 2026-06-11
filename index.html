@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,10 +10,11 @@
     <meta name="keywords" content="MultyDrink, bebida botánica, suplemento natural, ganoderma, mucílago de café, té negro, miel de agave, extracto de uva, salud natural">
     <meta property="og:title" content="MultyDrink | Bebida Botánica Natural">
     <meta property="og:description" content="Descubre MultyDrink: 5 ingredientes botánicos en un práctico sachet para tu bienestar diario.">
-    <meta property="og:image" content="https://www.multydrinklatam.com/RECURSOS/IMAGENES/Pack_energia.webp">
+        <meta property="og:image" content="https://www.multydrinklatam.com/RECURSOS/IMAGENES/Pack_energia.webp">
     <meta property="og:type" content="website">
     <link rel="icon" href="RECURSOS/IMAGENES/favicon.png" type="image/png">
 
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,10 +43,12 @@
         }
     </script>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -354,6 +359,7 @@
         }
     </style>
 
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -369,13 +375,11 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1667354304620331&ev=PageView&noscript=1"
     /></noscript>
-    </head>
+    <!-- End Meta Pixel Code -->
+</head>
 <body class="bg-brand-cream font-body">
 
-    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="whatsapp-float" aria-label="Contacto por WhatsApp">
-        <i class="fab fa-whatsapp text-white text-3xl"></i>
-    </a>
-
+    <!-- Navbar -->
     <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 bg-transparent py-4 px-4 md:px-8 lg:px-16">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
@@ -385,34 +389,41 @@
                 <a href="#beneficios" class="text-white/80 hover:text-brand-gold transition-colors text-sm font-medium tracking-wide">Beneficios</a>
                 <a href="#ingredientes" class="text-white/80 hover:text-brand-gold transition-colors text-sm font-medium tracking-wide">Ingredientes</a>
                 <a href="#testimonios" class="text-white/80 hover:text-brand-gold transition-colors text-sm font-medium tracking-wide">Testimonios</a>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-semibold py-2.5 px-6 rounded-md text-sm transition-all hover:-translate-y-1 shadow-lg pulse-glow flex items-center">
+                <a href="#precios" class="bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-semibold py-2.5 px-6 rounded-md text-sm transition-all hover:-translate-y-1 shadow-lg pulse-glow flex items-center">
                     <i class="fas fa-tags mr-2"></i>Comprar Ahora
                 </a>
             </div>
+            <!-- Mobile menu button -->
             <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-green-dark border border-brand-gold/20 rounded-2xl p-6 shadow-2xl">
             <div class="flex flex-col gap-4">
                 <a href="#beneficios" class="text-white/90 hover:text-brand-gold transition-colors text-sm font-medium" onclick="closeMobileMenu()">Beneficios</a>
                 <a href="#ingredientes" class="text-white/90 hover:text-brand-gold transition-colors text-sm font-medium" onclick="closeMobileMenu()">Ingredientes</a>
                 <a href="#testimonios" class="text-white/90 hover:text-brand-gold transition-colors text-sm font-medium" onclick="closeMobileMenu()">Testimonios</a>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" onclick="closeMobileMenu()" class="bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center text-sm text-center transition-all pulse-glow hover:-translate-y-1">
+                <a href="#precios" onclick="closeMobileMenu()" class="bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-semibold py-3 px-6 rounded-md w-full flex items-center justify-center text-sm text-center transition-all pulse-glow hover:-translate-y-1">
                     <i class="fas fa-tags mr-2"></i>Comprar Ahora
                 </a>
             </div>
         </div>
     </nav>
 
+    <!-- ==================== SECCIÓN 1: HERO ==================== -->
     <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background -->
         <div class="absolute inset-0 bg-gradient-to-br from-brand-green-dark via-brand-green to-brand-green-dark gradient-animated"></div>
+        <!-- Dot pattern overlay -->
         <div class="absolute inset-0 dot-pattern opacity-30"></div>
+        <!-- Decorative circles -->
         <div class="absolute top-20 left-10 w-72 h-72 bg-brand-green-light/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full pt-24 pb-16">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text content -->
                 <div class="text-center lg:text-left order-2 lg:order-1">
                     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full py-2 px-4 mb-6">
                         <span class="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
@@ -429,12 +440,13 @@
                     </p>
 
                     <div class="w-full mt-4">
-                        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-6 px-8 rounded-md text-lg sm:text-xl md:text-3xl shadow-floating transition-all hover:-translate-y-1 pulse-glow uppercase tracking-wide border-b-4 border-brand-gold-light/40">
+                        <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-6 px-8 rounded-md text-lg sm:text-xl md:text-3xl shadow-floating transition-all hover:-translate-y-1 pulse-glow uppercase tracking-wide border-b-4 border-brand-gold-light/40">
                             <i class="fas fa-tags text-lg sm:text-xl md:text-3xl"></i>
                             VER OPCIONES DE COMPRA
                         </a>
                     </div>
 
+                    <!-- Trust badges -->
                     <div class="flex items-center justify-center lg:justify-start gap-6 mt-10">
                         <div class="flex items-center gap-2 text-white/50 text-xs">
                             <i class="fas fa-leaf text-brand-green-light"></i>
@@ -451,6 +463,7 @@
                     </div>
                 </div>
 
+                <!-- Hero Image -->
                 <div class="order-1 lg:order-2 flex justify-center relative">
                     <div class="absolute inset-0 bg-brand-gold/25 rounded-full blur-3xl scale-75"></div>
                     <img src="RECURSOS/IMAGENES/nueva_imagen_hero.webp" alt="MultyDrink Producto Principal"
@@ -459,6 +472,7 @@
             </div>
         </div>
 
+        <!-- Scroll indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
             <div class="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-1">
                 <div class="w-1.5 h-3 bg-white/60 rounded-full animate-bounce"></div>
@@ -466,6 +480,7 @@
         </div>
     </section>
 
+    <!-- ==================== SECCIÓN 2: PROBLEMA DEL USUARIO ==================== -->
     <section class="py-20 md:py-28 bg-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green via-brand-gold to-brand-green"></div>
         <div class="max-w-7xl mx-auto px-4 md:px-8">
@@ -481,6 +496,7 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Problem Card 1 -->
                 <div class="problem-card animate-on-scroll bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 text-center border border-red-100/50 shadow-premium" data-delay="0">
                     <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-3 shadow-sm">
                         <i class="fas fa-battery-quarter text-red-500 text-2xl"></i>
@@ -489,6 +505,7 @@
                     <p class="text-brand-gray-light text-sm leading-relaxed">Te sientes agotado antes de que termine el día y dependes del café para funcionar.</p>
                 </div>
 
+                <!-- Problem Card 2 -->
                 <div class="problem-card animate-on-scroll bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8 text-center border border-yellow-100/50 shadow-premium" data-delay="100">
                     <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-5 -rotate-3 shadow-sm">
                         <i class="fas fa-brain text-yellow-600 text-2xl"></i>
@@ -497,6 +514,7 @@
                     <p class="text-brand-gray-light text-sm leading-relaxed">El envejecimiento prematuro y el daño celular afectan tu vitalidad y apariencia.</p>
                 </div>
 
+                <!-- Problem Card 3 -->
                 <div class="problem-card animate-on-scroll bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 text-center border border-orange-100/50 shadow-premium" data-delay="200">
                     <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-5 rotate-3 shadow-sm">
                         <i class="fas fa-fire-flame-curved text-orange-600 text-2xl"></i>
@@ -505,6 +523,7 @@
                     <p class="text-brand-gray-light text-sm leading-relaxed">Hinchazón, pesadez y malestar estomacal que afectan tu calidad de vida.</p>
                 </div>
 
+                <!-- Problem Card 4 -->
                 <div class="problem-card animate-on-scroll bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center border border-blue-100/50 shadow-premium" data-delay="300">
                     <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5 -rotate-3 shadow-sm">
                         <i class="fas fa-shield-virus text-blue-500 text-2xl"></i>
@@ -514,6 +533,7 @@
                 </div>
             </div>
 
+            <!-- Transition text -->
             <div class="text-center mt-14 animate-on-scroll">
                 <p class="text-brand-green font-heading font-semibold text-lg md:text-xl">
                     <i class="fas fa-arrow-down text-brand-gold mr-2 animate-bounce"></i>
@@ -524,23 +544,27 @@
         </div>
     </section>
 
+    <!-- Mobile CTA 1 -->
     <div class="md:hidden px-4 py-6 bg-white">
-        <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-5 px-6 rounded-xl text-xl shadow-xl shadow-brand-gold/20 transition-all active:scale-95 uppercase tracking-wide">
+        <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-5 px-6 rounded-xl text-xl shadow-xl shadow-brand-gold/20 transition-all active:scale-95 uppercase tracking-wide">
             <i class="fas fa-shopping-cart text-xl"></i>
             ¡QUIERO MI MULTYDRINK!
         </a>
     </div>
 
+    <!-- ==================== SECCIÓN 3: PRESENTACIÓN DEL PRODUCTO ==================== -->
     <section class="py-20 md:py-28 bg-brand-cream relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-brand-green/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
                 <div class="animate-on-scroll from-left relative flex justify-center">
                     <div class="absolute inset-0 bg-gradient-to-br from-brand-green/15 to-brand-gold/15 rounded-3xl blur-2xl scale-95"></div>
                     <img src="RECURSOS/IMAGENES/life style1.jpg" alt="MultyDrink con ingredientes naturales"
                          class="relative z-10 w-full max-w-md lg:max-w-lg rounded-3xl shadow-floating transform transition-transform duration-500 hover:scale-[1.03]">
                 </div>
 
+                <!-- Content -->
                 <div class="animate-on-scroll from-right">
                     <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">Conoce el producto</span>
                     <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-6">
@@ -558,7 +582,7 @@
                             </div>
                             <div>
                                 <h4 class="font-heading font-semibold text-brand-gray text-base">Formato práctico en sachets</h4>
-                                <p class="text-brand-gray-light text-sm">Llévalo contigo a donde vayas, fácil de preparar.</p>
+                                <p class="text-brand-gray-light text-sm">Llévalo contigo a donde vayas, fácil de prepare.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -581,15 +605,15 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-8 rounded-md text-xl md:text-2xl shadow-xl shadow-brand-green/20 transition-all hover:-translate-y-1 pulse-glow">
+                    <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-8 rounded-md text-xl md:text-2xl shadow-xl shadow-brand-green/20 transition-all hover:-translate-y-1 pulse-glow">
                         <i class="fas fa-tags text-2xl"></i>
-                        QUIERO MI MultyDrink
-                    </a>
+                        QUIERO MI MultyDrink                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==================== SECCIÓN 4: BENEFICIOS PRINCIPALES ==================== -->
     <section id="beneficios" class="py-20 md:py-28 bg-gradient-to-b from-brand-green-dark to-brand-green relative overflow-hidden">
         <div class="absolute inset-0 dot-pattern opacity-10"></div>
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent"></div>
@@ -604,6 +628,7 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Benefit 1 -->
                 <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="0">
                     <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
                         <i class="fas fa-bolt text-brand-gold text-2xl"></i>
@@ -612,6 +637,7 @@
                     <p class="text-white/80 text-sm leading-relaxed">Activa tu metabolismo y mantén tu vitalidad durante todo el día sin estimulantes artificiales.</p>
                 </div>
 
+                <!-- Benefit 2 -->
                 <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="100">
                     <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
                         <i class="fas fa-shield-halved text-brand-gold text-2xl"></i>
@@ -620,16 +646,943 @@
                     <p class="text-white/80 text-sm leading-relaxed">Fortalece tus defensas naturales con Ganoderma Lucidum y componentes bioactivos.</p>
                 </div>
 
+                <!-- Benefit 3 -->
                 <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="200">
                     <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
                         <i class="fas fa-brain text-brand-gold text-2xl"></i>
                     </div>
                     <h3 class="font-heading font-black text-lg text-white mb-3">Función Cognitiva</h3>
-                    <p class="text-white/80 text-sm leading-relaxed">Mejora el enfoque, la concentración y la claridad mental gracias a sus poderosos antioxidantes botánicos.</p>
+                    <p class="text-white/80 text-sm leading-relaxed">Mejora la concentración, memoria y claridad mental gracias a las teaflavinas del Té Negro.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="300">
+                    <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
+                        <i class="fas fa-heart-pulse text-brand-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-white mb-3">Salud Cardiovascular</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">El ácido clorogénico del mucílago de café promueve la salud de tu corazón y circulación.</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="400">
+                    <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
+                        <i class="fas fa-seedling text-brand-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-white mb-3">Digestión Optima</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">La inulina prebiótica de la Miel de Agave alimenta tu flora intestinal y mejora la digestión.</p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="animate-on-scroll glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-500 hover:shadow-floating" data-delay="500">
+                    <div class="benefit-icon w-16 h-16 bg-brand-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/40 shadow-lg">
+                        <i class="fas fa-dna text-brand-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-white mb-3">Anti-Envejecimiento</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">Los polifenoles del Extracto de Uva activan genes de longevidad y protegen tu ADN.</p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-6 mt-16 animate-on-scroll">
+                <div class="text-center">
+                    <div class="font-heading font-black text-3xl md:text-4xl text-brand-gold counter" data-target="5" data-suffix="">0</div>
+                    <p class="text-white/50 text-xs md:text-sm mt-1">Ingredientes Naturales</p>
+                </div>
+                <div class="text-center">
+                    <div class="font-heading font-black text-3xl md:text-4xl text-brand-gold counter" data-target="100" data-suffix="%">0</div>
+                    <p class="text-white/50 text-xs md:text-sm mt-1">Origen Natural</p>
+                </div>
+                <div class="text-center">
+                    <div class="font-heading font-black text-3xl md:text-4xl text-brand-gold counter" data-target="1000" data-suffix="+">0</div>
+                    <p class="text-white/50 text-xs md:text-sm mt-1">Clientes Satisfechos</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Mobile CTA 2 (Moverlo después de Beneficios) -->
+    <div class="md:hidden px-4 py-8 bg-white border-t border-brand-green/5">
+        <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-6 rounded-xl text-2xl shadow-2xl shadow-brand-green/30 transition-all active:scale-95 uppercase tracking-widest">
+            <i class="fas fa-bolt text-2xl"></i>
+            PEDIR AHORA
+        </a>
+    </div>
+
+    <!-- ==================== SECCIÓN 5: INGREDIENTES NATURALES ==================== -->
+    <section id="ingredientes" class="py-20 md:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="inline-block text-brand-green font-semibold text-sm tracking-widest uppercase mb-3">Fórmula única</span>
+                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-4">
+                    5 Ingredientes <span class="text-brand-green">Poderosos</span>
+                </h2>
+                <div class="section-divider mt-4 mb-6"></div>
+                <p class="text-brand-gray-light text-base md:text-lg max-w-2xl mx-auto">
+                    Cada ingrediente fue cuidadosamente seleccionado por sus propiedades únicas y respaldo científico.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                                <div class="ingredient-card animate-on-scroll bg-brand-cream rounded-2xl overflow-hidden shadow-premium border border-brand-green/5 hover:shadow-floating" data-delay="0">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/60 to-transparent z-10"></div>
+                        <img src="RECURSOS/IMAGENES/1_mucilago_de_cafe.webp" alt="Mucílago de Café"
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-brand-green/15 rounded-lg flex items-center justify-center shadow-sm">
+                                <i class="fas fa-leaf text-brand-green text-xs"></i>
+                            </div>
+                            <h3 class="font-heading font-black text-sm text-brand-gray uppercase tracking-tight">Mucílago de Café</h3>
+                        </div>
+                        <p class="text-brand-gray-light text-xs font-medium leading-relaxed">Fibra soluble con ácido clorogénico que regula el metabolismo, mejora la salud cardiovascular y estimula la regeneración celular.</p>
+                    </div>
+                </div>
+                                <div class="ingredient-card animate-on-scroll bg-brand-cream rounded-2xl overflow-hidden shadow-premium border border-brand-green/5 hover:shadow-floating" data-delay="100">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/60 to-transparent z-10"></div>
+                        <img src="RECURSOS/IMAGENES/2_ganoderma_lucidum.jpg" alt="Ganoderma Lucidum"
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-brand-green/15 rounded-lg flex items-center justify-center shadow-sm">
+                                <i class="fas fa-leaf text-brand-green text-xs"></i>
+                            </div>
+                            <h3 class="font-heading font-black text-sm text-brand-gray uppercase tracking-tight">Ganoderma Lucidum</h3>
+                        </div>
+                        <p class="text-brand-gray-light text-xs font-medium leading-relaxed">Hongo de la inmortalidad que regula el sistema inmunológico, fortaleciéndolo y equilibrándolo para una salud óptima.</p>
+                    </div>
+                </div>
+                                <div class="ingredient-card animate-on-scroll bg-brand-cream rounded-2xl overflow-hidden shadow-premium border border-brand-green/5 hover:shadow-floating" data-delay="200">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/60 to-transparent z-10"></div>
+                        <img src="RECURSOS/IMAGENES/3_te_negro.jpg" alt="Té Negro"
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-brand-green/15 rounded-lg flex items-center justify-center shadow-sm">
+                                <i class="fas fa-leaf text-brand-green text-xs"></i>
+                            </div>
+                            <h3 class="font-heading font-black text-sm text-brand-gray uppercase tracking-tight">Té Negro</h3>
+                        </div>
+                        <p class="text-brand-gray-light text-xs font-medium leading-relaxed">Sus teaflavinas mejoran la función cognitiva, protegen el cerebro, optimizan la conexión neuronal y estimulan el óxido nítrico para mejorar la circulación.</p>
+                    </div>
+                </div>
+                                <div class="ingredient-card animate-on-scroll bg-brand-cream rounded-2xl overflow-hidden shadow-premium border border-brand-green/5 hover:shadow-floating" data-delay="300">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/60 to-transparent z-10"></div>
+                        <img src="RECURSOS/IMAGENES/4_miel_de_agave.webp" alt="Miel de Agave"
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-brand-green/15 rounded-lg flex items-center justify-center shadow-sm">
+                                <i class="fas fa-leaf text-brand-green text-xs"></i>
+                            </div>
+                            <h3 class="font-heading font-black text-sm text-brand-gray uppercase tracking-tight">Miel de Agave</h3>
+                        </div>
+                        <p class="text-brand-gray-light text-xs font-medium leading-relaxed">Inulina prebiótica que alimenta bacterias benéficas, fortalece la digestión e inmunidad, regenera la mucosa intestinal y mejora el bienestar.</p>
+                    </div>
+                </div>
+                                <div class="ingredient-card animate-on-scroll bg-brand-cream rounded-2xl overflow-hidden shadow-premium border border-brand-green/5 hover:shadow-floating" data-delay="400">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/60 to-transparent z-10"></div>
+                        <img src="RECURSOS/IMAGENES/5_extracto_de_uva.webp" alt="Extracto de Uva"
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 bg-brand-green/15 rounded-lg flex items-center justify-center shadow-sm">
+                                <i class="fas fa-leaf text-brand-green text-xs"></i>
+                            </div>
+                            <h3 class="font-heading font-black text-sm text-brand-gray uppercase tracking-tight">Extracto de Uva</h3>
+                        </div>
+                        <p class="text-brand-gray-light text-xs font-medium leading-relaxed">Activan genes de longevidad (SIRT1), ralentizan el envejecimiento, protegen el ADN y optimizan la función celular.</p>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Mobile CTA 3 -->
+    <div class="md:hidden px-4 py-8 bg-white border-t border-brand-green/5">
+        <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-6 px-6 rounded-xl text-2xl shadow-2xl shadow-brand-gold/30 transition-all active:scale-95 uppercase tracking-widest">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            COMPRA AHORA
+        </a>
+    </div>
+
+    <!-- ==================== SECCIÓN 6: VIDEO USO DEL PRODUCTO ==================== -->
+    <section class="py-20 md:py-28 bg-gradient-to-br from-brand-cream to-white relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-green/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text -->
+                <div class="animate-on-scroll from-left order-2 lg:order-1">
+                    <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">Fácil de usar</span>
+                    <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-6">
+                        MultyDrink fácil de <span class="text-brand-green">incorporar</span> a tu día
+                    </h2>
+                    <div class="section-divider !mx-0 mb-6"></div>
+
+                    <div class="space-y-5 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-green/30">
+                                <span class="text-white font-heading font-bold text-sm">01</span>
+                            </div>
+                            <p class="text-brand-gray text-base font-medium">Directamente del sachet</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-green/30">
+                                <span class="text-white font-heading font-bold text-sm">02</span>
+                            </div>
+                            <p class="text-brand-gray text-base font-medium">Mezclado en agua fría o caliente</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-green/30">
+                                <span class="text-white font-heading font-bold text-sm">03</span>
+                            </div>
+                            <p class="text-brand-gray text-base font-medium">En jugos, batidos o smoothies</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-green/30">
+                                <span class="text-white font-heading font-bold text-sm">04</span>
+                            </div>
+                            <p class="text-brand-gray text-base font-medium">Como parte de tu rutina diaria</p>
+                        </div>
+                    </div>
+
+                    <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-6 px-8 rounded-md text-lg md:text-2xl shadow-xl shadow-brand-gold/20 transition-all hover:-translate-y-1 pulse-glow border-b-4 border-brand-gold-light/40">
+                        <i class="fas fa-tags text-lg"></i>
+                        PEDIR MULTYDRINK AHORA
+                    </a>
+                </div>
+
+                <!-- Video -->
+                <div class="animate-on-scroll from-right order-1 lg:order-2">
+                    <div class="video-container shadow-2xl mx-auto pulse-glow">
+                        <iframe src="https://www.youtube.com/embed/qA1I6KwER0M"
+                                title="MultyDrink - Cómo usarlo"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 7: TESTIMONIOS EN VIDEO ==================== -->
+    <section id="testimonios" class="py-20 md:py-28 bg-brand-green-dark relative overflow-hidden">
+        <div class="absolute inset-0 dot-pattern opacity-10"></div>
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">Testimonios reales</span>
+                <h2 class="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-white mb-4">
+                    Personas reales que ya <span class="text-brand-gold">lo probaron</span>
+                </h2>
+                <div class="section-divider mt-4 mb-6"></div>
+                <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
+                    Descubre las experiencias de quienes incorporaron MultyDrink a su rutina diaria.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="animate-on-scroll glass rounded-2xl p-5 hover:shadow-floating transition-all duration-500" data-delay="0">
+                    <div class="video-container shadow-premium !max-w-full">
+                        <iframe src="https://www.youtube.com/embed/7PW34reKlBA"
+                                title="Testimonio 1 - MultyDrink"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 justify-center">
+                        <div class="flex text-brand-gold text-sm gap-0.5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-white font-semibold text-[10px] uppercase tracking-widest opacity-80">Cliente verificado</span>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="animate-on-scroll glass rounded-2xl p-5 hover:shadow-floating transition-all duration-500" data-delay="150">
+                    <div class="video-container shadow-premium !max-w-full">
+                        <iframe src="https://www.youtube.com/embed/57Pf1JkqB7w"
+                                title="Testimonio 2 - MultyDrink"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 justify-center">
+                        <div class="flex text-brand-gold text-sm gap-0.5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-white font-semibold text-[10px] uppercase tracking-widest opacity-80">Cliente verificado</span>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="animate-on-scroll glass rounded-2xl p-5 hover:shadow-floating transition-all duration-500" data-delay="300">
+                    <div class="video-container shadow-premium !max-w-full">
+                        <iframe src="https://www.youtube.com/embed/HvfAmfExpb4"
+                                title="Testimonio 3 - MultyDrink"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 justify-center">
+                        <div class="flex text-brand-gold text-sm gap-0.5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-white font-semibold text-[10px] uppercase tracking-widest opacity-80">Cliente verificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 8: RESULTADOS / BIENESTAR ==================== -->
+    <section class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="animate-on-scroll from-left">
+                    <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">Resultados visibles</span>
+                    <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-6">
+                        Tu bienestar empieza con <span class="text-brand-green">pequeñas decisiones</span>
+                    </h2>
+                    <div class="section-divider !mx-0 mb-6"></div>
+                    <p class="text-brand-gray-light text-base md:text-lg leading-relaxed mb-8">
+                        Incorporar MultyDrink a tu rutina diaria es el primer paso hacia un estilo de vida más saludable. Siente la diferencia desde los primeros días.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="bg-brand-cream rounded-xl p-5 text-center border border-brand-green/10 shadow-sm hover:shadow-premium transition-all duration-300">
+                            <i class="fas fa-sun text-brand-gold text-2xl mb-2"></i>
+                            <p class="font-heading font-black text-brand-gray text-xs uppercase tracking-tighter">Más Energía</p>
+                        </div>
+                        <div class="bg-brand-cream rounded-xl p-5 text-center border border-brand-green/10 shadow-sm hover:shadow-premium transition-all duration-300">
+                            <i class="fas fa-moon text-brand-gold text-2xl mb-2"></i>
+                            <p class="font-heading font-black text-brand-gray text-xs uppercase tracking-tighter">Mejor Descanso</p>
+                        </div>
+                        <div class="bg-brand-cream rounded-xl p-5 text-center border border-brand-green/10 shadow-sm hover:shadow-premium transition-all duration-300">
+                            <i class="fas fa-face-smile-beam text-brand-gold text-2xl mb-2"></i>
+                            <p class="font-heading font-black text-brand-gray text-xs uppercase tracking-tighter">Mayor Bienestar</p>
+                        </div>
+                        <div class="bg-brand-cream rounded-xl p-5 text-center border border-brand-green/10 shadow-sm hover:shadow-premium transition-all duration-300">
+                            <i class="fas fa-person-running text-brand-gold text-2xl mb-2"></i>
+                            <p class="font-heading font-black text-brand-gray text-xs uppercase tracking-tighter">Más Vitalidad</p>
+                        </div>
+                    </div>
+
+                    <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-8 rounded-md text-xl md:text-2xl shadow-premium transition-all hover:-translate-y-1 pulse-glow uppercase tracking-widest border-b-4 border-brand-green-dark/40">
+                        <i class="fas fa-tags text-xl"></i>
+                        ¡LO QUIERO AHORA!
+                    </a>
+                </div>
+
+                <!-- Image -->
+                <div class="animate-on-scroll from-right relative">
+                    <div class="absolute -top-8 -right-8 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl"></div>
+                    <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-brand-green/10 rounded-full blur-2xl"></div>
+                    <img src="RECURSOS/IMAGENES/Producto_+_ingredientes2.webp" alt="Bienestar con MultyDrink"
+                         class="relative z-10 w-full rounded-3xl shadow-floating transform transition-transform duration-700 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile CTA 4 -->
+    <div class="md:hidden px-4 py-8 bg-white text-center">
+        <p class="text-brand-gray-light text-sm mb-4 font-medium italic">"La mejor inversión es en tu salud"</p>
+        <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-5 px-6 rounded-xl text-xl shadow-2xl shadow-brand-green/30 transition-all active:scale-95 uppercase tracking-widest">
+            <i class="fas fa-hand-holding-heart text-2xl"></i>
+            ¡VER PROMOCIONES!
+        </a>
+    </div>
+
+    <!-- ==================== SECCIÓN 9: PRECIOS ==================== -->
+    <section id="precios" class="py-20 md:py-28 bg-brand-cream relative overflow-hidden">
+        <div class="absolute inset-0 dot-pattern opacity-20"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-green via-brand-gold to-brand-green"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
+
+            <!-- Section Title -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="inline-block text-brand-gold font-semibold text-sm tracking-widest uppercase mb-3">Elige tu plan</span>
+                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-4">
+                    INVIERTE EN TU <span class="text-brand-green">ENERGÍA</span>
+                </h2>
+                <p class="text-brand-gray-light text-base md:text-lg max-w-2xl mx-auto">
+                    Elige el plan que transformará tu Salud.
+                </p>
+                <div class="section-divider mt-6"></div>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+
+                <!-- ===== PACK INICIO (Izquierda) ===== -->
+                <div class="animate-on-scroll bg-white rounded-3xl shadow-premium border border-gray-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-floating hover:-translate-y-2 group" data-delay="0">
+                    <!-- Image -->
+                    <div class="p-6 pb-0 flex justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-green/5 group-hover:bg-brand-green/10 transition-colors"></div>
+                        <img src="RECURSOS/IMAGENES/Pack_inicio.webp" alt="Pack Inicio MultyDrink" class="w-48 h-48 object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-md">
+                    </div>
+                    <!-- Content -->
+                    <div class="p-6 pt-4 flex flex-col flex-grow text-center">
+                        <h3 class="font-heading font-black text-2xl md:text-xl text-brand-gray mb-1 uppercase tracking-tight">PACK INICIO</h3>
+                        <p class="text-brand-gray-light text-xs font-bold uppercase tracking-widest mb-4 opacity-70">Rutina de 7 días</p>
+
+                        <!-- Price -->
+                        <div class="mb-5">
+                            <span class="font-heading font-black text-3xl lg:text-4xl xl:text-5xl text-brand-green leading-none whitespace-nowrap">COP $ 120.000</span>
+                        </div>
+                        <p class="text-white bg-red-600 inline-block mx-auto px-4 py-1.5 rounded-full font-black text-base mb-8 uppercase tracking-widest shadow-md animate-pulse">
+                            <i class="fas fa-truck-fast mr-2"></i>Envío GRATIS
+                        </p>
+
+                        <!-- Details -->
+                        <div class="text-left space-y-4 mb-8 border-t border-gray-100 pt-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-brand-green/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-box text-brand-green text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-base font-bold">1 Caja – 21 sobres</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-brand-green/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-calendar-day text-brand-green text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-base font-bold">7 días de consumo</span>
+                            </div>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-brand-green text-lg mt-0.5"></i>
+                                <span class="text-brand-gray-light text-base font-medium">Ideal para conocer el producto</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="https://wa.link/u1f3aw" onclick="fbq('track', 'Contact'); fbq('track', 'AddToCart', {value: 120000, currency: 'COP', content_name: 'Pack Inicio'});" target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-4 rounded-xl text-lg lg:text-xl shadow-premium transition-all hover:-translate-y-1 uppercase tracking-widest border-b-4 border-brand-green-dark/40 whitespace-nowrap">
+                                <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+                                QUIERO 1 CAJA
+                            </a>
+                        </div>
+                    </div>
+                </div>                  <!-- ===== PACK ENERGÍA (Centro - DESTACADO) ===== -->
+                <div class="animate-on-scroll bg-gradient-to-b from-brand-green-dark to-brand-green rounded-3xl shadow-floating overflow-hidden flex flex-col relative transition-all duration-500 hover:scale-[1.04] md:scale-105 z-20 group" data-delay="100">
+                    <!-- Badge -->
+                    <div class="absolute top-0 left-0 right-0 bg-brand-gold text-brand-green-dark text-center py-2.5 font-heading font-black text-sm md:text-base uppercase tracking-[0.2em] shadow-md">
+                        <i class="fas fa-star mr-1 animate-pulse"></i> EL MÁS ELEGIDO <i class="fas fa-star ml-1 animate-pulse"></i>
+                    </div>
+                    <!-- Image -->
+                    <div class="p-6 pb-0 pt-14 flex justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <img src="RECURSOS/IMAGENES/Pack_energia.webp" alt="Pack Energía MultyDrink" class="w-56 h-56 object-contain relative z-10 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2 drop-shadow-2xl brightness-110">
+                    </div>
+                    <!-- Content -->
+                    <div class="p-8 pt-4 flex flex-col flex-grow text-center">
+                        <h3 class="font-heading font-black text-3xl md:text-2xl text-white mb-1 uppercase tracking-tight">PACK ENERGÍA</h3>
+                        <p class="text-brand-gold font-bold text-xs uppercase tracking-widest mb-6 opacity-90">Rutina de 21 días</p>
+
+                        <!-- Price -->
+                        <div class="mb-6">
+                            <div class="text-[10px] text-white/50 uppercase tracking-widest mb-1">Precio Especial</div>
+                            <span class="font-heading font-black text-4xl lg:text-5xl xl:text-6xl text-brand-gold tracking-tighter drop-shadow-md leading-none whitespace-nowrap">COP $ 330.000</span>
+                        </div>
+                        <p class="text-white bg-red-600 inline-block mx-auto px-5 py-2 rounded-full font-black text-lg mb-10 uppercase tracking-widest shadow-xl animate-pulse">
+                            <i class="fas fa-truck-fast mr-2"></i>Envío GRATIS
+                        </p>
+
+                        <!-- Details -->
+                        <div class="text-left space-y-5 mb-10 border-t border-white/10 pt-8">
+                            <div class="flex items-center gap-4">
+                                <div class="w-8 h-8 bg-brand-gold/20 rounded-full flex items-center justify-center shadow-inner">
+                                    <i class="fas fa-box text-brand-gold text-sm"></i>
+                                </div>
+                                <span class="text-white text-base md:text-lg font-black uppercase tracking-tight">3 Cajas – 63 sobres</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-8 h-8 bg-brand-gold/20 rounded-full flex items-center justify-center shadow-inner">
+                                    <i class="fas fa-calendar-day text-brand-gold text-sm"></i>
+                                </div>
+                                <span class="text-white text-base md:text-lg font-black uppercase tracking-tight">21 días de consumo</span>
+                            </div>
+                            <div class="h-px bg-white/10 my-2"></div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-brand-gold text-xl mt-1"></i>
+                                <span class="text-white font-bold text-base md:text-lg leading-snug">Ideal para mantener constancia y ver resultados reales</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="https://wa.link/u1f3aw" onclick="fbq('track', 'Contact'); fbq('track', 'AddToCart', {value: 330000, currency: 'COP', content_name: 'Pack Energia'});" target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-white font-black py-7 px-4 rounded-xl text-xl lg:text-2xl shadow-floating transition-all pulse-glow hover:-translate-y-1 uppercase tracking-widest border-b-4 border-brand-gold-light/50 whitespace-nowrap">
+                                <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
+                                QUIERO 3 CAJAS
+                            </a>
+                        </div>
+                    </div>
+                </div>                  <!-- ===== PACK FAMILIAR (Derecha) ===== -->
+                <div class="animate-on-scroll bg-white rounded-3xl shadow-premium border border-gray-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-floating hover:-translate-y-2 group" data-delay="200">
+                    <!-- Image -->
+                    <div class="p-6 pb-0 flex justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-green/5 group-hover:bg-brand-green/10 transition-colors"></div>
+                        <img src="RECURSOS/IMAGENES/Pack_familiar.webp" alt="Pack Familiar MultyDrink" class="w-48 h-48 object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-md">
+                    </div>
+                    <!-- Content -->
+                    <div class="p-6 pt-4 flex flex-col flex-grow text-center">
+                        <h3 class="font-heading font-black text-2xl md:text-xl text-brand-gray mb-1 uppercase tracking-tight">PACK FAMILIAR</h3>
+                        <p class="text-brand-gray-light text-xs font-bold uppercase tracking-widest mb-4 opacity-70">Rutina de 42 días</p>
+
+                        <!-- Price -->
+                        <div class="mb-5">
+                            <span class="font-heading font-black text-3xl lg:text-4xl xl:text-5xl text-brand-green leading-none whitespace-nowrap">COP $ 550.000</span>
+                        </div>
+                        <p class="text-white bg-red-600 inline-block mx-auto px-4 py-1.5 rounded-full font-black text-base mb-8 uppercase tracking-widest shadow-md animate-pulse">
+                            <i class="fas fa-truck-fast mr-2"></i>Envío GRATIS
+                        </p>
+
+                        <!-- Details -->
+                        <div class="text-left space-y-4 mb-8 border-t border-gray-100 pt-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-brand-green/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-box text-brand-green text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-base font-bold">6 Cajas – 126 sobres</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-brand-green/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-calendar-day text-brand-green text-sm"></i>
+                                </div>
+                                <span class="text-brand-gray text-base font-bold">42 días de consumo</span>
+                            </div>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-brand-green text-lg mt-0.5"></i>
+                                <span class="text-brand-gray-light text-base font-medium">Máximo ahorro por caja</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="https://wa.link/u1f3aw" onclick="fbq('track', 'Contact'); fbq('track', 'AddToCart', {value: 550000, currency: 'COP', content_name: 'Pack Familiar'});" target="_blank" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white font-black py-6 px-4 rounded-xl text-lg lg:text-xl shadow-premium transition-all hover:-translate-y-1 uppercase tracking-widest border-b-4 border-brand-green-dark/40 whitespace-nowrap">
+                                <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+                                QUIERO 6 CAJAS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Trust note -->
+            <div class="text-center mt-10 animate-on-scroll">
+                <p class="text-brand-gray-light text-sm">
+                    <i class="fas fa-lock text-brand-green mr-1"></i> Compra segura por WhatsApp • Respuesta inmediata • <i class="fas fa-truck-fast text-brand-green mx-1"></i> Envío a toda Colombia
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 10: GARANTÍA Y PAGOS ==================== -->
+    <section id="garantia" class="py-20 md:py-28 bg-brand-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Lado Izquierdo: Tarjetas de Confianza Apiladas -->
+                <div class="space-y-8 order-2 lg:order-1">
+                    <!-- Garantía e Invima -->
+                    <div class="animate-on-scroll from-left bg-white p-8 rounded-3xl shadow-premium border border-brand-green/5 relative overflow-hidden group hover:shadow-floating transition-all duration-500">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex flex-col sm:flex-row items-center gap-6 mb-6">
+                                <img src="RECURSOS/IMAGENES/sello_GARANTIA.avif" alt="Sello de Garantía" class="w-24 h-24 object-contain">
+                                <div class="text-center sm:text-left">
+                                    <h3 class="font-heading font-black text-2xl text-brand-gray mb-2 uppercase tracking-tight">Garantía de Calidad</h3>
+                                    <p class="text-brand-gray-light text-sm leading-relaxed">
+                                        Productos Naturales 100% con certificados de calidad y patentes nacionales e internacionales.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-brand-cream/50 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-brand-green/10">
+                                <div class="text-center sm:text-left">
+                                    <p class="text-[10px] text-brand-green font-black uppercase tracking-widest mb-1">Registro Sanitario</p>
+                                    <p class="text-brand-gray font-black text-xs">VIGILADO POR EL INVIMA</p>
+                                </div>
+                                <img src="RECURSOS/IMAGENES/registro_invima.webp" alt="Registro Invima" class="h-10 w-auto contrast-125 opacity-90">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagos Seguros -->
+                    <div class="animate-on-scroll from-left bg-white p-8 rounded-3xl shadow-premium border border-brand-gold/5 text-center lg:text-left group hover:shadow-floating transition-all duration-500" data-delay="100">
+                        <h3 class="font-heading font-black text-2xl text-brand-gray mb-6 uppercase tracking-tight inline-flex items-center gap-3">
+                            <i class="fas fa-shield-check text-brand-green"></i> Pagos 100% Seguros
+                        </h3>
+                        
+                        <div class="flex flex-col lg:flex-row items-center gap-6">
+                            <img src="RECURSOS/IMAGENES/pago seguro.png" alt="Medios de Pago Seguros" class="max-w-[280px] w-full h-auto drop-shadow-md">
+                            
+                            <div class="grid grid-cols-2 gap-4 flex-1">
+                                <div class="flex flex-col items-center lg:items-start gap-1">
+                                    <i class="fas fa-truck text-brand-gold text-lg"></i>
+                                    <span class="text-[10px] font-bold text-brand-gray uppercase">Envío Gratis</span>
+                                </div>
+                                <div class="flex flex-col items-center lg:items-start gap-1">
+                                    <i class="fas fa-lock text-brand-gold text-lg"></i>
+                                    <span class="text-[10px] font-bold text-brand-gray uppercase">Encriptado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lado Derecho: Imagen del Producto de Compra -->
+                <div class="animate-on-scroll from-right order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-green/20 rounded-full blur-3xl scale-90 translate-y-10"></div>
+                        <img src="RECURSOS/IMAGENES/MULTYDRINK_COMPRA.webp" alt="Compra MultyDrink" 
+                             class="relative z-10 w-full h-auto rounded-3xl shadow-floating hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 11: PREGUNTAS FRECUENTES ==================== -->
+    <section id="faq" class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="inline-block text-brand-green font-semibold text-sm tracking-widest uppercase mb-3">Tus dudas resueltas</span>
+                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-brand-gray mb-4">
+                    Preguntas <span class="text-brand-green">Frecuentes</span>
+                </h2>
+                <div class="section-divider mt-4 mb-6"></div>
+            </div>
+
+            <div class="space-y-4 animate-on-scroll">
+                                <div class="faq-item border border-brand-green/15 rounded-2xl overflow-hidden shadow-premium hover:shadow-floating transition-all duration-300 bg-white">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none bg-white hover:bg-brand-cream transition-colors group" onclick="toggleFaq(0)">
+                        <h3 class="font-heading font-black text-base md:text-lg text-brand-gray group-hover:text-brand-green transition-colors leading-tight uppercase tracking-tight">
+                            ¿MultyDrink es un medicamento?                        </h3>
+                        <div class="faq-icon w-8 h-8 bg-brand-green/20 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 shadow-sm">
+                            <i class="fas fa-chevron-down text-brand-green text-sm"></i>
+                        </div>
+                    </button>
+                    <div id="faq-answer-0" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-cream/40">
+                        <div class="p-5 md:p-6 pt-0 border-t border-brand-green/10">
+                            <p class="text-brand-gray-light text-sm md:text-base font-medium leading-relaxed">
+                                No. MultyDrink es una bebida botánica en sachet que acompaña la alimentación diaria.                            </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="faq-item border border-brand-green/15 rounded-2xl overflow-hidden shadow-premium hover:shadow-floating transition-all duration-300 bg-white">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none bg-white hover:bg-brand-cream transition-colors group" onclick="toggleFaq(1)">
+                        <h3 class="font-heading font-black text-base md:text-lg text-brand-gray group-hover:text-brand-green transition-colors leading-tight uppercase tracking-tight">
+                            ¿Puedo tomarlo todos los días?                        </h3>
+                        <div class="faq-icon w-8 h-8 bg-brand-green/20 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 shadow-sm">
+                            <i class="fas fa-chevron-down text-brand-green text-sm"></i>
+                        </div>
+                    </button>
+                    <div id="faq-answer-1" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-cream/40">
+                        <div class="p-5 md:p-6 pt-0 border-t border-brand-green/10">
+                            <p class="text-brand-gray-light text-sm md:text-base font-medium leading-relaxed">
+                                Sí, puede incorporarse a la rutina diaria dentro de una alimentación equilibrada. Respeta la recomendación de uso.                            </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="faq-item border border-brand-green/15 rounded-2xl overflow-hidden shadow-premium hover:shadow-floating transition-all duration-300 bg-white">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none bg-white hover:bg-brand-cream transition-colors group" onclick="toggleFaq(2)">
+                        <h3 class="font-heading font-black text-base md:text-lg text-brand-gray group-hover:text-brand-green transition-colors leading-tight uppercase tracking-tight">
+                            ¿Pueden tomarlo los niños?                        </h3>
+                        <div class="faq-icon w-8 h-8 bg-brand-green/20 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 shadow-sm">
+                            <i class="fas fa-chevron-down text-brand-green text-sm"></i>
+                        </div>
+                    </button>
+                    <div id="faq-answer-2" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-cream/40">
+                        <div class="p-5 md:p-6 pt-0 border-t border-brand-green/10">
+                            <p class="text-brand-gray-light text-sm md:text-base font-medium leading-relaxed">
+                                Puede ser consumido por niños desde los 2 años, siguiendo la dosis orientativa indicada y bajo supervisión de un adulto.                            </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="faq-item border border-brand-green/15 rounded-2xl overflow-hidden shadow-premium hover:shadow-floating transition-all duration-300 bg-white">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none bg-white hover:bg-brand-cream transition-colors group" onclick="toggleFaq(3)">
+                        <h3 class="font-heading font-black text-base md:text-lg text-brand-gray group-hover:text-brand-green transition-colors leading-tight uppercase tracking-tight">
+                            ¿Reemplaza comidas o tratamientos?                        </h3>
+                        <div class="faq-icon w-8 h-8 bg-brand-green/20 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 shadow-sm">
+                            <i class="fas fa-chevron-down text-brand-green text-sm"></i>
+                        </div>
+                    </button>
+                    <div id="faq-answer-3" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-cream/40">
+                        <div class="p-5 md:p-6 pt-0 border-t border-brand-green/10">
+                            <p class="text-brand-gray-light text-sm md:text-base font-medium leading-relaxed">
+                                No. MultyDrink no reemplaza comidas ni tratamientos médicos. Es una bebida botánica complementaria.                            </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="faq-item border border-brand-green/15 rounded-2xl overflow-hidden shadow-premium hover:shadow-floating transition-all duration-300 bg-white">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none bg-white hover:bg-brand-cream transition-colors group" onclick="toggleFaq(4)">
+                        <h3 class="font-heading font-black text-base md:text-lg text-brand-gray group-hover:text-brand-green transition-colors leading-tight uppercase tracking-tight">
+                            ¿Realizan entrega en toda Colombia?                        </h3>
+                        <div class="faq-icon w-8 h-8 bg-brand-green/20 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 shadow-sm">
+                            <i class="fas fa-chevron-down text-brand-green text-sm"></i>
+                        </div>
+                    </button>
+                    <div id="faq-answer-4" class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-cream/40">
+                        <div class="p-5 md:p-6 pt-0 border-t border-brand-green/10">
+                            <p class="text-brand-gray-light text-sm md:text-base font-medium leading-relaxed">
+                                Sí. Hacemos envíos a la mayoría de ciudades y municipios de Colombia por medio de transportadoras aliadas. Los tiempos pueden variar según la zona.                            </p>
+                        </div>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 11: CTA FINAL ==================== -->
+    <section class="relative py-24 md:py-32 overflow-hidden">
+        <!-- Background image overlay -->
+        <div class="absolute inset-0">
+            <img src="RECURSOS/IMAGENES/life style2.jpg" alt="Bienestar natural" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-green-dark/95 to-brand-green/90"></div>
+        </div>
+        <div class="absolute inset-0 dot-pattern opacity-10"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center">
+            <div class="animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/20 backdrop-blur-sm rounded-full py-2 px-5 mb-8">
+                    <i class="fas fa-sparkles text-brand-gold text-sm"></i>
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">Da el primer paso</span>
+                </div>
+
+                <h2 class="font-heading font-black text-3xl md:text-4xl lg:text-6xl text-white mb-6 leading-tight">
+                    Empieza hoy a cuidar tu
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-brand-gold-light">energía natural</span>
+                </h2>
+
+                <p class="text-white/70 text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Miles de personas ya transformaron su bienestar con MultyDrink. Tú puedes ser el siguiente.
+                </p>
+
+                <div class="w-full">
+                    <a href="#precios" class="cta-btn w-full flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-black py-6 px-12 rounded-md text-xl md:text-2xl shadow-2xl shadow-brand-gold/40 transition-all pulse-glow hover:-translate-y-1 uppercase tracking-wide">
+                        <i class="fas fa-tags text-2xl"></i>
+                        ¡Lo Quiero Ahora!
+                    </a>
+                </div>
+
+                <div class="flex items-center justify-center gap-6 mt-8">
+                    <div class="flex items-center gap-2 text-white/40 text-xs">
+                        <i class="fas fa-truck-fast"></i>
+                        <span>Envío rápido</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-xs">
+                        <i class="fas fa-headset"></i>
+                        <span>Atención inmediata</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/40 text-xs">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>100% Natural</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-brand-green-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <!-- Logo & Description -->
+                <div class="text-center md:text-left">
+                    <img src="RECURSOS/IMAGENES/logo.png" alt="MultyDrink" class="h-14 w-auto mb-4 mx-auto md:mx-0">
+                    <p class="text-white/60 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                        Bebida botánica con 5 ingredientes naturales para tu bienestar diario. No es un medicamento.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center">
+                    <h4 class="font-heading font-bold text-brand-gold mb-4 text-lg">Enlaces Rápidos</h4>
+                    <div class="flex flex-col gap-2">
+                        <a href="#hero" class="text-white/60 hover:text-brand-gold transition-colors text-sm">Inicio</a>
+                        <a href="#beneficios" class="text-white/60 hover:text-brand-gold transition-colors text-sm">Beneficios</a>
+                        <a href="#ingredientes" class="text-white/60 hover:text-brand-gold transition-colors text-sm">Ingredientes</a>
+                        <a href="#testimonios" class="text-white/60 hover:text-brand-gold transition-colors text-sm">Testimonios</a>
+                    </div>
+                </div>
+
+                <!-- Social & WhatsApp -->
+                <div class="text-center md:text-right">
+                    <h4 class="font-heading font-bold text-brand-gold mb-4 text-lg">Contáctanos</h4>
+                    <a href="https://wa.link/u1f3aw" target="_blank" class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] w-full text-white font-black py-4 px-6 rounded-xl text-base md:text-lg transition-all hover:-translate-y-1 mb-6 pulse-glow uppercase tracking-widest shadow-lg">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        ESCRIBANOS POR WHATSAPP
+                    </a>
+                    <div class="flex items-center justify-center md:justify-end gap-4 mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61587653004482" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-brand-gold rounded-full flex items-center justify-center transition-all hover:scale-110">
+                            <i class="fab fa-facebook-f text-white text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/multydrinklatinoamerica/" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-brand-gold rounded-full flex items-center justify-center transition-all hover:scale-110">
+                            <i class="fab fa-instagram text-white text-sm"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@MULTYDRINKLATINOAMERICA" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-brand-gold rounded-full flex items-center justify-center transition-all hover:scale-110">
+                            <i class="fab fa-youtube text-white text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-white/40 text-xs text-center md:text-left">
+                        &copy; 2026 MultyDrink. Todos los derechos reservados.<br class="md:hidden"> 
+                        <span class="hidden md:inline"> | </span>Creada por <a href="https://gramseostudio.com/" target="_blank" class="text-brand-gold hover:underline transition-colors">Gramseo Studio</a>.<br class="md:hidden"> Este producto no es un medicamento.
+                    </p>
+                    <p class="text-white/40 text-xs text-center md:text-right">
+                        <i class="fas fa-leaf text-brand-green-light mr-1"></i> Producto con ingredientes de origen natural
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.link/u1f3aw" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+
+        // Scroll animations (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -80px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Add staggered delay based on data attribute or index
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el, i) => {
+            observer.observe(el);
+        });
+
+        // Counter animation
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            const suffix = el.getAttribute('data-suffix') || '';
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+            }, 25);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => {
+            counterObserver.observe(el);
+        });
+
+        // FAQ Toggle Logic
+        function toggleFaq(index) {
+            const content = document.getElementById(`faq-answer-${index}`);
+            const item = content.closest('.faq-item');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-content').forEach((el, i) => {
+                if (i !== index) {
+                    el.style.maxHeight = null;
+                    el.closest('.faq-item').classList.remove('active');
+                }
+            });
+
+            // Toggle current FAQ
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                item.classList.remove('active');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                item.classList.add('active');
+            }
+        }
+    </script>
 
 </body>
 </html>
