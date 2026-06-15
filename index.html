@@ -1,117 +1,351 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <script data-source-attribution="shopify.event_observer.bootstrap">
-    (function(){let e=navigator,t=`prototype`,n=`sendBeacon`,r=e[n],i=fetch,a=XMLHttpRequest[t],{open:o,send:s}=a,c=`EventListener`,l=`add${c}`,u=`remove${c}`,d=EventTarget[t],f=d[l],p=d[u],m=e=>Error((e=document.currentScript)&&[e?.src,e?.id||e?.dataset?.sourceAttribution]),h=(e=[],t=0)=>(e.p=n=>e[t++%1e3]=n,[e,t=>(e.forEach(e.p=t),e.length=0)]),[g,_]=h(),[v,y]=h(),b,x=new WeakMap,S=e=>e&&g.p([e,b||[m()]]);d[l]=function(e,t,n){let r=this,i=t?.handleEvent||t,a=x.get(t),o=m();i?.call&&!a&&x.set(t,a=function(e){b=[o,e.type];try{i.call(t==i?this:t,e)}finally{b=null}}),v.p([e,o,a,r?.tagName||r+``,r?.id]),f.call(r,e,a||t,n)},d[u]=function(e,t,n){p.call(this,e,x.get(t)||t,n)},a.open=function(e,t){x.set(this,[t+``,e]),o.apply(this,arguments)},a.send=function(e){S(x.get(this)),s.call(this,e)},fetch=(e,t)=>(S([(e?.url||e)+``,t?.method]),i(e,t)),e[n]=(t,n)=>(S([t+``,``]),r.call(e,t,n)),setTimeout(()=>import("//saludmultydrink.com/cdn/shopifycloud/storefront/assets/storefront/event_observer_reporter-de731130.js").then(e=>e.$(_,y,f,i,`71699759194`)))})();//# sourceURL=event-observer-collector.js
-  </script>
-  
-  <link rel="icon" type="image/png" href="//saludmultydrink.com/cdn/shop/files/1771518664Rapi-Bundles-CANT1.jpg?crop=center&height=32&v=1771518666&width=32">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="view-transition" content="same-origin">
-  <meta name="theme-color" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultyDrink | Bebida Botánica Natural con Envío a toda Latinoamérica</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-dark: #1b5e20;
+            --accent-color: #ff9800;
+            --text-color: #333333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --whatsapp-color: #25D366;
+            --whatsapp-dark: #128C7E;
+        }
 
-  <meta property="og:site_name" content="Salud Multydrink">
-  <meta property="og:url" content="https://saludmultydrink.com/">
-  <meta property="og:title" content="Salud MultyDrink">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Una fuente concentrada de antioxidantes naturales, diseñada para acompañarte donde sea que tu vida te lleve. Cada gota de MultyDrink combina ciencia, naturaleza y conveniencia para potenciar tu vitalidad cada día.">
-  <meta property="og:image" content="http://saludmultydrink.com/cdn/shop/files/magnific_teniendo-en-cuenta-la-ima_2928228594_9aa6846e-2981-4742-b225-9258735d1591.png?v=1778022743">
-  <meta property="og:image:secure_url" content="https://saludmultydrink.com/cdn/shop/files/magnific_teniendo-en-cuenta-la-ima_2928228594_9aa6846e-2981-4742-b225-9258735d1591.png?v=1778022743">
-  <meta property="og:image:width" content="1226">
-  <meta property="og:image:height" content="584">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Salud MultyDrink">
-  <meta name="twitter:description" content="Una fuente concentrada de antioxidantes naturales, diseñada para acompañarte donde sea que tu vida te lleve. Cada gota de MultyDrink combina ciencia, naturaleza y conveniencia para potenciar tu vitalidad cada día.">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
 
-  <title>Salud MultyDrink &ndash; Salud Multydrink</title>
-  <link rel="canonical" href="https://saludmultydrink.com/">
-  <meta name="description" content="Una fuente concentrada de antioxidantes naturales, diseñada para acompañarte donde sea que tu vida te lleve. Cada gota de MultyDrink combina ciencia, naturaleza y conveniencia para potenciar tu vitalidad cada día.">
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  <link href="//saludmultydrink.com/cdn/shop/t/1/assets/overflow-list.css?v=78235234226353326431771209367" as="style" rel="preload">
-  <link href="//saludmultydrink.com/cdn/shop/t/1/assets/base.css?v=143605426757437778521771209367" rel="stylesheet" type="text/css" media="all" />
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
 
-  <link rel="preload" as="font" href="//saludmultydrink.com/cdn/fonts/montserrat/montserrat_n9.680ded1be351aa3bf3b3650ac5f6df485af8a07c.woff2" type="font/woff2" crossorigin fetchpriority="low">
-  <link rel="preload" as="font" href="//saludmultydrink.com/cdn/fonts/inter/inter_n5.d7101d5e168594dd06f56f290dd759fba5431d97.woff2" type="font/woff2" crossorigin fetchpriority="low">
-  <link rel="preload" as="font" href="//saludmultydrink.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2" type="font/woff2" crossorigin fetchpriority="low">
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
 
-  <script type="importmap">
-  {
-    "imports": {
-      "@theme/overflow-list": "//saludmultydrink.com/cdn/shop/t/1/assets/overflow-list.js?v=46858356770684902511771209367",
-      "@theme/product-title": "//saludmultydrink.com/cdn/shop/t/1/assets/product-title-truncation.js?v=81744426891537421781771209367",
-      "@theme/component": "//saludmultydrink.com/cdn/shop/t/1/assets/component.js?v=184240237101443119871771209367",
-      "@theme/dialog": "//saludmultydrink.com/cdn/shop/t/1/assets/dialog.js?v=150888536568694194021771209367",
-      "@theme/events": "//saludmultydrink.com/cdn/shop/t/1/assets/events.js?v=147926035229139604561771209367",
-      "@theme/focus": "//saludmultydrink.com/cdn/shop/t/1/assets/focus.js?v=60436577539430446401771209367",
-      "@theme/morph": "//saludmultydrink.com/cdn/shop/t/1/assets/morph.js?v=102085577784545683451771209367",
-      "@theme/paginated-list": "//saludmultydrink.com/cdn/shop/t/1/assets/paginated-list.js?v=95298315036233333871771209367",
-      "@theme/performance": "//saludmultydrink.com/cdn/shop/t/1/assets/performance.js?v=171015751390534793081771209367",
-      "@theme/product-form": "//saludmultydrink.com/cdn/shop/t/1/assets/product-form.js?v=37993400097492174081771209367",
-      "@theme/recently-viewed-products": "//saludmultydrink.com/cdn/shop/t/1/assets/recently-viewed-products.js?v=94729125001750262651771209367",
-      "@theme/scrolling": "//saludmultydrink.com/cdn/shop/t/1/assets/scrolling.js?v=162288454571026455011771209367",
-      "@theme/section-renderer": "//saludmultydrink.com/cdn/shop/t/1/assets/section-renderer.js?v=152586934315572818121771209367",
-      "@theme/section-hydration": "//saludmultydrink.com/cdn/shop/t/1/assets/section-hydration.js?v=108434990705342316311771209367",
-      "@theme/money-formatting": "//saludmultydrink.com/cdn/shop/t/1/assets/money-formatting.js?v=182191346160333327151771209367",
-      "@theme/utilities": "//saludmultydrink.com/cdn/shop/t/1/assets/utilities.js?v=137979405375850297411771209367",
-      "@theme/variant-picker": "//saludmultydrink.com/cdn/shop/t/1/assets/variant-picker.js?v=124079696159966615681771209367",
-      "@theme/media-gallery": "//saludmultydrink.com/cdn/shop/t/1/assets/media-gallery.js?v=14624021005636302161771209367",
-      "@theme/quick-add": "//saludmultydrink.com/cdn/shop/t/1/assets/quick-add.js?v=8173316780029216301771209367",
-      "@theme/paginated-list-aspect-ratio": "//saludmultydrink.com/cdn/shop/t/1/assets/paginated-list-aspect-ratio.js?v=25254270272143792451771209367",
-      "@theme/popover-polyfill": "//saludmultydrink.com/cdn/shop/t/1/assets/popover-polyfill.js?v=119029313658895111201771209367",
-      "@theme/component-quantity-selector": "//saludmultydrink.com/cdn/shop/t/1/assets/component-quantity-selector.js?v=67906657287482036641771209367",
-      "@theme/comparison-slider": "//saludmultydrink.com/cdn/shop/t/1/assets/comparison-slider.js?v=106705562947035711941771209367",
-      "@theme/sticky-add-to-cart": "//saludmultydrink.com/cdn/shop/t/1/assets/sticky-add-to-cart.js?v=48956925339276737091771209367",
-      "@theme/fly-to-cart": "//saludmultydrink.com/cdn/shop/t/1/assets/fly-to-cart.js?v=48483246440248933081771209367"
-    }
-  }
-  </script>
+        nav a:hover {
+            color: var(--primary-color);
+        }
 
-  <script src="//saludmultydrink.com/cdn/shop/t/1/assets/view-transitions.js?v=7106414069516106341771209367" async></script>
-  <script src="//saludmultydrink.com/cdn/shop/t/1/assets/popover-polyfill.js?v=119029313658895111201771209367" type="module" fetchpriority="low"></script>
-  <script src="//saludmultydrink.com/cdn/shop/t/1/assets/overflow-list.js?v=46858356770684902511771209367" type="module" fetchpriority="low"></script>
-  <script src="//saludmultydrink.com/cdn/shop/t/1/assets/quick-add.js?v=8173316780029216301771209367" type="module" fetchpriority="low"></script>
-  <script src="//saludmultydrink.com/cdn/shop/t/1/assets/cart-discount.js?v=107077853990124422021771209367" type="module" fetchpriority="low"></script>
-  <script src="//saludmultydrink.com/cdn/shop/t/1/assets/dialog.js?v=150888536568694194021771209367" type="module" fetchpriority="low"></script>
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-  <style>
-    /* Estilos base del documento */
-    :root {
-      --border-color: rgb(0 0 0 / 50%);
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    /* Estilo personalizado para botones de compra directos a tu WhatsApp */
-    .btn-buy-whatsapp {
-      display: inline-block;
-      background-color: #25D366;
-      color: #fff;
-      padding: 12px 24px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-      text-transform: uppercase;
-    }
-    .btn-buy-whatsapp:hover {
-      background-color: #128C7E;
-    }
-  </style>
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-dark);
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .pricing-section {
+            background-color: var(--light-bg);
+            padding: 60px 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: #aeaeae;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--whatsapp-dark);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .price-card.featured {
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div style="text-align: center; padding: 50px;">
-    <h2>¡Adquiere tu Kit de Salud MultyDrink hoy mismo!</h2>
-    <p>Haz clic abajo para chatear directamente con nosotros y gestionar tu pedido.</p>
-    
-    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn-buy-whatsapp">
-      Comprar Kit por WhatsApp
+    <header>
+        <a href="#" class="logo">MultyDrink</a>
+        <nav>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#ingredientes">Ingredientes</a>
+            <a href="#comprar">Comprar Ahora</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Potencia tu Energía Natural</h1>
+        <p>Descubre MultyDrink: 5 ingredientes botánicos en un práctico sachet para transformar tu bienestar diario.</p>
+        <a href="#comprar" class="btn">VER OPCIONES DE COMPRA</a>
+    </section>
+
+    <section id="beneficios" class="section">
+        <h2 class="section-title">Beneficios que transforman</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Energía Natural</h3>
+                <p>Activa tu metabolismo y mantén tu vitalidad durante todo el día sin estimulantes artificiales.</p>
+            </div>
+            <div class="card">
+                <h3>Sistema Inmune Fuerte</h3>
+                <p>Fortalece tus defensas naturales con Ganoderma Lucidum y componentes bioactivos.</p>
+            </div>
+            <div class="card">
+                <h3>Digestión Óptima</h3>
+                <p>La inulina prebiótica de la Miel de Agave alimenta tu flora intestinal y mejora la digestión.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ingredientes" class="section">
+        <h2 class="section-title">5 Ingredientes Poderosos</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Mucílago de Café</h3>
+                <p>Regula el metabolismo y estimula la regeneración celular.</p>
+            </div>
+            <div class="card">
+                <h3>Ganoderma Lucidum</h3>
+                <p>Hongo ancestral que equilibra y fortalece el sistema inmunológico.</p>
+            </div>
+            <div class="card">
+                <h3>Té Negro</h3>
+                <p>Mejora la función cognitiva, concentración y claridad mental.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="comprar" class="pricing-section">
+        <h2 class="section-title">Elige tu plan e invierte en tu energía</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>PACK INICIO</h3>
+                <p>Rutina de 7 días</p>
+                <div class="price">COP $ 120.000</div>
+                <ul class="features-list">
+                    <li>1 Caja – 21 sobres</li>
+                    <li>Ideal para conocer el producto</li>
+                    <li>Envío GRATIS</li>
+                </ul>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">QUIERO 1 CAJA</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="badge">EL MÁS ELEGIDO</div>
+                <h3>PACK ENERGÍA</h3>
+                <p>Rutina de 21 días</p>
+                <div class="price">COP $ 330.000</div>
+                <ul class="features-list">
+                    <li>3 Cajas – 63 sobres</li>
+                    <li>Mantén constancia y ve resultados</li>
+                    <li>Envío GRATIS</li>
+                </ul>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">QUIERO 3 CAJAS</a>
+            </div>
+
+            <div class="price-card">
+                <h3>PACK FAMILIAR</h3>
+                <p>Rutina de 42 días</p>
+                <div class="price">COP $ 550.000</div>
+                <ul class="features-list">
+                    <li>6 Cajas – 126 sobres</li>
+                    <li>Máximo ahorro por caja</li>
+                    <li>Envío GRATIS</li>
+                </ul>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">QUIERO 6 CAJAS</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 MultyDrink. Todos los derechos reservados. | Compra segura por WhatsApp</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Este producto no es un medicamento. Producto con ingredientes de origen natural.</p>
+    </footer>
+
+    <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." class="whatsapp-float" target="_blank">
+        <span>Pedir por WhatsApp</span>
     </a>
-  </div>
 
 </body>
 </html>
