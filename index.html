@@ -214,9 +214,9 @@
             gap: 30px;
         }
 
+        /* CORRECCIÓN INGREDIENTES: Tarjeta adaptada para albergar imágenes al borde */
         .card {
             background: var(--white);
-            padding: 40px 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
@@ -224,17 +224,21 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden; /* Esto recorta la imagen perfectamente a las esquinas redondeadas de la tarjeta */
         }
 
+        /* CORRECCIÓN INGREDIENTES: Imagen al borde total del marco */
         .card img {
-            height: 160px; 
-            width: auto;
-            max-width: 100%;
-            object-fit: contain;
-            margin-bottom: 25px;
+            width: 100%;
+            height: 220px; /* Altura generosa para impactar visualmente */
+            object-fit: cover; /* Hace que llene por completo el marco sin deformarse */
             display: block;
+            margin: 0;
+        }
+
+        /* Contenedor interno del texto de los ingredientes */
+        .card-body {
+            padding: 30px 25px 40px 25px;
         }
 
         .card h3 {
@@ -354,7 +358,7 @@
             gap: 35px;
             max-width: 1100px;
             margin: 0 auto;
-            align-items: stretch; /* Mantiene tarjetas con la misma altura */
+            align-items: stretch; 
         }
 
         .price-card {
@@ -376,13 +380,12 @@
             box-shadow: 0 20px 40px rgba(22, 74, 39, 0.12);
         }
 
-        /* NUEVO: Contenedor e imágenes para cada pack */
         .pack-image-container {
             width: 100%;
             height: 160px;
             margin: 15px 0;
             display: flex;
-            justify-content: center;
+            justify(content): center;
             align-items: center;
         }
 
@@ -441,7 +444,7 @@
 
         .features-list li.gift-item::before { content: "🎁 "; }
 
-        /* NUEVO: Estilos Acordeón Preguntas Frecuentes */
+        /* Estilos Acordeón Preguntas Frecuentes */
         .faq-section {
             background-color: var(--white);
             padding: 90px 5%;
@@ -579,6 +582,7 @@
             .hero h1 { font-size: 2.2rem; }
             .price-card.featured { transform: none; margin: 20px 0; }
             .faq-question { font-size: 1.1rem; padding: 15px 20px; }
+            .card img { height: 180px; } /* Altura ligeramente menor en celulares */
         }
     </style>
 </head>
@@ -592,8 +596,8 @@
             <a href="#ingredientes">5 Ingredientes</a>
             <a href="#testimonios">Testimonios</a>
             <a href="#comprar">Planes</a>
-            <a href="#faq">Preguntas</a>
             <a href="#distribuidor">Ser Distribuidor</a>
+            <a href="#faq">Preguntas</a>
         </nav>
     </header>
 
@@ -608,9 +612,9 @@
     <section id="producto" class="section bg-white-pure" style="max-width: 100%; width: 100%; padding-left: 0; padding-right: 0;">
         <div class="grid-layout section" style="padding-top: 0; padding-bottom: 0;">
             <div class="scroll-animate">
-                <h2 style="color: var(--primary-dark); font-size: 2.3rem; margin-bottom: 20px;">¿Qué es MultyDrink?</h2>
-                <p style="font-size: 1.1rem; color: #4f5f6f;">Una bebida botánica en formato sachet que combina 5 ingredientes de origen natural, diseñada para que complementes tu alimentación diaria de manera práctica y portátil.</p>
-                <p style="font-size: 1.1rem; color: #4f5f6f; margin-bottom: 30px;">Ideal para equilibrar tu organismo, combatir el cansancio diario y recuperar el enfoque mental perdido por las rutinas del día a día.</p>
+                <h2 style="color: var(--primary-dark); font-size: 2.3rem; margin-bottom: 20px;">Bienestar Simplificado</h2>
+                <p style="font-size: 1.2rem; color: #1c2833; font-weight: 600; line-height: 1.6;">MultyDrink es tu bienestar simplificado en un solo sobre. Es una poderosa bebida antioxidante diseñada para combatir la fatiga moderna y activar tu máximo rendimiento diario de forma natural y portátil.</p>
+                <p style="font-size: 1.1rem; color: #4f5f6f; margin-bottom: 30px;">Nuestro gran diferencial es que <strong>destruimos la complejidad</strong>: en lugar de tomar 10 suplementos diferentes, concentramos todo lo que tu cuerpo necesita en una sola fórmula inteligente. Bienestar absurdo, práctico y sin rodeos.</p>
                 <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">Consultar por WhatsApp</a>
             </div>
             <div class="grid-image-container scroll-animate">
@@ -623,31 +627,47 @@
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title scroll-animate">5 Ingredientes Poderosos</h2>
             <div class="grid-ingredients">
+                
                 <div class="card scroll-animate">
                     <img src="images/mucilago-cafe.webp" alt="Mucílago de Café">
-                    <h3>Mucílago de Café</h3>
-                    <p>Fibra soluble con ácido clorogénico que regula el metabolismo y promueve la salud celular.</p>
+                    <div class="card-body">
+                        <h3>Mucílago de Café</h3>
+                        <p>Fibra soluble con ácido clorogénico que regula el metabolismo y promueve la salud celular.</p>
+                    </div>
                 </div>
+
                 <div class="card scroll-animate">
                     <img src="images/ganoderma.jpg" alt="Ganoderma Lucidum">
-                    <h3>Ganoderma Lucidum</h3>
-                    <p>Hongo ancestral que equilibra, protege y fortalece óptimamente el sistema inmunológico.</p>
+                    <div class="card-body">
+                        <h3>Ganoderma Lucidum</h3>
+                        <p>Hongo ancestral que equilibra, protege y fortalece óptimamente el sistema inmunológico.</p>
+                    </div>
                 </div>
+
                 <div class="card scroll-animate">
                     <img src="images/te-negro.jpg" alt="Té Negro">
-                    <h3>Té Negro</h3>
-                    <p>Sus teaflavinas optimizan las conexiones neuronales y aportan claridad mental.</p>
+                    <div class="card-body">
+                        <h3>Té Negro</h3>
+                        <p>Sus teaflavinas optimizan las conexiones neuronales y aportan claridad mental.</p>
+                    </div>
                 </div>
+
                 <div class="card scroll-animate">
                     <img src="images/miel-agave.webp" alt="Miel de Agave">
-                    <h3>Miel de Agave</h3>
-                    <p>Contiene inulina prebiótica que regenera la mucosa intestinal y mejora la digestión.</p>
+                    <div class="card-body">
+                        <h3>Miel de Agave</h3>
+                        <p>Contiene inulina prebiótica que regenera la mucosa intestinal y mejora la digestión.</p>
+                    </div>
                 </div>
+
                 <div class="card scroll-animate">
                     <img src="images/extracto-uva.webp" alt="Extracto de Uva">
-                    <h3>Extracto de Uva</h3>
-                    <p>Aporta potentes polifenoles que combaten los radicales libres y protegen las células.</p>
+                    <div class="card-body">
+                        <h3>Extracto de Uva</h3>
+                        <p>Aporta potentes polifenoles que combaten los radicales libres y protegen las células.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -696,7 +716,7 @@
                     <h3>PACK INICIO</h3>
                     <p style="margin: 0; color: #718096;">Rutina de 7 días</p>
                     <div class="pack-image-container">
-                        <img src="images/imgi_10_Pack_inicio.webp" alt="MultyDrink Pack Inicio">
+                        <img src="images/pack-inicio.webp" alt="MultyDrink Pack Inicio">
                     </div>
                     <div class="price">COP $ 120.000</div>
                     <p style="color: var(--primary-color); font-weight: bold; margin: 0;">Envío GRATIS</p>
@@ -716,7 +736,7 @@
                     <h3 style="margin-top: 10px;">PACK ENERGÍA</h3>
                     <p style="margin: 0; color: #718096;">Rutina de 21 días</p>
                     <div class="pack-image-container">
-                        <img src="images/imgi_11_Pack_energia.webp" alt="MultyDrink Pack Energía">
+                        <img src="images/pack-energia.webp" alt="MultyDrink Pack Energía">
                     </div>
                     <div class="price">COP $ 330.000</div>
                     <p style="color: var(--primary-color); font-weight: bold; margin: 0;">Envío GRATIS</p>
@@ -735,7 +755,7 @@
                     <h3>PACK FAMILIAR</h3>
                     <p style="margin: 0; color: #718096;">Rutina de 42 días</p>
                     <div class="pack-image-container">
-                        <img src="images/imgi_12_Pack_familiar.webp" alt="MultyDrink Pack Familiar">
+                        <img src="images/pack-familiar.webp" alt="MultyDrink Pack Familiar">
                     </div>
                     <div class="price">COP $ 550.000</div>
                     <div class="price" style="font-size: 1rem; color: #718096; text-decoration: line-through; margin: -10px 0 5px 0; font-weight: normal;">Precio Especial</div>
@@ -748,6 +768,21 @@
                     </ul>
                 </div>
                 <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Familiar." target="_blank" class="btn btn-whatsapp">QUIERO 6 CAJAS</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="distribuidor" class="partner-section">
+        <div class="partner-container">
+            <div class="discount-badge scroll-animate">RECIBE MÁS DEL 20% DE DESCUENTO</div>
+            <h2 class="scroll-animate" style="font-size: 2.6rem; margin-bottom: 25px;">Conviértete en Socio Distribuidor</h2>
+            <p class="scroll-animate" style="font-size: 1.25rem; max-width: 720px; margin: 0 auto 40px auto; opacity: 0.95; line-height: 1.7;">
+                Lleva un mensaje de bienestar y vitalidad a gran escala. Obtén acceso preferencial a stock y compras corporativas con un descuento exclusivo superior al 20%.
+            </p>
+            <div class="scroll-animate">
+                <a href="https://wa.me/573041222672?text=Hola%20Daniel%2C%20quiero%20recibir%20informaci%C3%B3n%20para%20obtener%20el%20descuento%20de%20Socio%20Distribuidor." target="_blank" class="btn">
+                    Quiero Recibir Detalles como Socio
+                </a>
             </div>
         </div>
     </section>
@@ -794,21 +829,6 @@
         </div>
     </section>
 
-    <section id="distribuidor" class="partner-section">
-        <div class="partner-container">
-            <div class="discount-badge scroll-animate">RECIBE MÁS DEL 20% DE DESCUENTO</div>
-            <h2 class="scroll-animate" style="font-size: 2.6rem; margin-bottom: 25px;">Conviértete en Socio Distribuidor</h2>
-            <p class="scroll-animate" style="font-size: 1.25rem; max-width: 720px; margin: 0 auto 40px auto; opacity: 0.95; line-height: 1.7;">
-                Lleva un mensaje de bienestar y vitalidad a gran escala. Obtén acceso preferencial a stock y compras corporativas con un descuento exclusivo superior al 20%.
-            </p>
-            <div class="scroll-animate">
-                <a href="https://wa.me/573041222672?text=Hola%20Daniel%2C%20quiero%20recibir%20informaci%C3%B3n%20para%20obtener%20el%20descuento%20de%20Socio%20Distribuidor." target="_blank" class="btn">
-                    Quiero Recibir Detalles como Socio
-                </a>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <p>© 2026 MultyDrink. Todos los derechos reservados.</p>
     </footer>
@@ -841,7 +861,7 @@
                 }
             });
 
-            // NUEVO: Funcionalidad Interactiva para el Acordeón de Preguntas Frecuentes (FAQ)
+            // Acordeón de Preguntas Frecuentes (FAQ)
             const faqQuestions = document.querySelectorAll('.faq-question');
             
             faqQuestions.forEach(question => {
@@ -849,24 +869,21 @@
                     const item = this.parentElement;
                     const answer = this.nextElementSibling;
                     
-                    // Si ya está activo, lo cerramos
                     if (item.classList.contains('active')) {
                         answer.style.maxHeight = null;
                         item.classList.remove('active');
                     } else {
-                        // Cerramos cualquier otro abierto antes
                         document.querySelectorAll('.faq-item').forEach(i => {
                             i.classList.remove('active');
                             i.querySelector('.faq-answer').style.maxHeight = null;
                         });
-                        // Abrimos el actual de forma dinámica
                         item.classList.add('active');
                         answer.style.maxHeight = answer.scrollHeight + "px";
                     }
                 });
             });
 
-            // Animación por Scroll (Intersection Observer)
+            // Animación por Scroll
             const animatedElements = document.querySelectorAll('.scroll-animate');
             const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
 
