@@ -65,7 +65,6 @@
             color: var(--primary-color);
         }
 
-        /* Botón de Menú Móvil */
         .menu-toggle {
             display: none;
             background: var(--primary-color);
@@ -78,14 +77,14 @@
             cursor: pointer;
         }
 
-        /* CORRECCIÓN HERO BANNER: Sintaxis limpia directa */
+        /* Hero Banner */
         .hero {
             position: relative;
             background-image: url('images/hero-bg.webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-            background-color: var(--primary-dark); /* Color de respaldo */
+            background-color: var(--primary-dark); 
             color: var(--white);
             padding: 140px 20px;
             text-align: center;
@@ -97,7 +96,6 @@
             z-index: 1;
         }
 
-        /* Capa oscura superpuesta para que resalte el texto sobre tu imagen */
         .hero::before {
             content: '';
             position: absolute;
@@ -209,7 +207,7 @@
             display: block;
         }
 
-        /* CORRECCIÓN REDISEÑO: Grid de Ingredientes Grandes y Robustos */
+        /* Grid de Ingredientes */
         .grid-ingredients {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -230,9 +228,8 @@
             justify-content: center;
         }
 
-        /* CORRECCIÓN: Tamaño de imágenes aumentado sustancialmente */
         .card img {
-            height: 160px; /* Tamaño grande fijado */
+            height: 160px; 
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -346,7 +343,7 @@
             box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
         }
 
-        /* Precios */
+        /* Precios y Packs */
         .pricing-section {
             padding: 90px 5%;
         }
@@ -357,23 +354,42 @@
             gap: 35px;
             max-width: 1100px;
             margin: 0 auto;
-            align-items: center;
+            align-items: stretch; /* Mantiene tarjetas con la misma altura */
         }
 
         .price-card {
             background: var(--white);
             border-radius: 24px;
-            padding: 45px 35px;
+            padding: 35px 25px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             border: 2px solid #eef4ee;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .price-card.featured {
             border-color: var(--primary-color);
-            transform: scale(1.05);
+            transform: scale(1.03);
             box-shadow: 0 20px 40px rgba(22, 74, 39, 0.12);
+        }
+
+        /* NUEVO: Contenedor e imágenes para cada pack */
+        .pack-image-container {
+            width: 100%;
+            height: 160px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pack-image-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
         }
 
         .badge {
@@ -390,24 +406,24 @@
         }
 
         .price {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             color: var(--primary-dark);
             font-weight: 800;
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         .features-list {
             list-style: none;
             padding: 0;
-            margin: 25px 0 35px 0;
+            margin: 15px 0 25px 0;
             text-align: left;
         }
 
         .features-list li {
-            margin-bottom: 14px;
-            padding-left: 28px;
+            margin-bottom: 10px;
+            padding-left: 25px;
             position: relative;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .features-list li::before {
@@ -424,6 +440,70 @@
         }
 
         .features-list li.gift-item::before { content: "🎁 "; }
+
+        /* NUEVO: Estilos Acordeón Preguntas Frecuentes */
+        .faq-section {
+            background-color: var(--white);
+            padding: 90px 5%;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid #e2ebe2;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 25px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--white);
+        }
+
+        .faq-answer p {
+            padding: 20px 25px;
+            margin: 0;
+            color: #4a5568;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            border-top: 1px solid #eef4ee;
+        }
 
         footer {
             background-color: #0b1c11;
@@ -461,16 +541,14 @@
             transform: translateY(0);
         }
 
-        /* ----------------------------------------------------
-           CORRECCIÓN COMPLETA DE NAVEGACIÓN PARA MÓVILES
-        ------------------------------------------------------- */
+        /* Responsivo Navegación */
         @media (max-width: 768px) {
             .menu-toggle {
-                display: block; /* Vuelve a aparecer el botón */
+                display: block; 
             }
 
             nav {
-                display: none; /* INICIA TOTALMENTE OCULTO */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
@@ -483,7 +561,6 @@
                 z-index: 9999;
             }
 
-            /* Clase dinámica que se activa desde JS */
             nav.mobile-open {
                 display: flex !important; 
             }
@@ -500,7 +577,8 @@
 
             .grid-layout { grid-template-columns: 1fr; gap: 40px; }
             .hero h1 { font-size: 2.2rem; }
-            .price-card.featured { transform: none; }
+            .price-card.featured { transform: none; margin: 20px 0; }
+            .faq-question { font-size: 1.1rem; padding: 15px 20px; }
         }
     </style>
 </head>
@@ -514,6 +592,7 @@
             <a href="#ingredientes">5 Ingredientes</a>
             <a href="#testimonios">Testimonios</a>
             <a href="#comprar">Planes</a>
+            <a href="#faq">Preguntas</a>
             <a href="#distribuidor">Ser Distribuidor</a>
         </nav>
     </header>
@@ -611,42 +690,107 @@
     <section id="comprar" class="pricing-section bg-white-pure">
         <h2 class="section-title scroll-animate" style="color: var(--primary-dark)">Elige tu Plan de Consumo</h2>
         <div class="pricing-grid">
+            
             <div class="price-card scroll-animate">
-                <h3>PACK INICIO</h3>
-                <p>Rutina de 7 días</p>
-                <div class="price">COP $ 120.000</div>
-                <ul class="features-list">
-                    <li>1 Caja – 21 sobres</li>
-                    <li>Ideal para conocer el producto</li>
-                    <li class="gift-item">+ Obsequio Especial Incluido</li>
-                </ul>
+                <div>
+                    <h3>PACK INICIO</h3>
+                    <p style="margin: 0; color: #718096;">Rutina de 7 días</p>
+                    <div class="pack-image-container">
+                        <img src="images/pack-inicio.webp" alt="MultyDrink Pack Inicio">
+                    </div>
+                    <div class="price">COP $ 120.000</div>
+                    <p style="color: var(--primary-color); font-weight: bold; margin: 0;">Envío GRATIS</p>
+                    <ul class="features-list">
+                        <li>1 Caja – 21 sobres</li>
+                        <li>7 días de consumo</li>
+                        <li>Ideal para conocer el producto</li>
+                        <li class="gift-item">+ Obsequio Especial Incluido</li>
+                    </ul>
+                </div>
                 <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Inicio." target="_blank" class="btn btn-whatsapp">QUIERO 1 CAJA</a>
             </div>
 
             <div class="price-card featured scroll-animate">
                 <div class="badge">EL MÁS ELEGIDO</div>
-                <h3>PACK ENERGÍA</h3>
-                <p>Rutina de 21 días</p>
-                <div class="price">COP $ 330.000</div>
-                <ul class="features-list">
-                    <li>3 Cajas – 63 sobres</li>
-                    <li>Ideal para ver resultados reales</li>
-                    <li class="gift-item">+ Obsequio de Alta Vitalidad</li>
-                </ul>
+                <div>
+                    <h3 style="margin-top: 10px;">PACK ENERGÍA</h3>
+                    <p style="margin: 0; color: #718096;">Rutina de 21 días</p>
+                    <div class="pack-image-container">
+                        <img src="images/pack-energia.webp" alt="MultyDrink Pack Energía">
+                    </div>
+                    <div class="price">COP $ 330.000</div>
+                    <p style="color: var(--primary-color); font-weight: bold; margin: 0;">Envío GRATIS</p>
+                    <ul class="features-list">
+                        <li>3 Cajas – 63 sobres</li>
+                        <li>21 días de consumo</li>
+                        <li>Ideal para ver resultados reales</li>
+                        <li class="gift-item">+ Obsequio de Alta Vitalidad</li>
+                    </ul>
+                </div>
                 <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Energia." target="_blank" class="btn btn-whatsapp">QUIERO 3 CAJAS</a>
             </div>
 
             <div class="price-card scroll-animate">
-                <h3>PACK FAMILIAR</h3>
-                <p>Rutina de 42 días</p>
-                <div class="price">COP $ 550.000</div>
-                <ul class="features-list">
-                    <li>6 Cajas – 126 sobres</li>
-                    <li>Máximo ahorro por volumen</li>
-                    <li class="gift-item">+ Obsequio Premium Sorpresa</li>
-                </ul>
+                <div>
+                    <h3>PACK FAMILIAR</h3>
+                    <p style="margin: 0; color: #718096;">Rutina de 42 días</p>
+                    <div class="pack-image-container">
+                        <img src="images/pack-familiar.webp" alt="MultyDrink Pack Familiar">
+                    </div>
+                    <div class="price">COP $ 550.000</div>
+                    <div class="price" style="font-size: 1rem; color: #718096; text-decoration: line-through; margin: -10px 0 5px 0; font-weight: normal;">Precio Especial</div>
+                    <p style="color: var(--primary-color); font-weight: bold; margin: 0;">Envío GRATIS</p>
+                    <ul class="features-list">
+                        <li>6 Cajas – 126 sobres</li>
+                        <li>42 días de consumo</li>
+                        <li>Máximo ahorro por caja</li>
+                        <li class="gift-item">+ Obsequio Premium Sorpresa</li>
+                    </ul>
+                </div>
                 <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Familiar." target="_blank" class="btn btn-whatsapp">QUIERO 6 CAJAS</a>
             </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2 class="section-title scroll-animate" style="color: var(--primary-dark)">Tus dudas resueltas</h2>
+        <div class="faq-container">
+            
+            <div class="faq-item scroll-animate">
+                <button class="faq-question">¿MultyDrink es un medicamento?</button>
+                <div class="faq-answer">
+                    <p>No. MultyDrink es una bebida botánica en sachet que acompaña la alimentación diaria.</p>
+                </div>
+            </div>
+
+            <div class="faq-item scroll-animate">
+                <button class="faq-question">¿Puedo tomarlo todos los días?</button>
+                <div class="faq-answer">
+                    <p>Sí, puede incorporarse a la rutina diaria dentro de una alimentación equilibrada. Respeta la recomendación de uso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item scroll-animate">
+                <button class="faq-question">¿Pueden tomarlo los niños?</button>
+                <div class="faq-answer">
+                    <p>Puede ser consumido por niños desde los 2 años, siguiendo la dosis orientativa indicada y bajo supervisión de un adulto.</p>
+                </div>
+            </div>
+
+            <div class="faq-item scroll-animate">
+                <button class="faq-question">¿Reemplaza comidas o tratamientos?</button>
+                <div class="faq-answer">
+                    <p>No. MultyDrink no reemplaza comidas ni tratamientos médicos. Es una bebida botánica complementaria.</p>
+                </div>
+            </div>
+
+            <div class="faq-item scroll-animate">
+                <button class="faq-question">¿Realizan entrega en toda Colombia?</button>
+                <div class="faq-answer">
+                    <p>Sí. Hacemos envíos a la mayoría de ciudades y municipios de Colombia por medio de transportadoras aliadas. Los tiempos pueden variar según la zona.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -675,29 +819,51 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // CORRECCIÓN: Lógica interactiva del menú restaurada por completo
+            // Control Menú Celular
             const menuBtn = document.getElementById('menuBtn');
             const navMenu = document.getElementById('navMenu');
             const menuLinks = navMenu.querySelectorAll('a');
 
-            // Abrir / Cerrar al pulsar el botón de hamburguesa
             menuBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 navMenu.classList.toggle('mobile-open');
             });
 
-            // Cerrar automáticamente al pulsar un enlace
             menuLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     navMenu.classList.remove('mobile-open');
                 });
             });
 
-            // Cerrar automáticamente si el usuario hace scroll hacia abajo para no obstruir la pantalla
             window.addEventListener('scroll', function() {
                 if (navMenu.classList.contains('mobile-open')) {
                     navMenu.classList.remove('mobile-open');
                 }
+            });
+
+            // NUEVO: Funcionalidad Interactiva para el Acordeón de Preguntas Frecuentes (FAQ)
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const answer = this.nextElementSibling;
+                    
+                    // Si ya está activo, lo cerramos
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = null;
+                        item.classList.remove('active');
+                    } else {
+                        // Cerramos cualquier otro abierto antes
+                        document.querySelectorAll('.faq-item').forEach(i => {
+                            i.classList.remove('active');
+                            i.querySelector('.faq-answer').style.maxHeight = null;
+                        });
+                        // Abrimos el actual de forma dinámica
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
             });
 
             // Animación por Scroll (Intersection Observer)
