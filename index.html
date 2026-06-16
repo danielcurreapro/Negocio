@@ -6,11 +6,11 @@
     <title>MultyDrink | Vitalidad Natural y Propósito con Salud</title>
     <style>
         :root {
-            --primary-color: #164a27;       /* Verde botánico original */
-            --primary-dark: #10351C;        /* Verde profundo corporativo */
-            --accent-color: #ff9800;        /* Naranja de llamadas a la acción */
+            --primary-color: #164a27;       
+            --primary-dark: #10351C;        
+            --accent-color: #ff9800;        
             --text-color: #2c3e50;
-            --light-bg: #f3f7f3;            /* Fondo suave texturizado */
+            --light-bg: #f3f7f3;            
             --white: #ffffff;
             --whatsapp-color: #25D366;
             --whatsapp-dark: #128C7E;
@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Header con navegación fija */
+        /* Header y Menú de Navegación */
         header {
             background-color: var(--white);
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
@@ -47,7 +47,6 @@
             letter-spacing: 1px;
         }
 
-        /* Menú en Escritorio */
         nav {
             display: flex;
             align-items: center;
@@ -66,53 +65,66 @@
             color: var(--primary-color);
         }
 
-        /* Botón de Menú Móvil (Oculto en PC) */
+        /* Botón de Menú Móvil */
         .menu-toggle {
             display: none;
             background: var(--primary-color);
             color: var(--white);
             border: none;
-            padding: 8px 15px;
+            padding: 10px 18px;
             font-size: 1rem;
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
         }
 
-        /* CORRECCIÓN: Hero Banner (Sintaxis exacta para que la imagen cargue) */
+        /* CORRECCIÓN HERO BANNER: Sintaxis limpia directa */
         .hero {
             position: relative;
-            /* La imagen cargará solo si existe en tu carpeta images/ */
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1c5c32 100%), 
-                        url('images/hero-bg.webp') no-repeat center center/cover;
+            background-image: url('images/hero-bg.webp');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-color: var(--primary-dark); /* Color de respaldo */
             color: var(--white);
-            padding: 120px 20px;
+            padding: 140px 20px;
             text-align: center;
-            min-height: 400px;
+            min-height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            z-index: 1;
+        }
+
+        /* Capa oscura superpuesta para que resalte el texto sobre tu imagen */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(16, 53, 28, 0.75);
+            z-index: -1;
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             color: var(--white);
             margin-bottom: 25px;
             max-width: 850px;
             font-weight: 800;
             line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             max-width: 650px;
             margin: 0 auto 40px auto;
             color: #e2ede5;
-            font-weight: 400;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
         }
 
-        /* Botones Estilizados */
+        /* Botones */
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
@@ -123,7 +135,7 @@
             border-radius: 30px;
             font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
         }
 
         .btn:hover {
@@ -158,19 +170,14 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 700;
             margin-bottom: 60px;
             position: relative;
         }
 
-        .bg-dark-green .section-title {
-            color: var(--white);
-        }
-        
-        .bg-white-pure .section-title {
-            color: var(--primary-dark);
-        }
+        .bg-dark-green .section-title { color: var(--white); }
+        .bg-white-pure .section-title { color: var(--primary-dark); }
 
         .section-title::after {
             content: '';
@@ -202,46 +209,50 @@
             display: block;
         }
 
-        /* Cuadrícula estética para los 5 ingredientes */
+        /* CORRECCIÓN REDISEÑO: Grid de Ingredientes Grandes y Robustos */
         .grid-ingredients {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 25px;
-        }
-
-        /* Los primeros 3 toman 2 columnas cada uno (Fila 1) */
-        .grid-ingredients .card:nth-child(1),
-        .grid-ingredients .card:nth-child(2),
-        .grid-ingredients .card:nth-child(3) {
-            grid-column: span 2;
-        }
-
-        /* Los últimos 2 toman 3 columnas cada uno para centrarse perfectamente abajo (Fila 2) */
-        .grid-ingredients .card:nth-child(4),
-        .grid-ingredients .card:nth-child(5) {
-            grid-column: span 3;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: var(--white);
-            padding: 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
-            border: 1px solid #eef4ee;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
             color: var(--text-color);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* CORRECCIÓN: Tamaño de imagen de ingrediente aumentado */
+        /* CORRECCIÓN: Tamaño de imágenes aumentado sustancialmente */
         .card img {
+            height: 160px; /* Tamaño grande fijado */
             width: auto;
-            height: 120px; /* Aumentado de 80px a 120px */
             max-width: 100%;
-            margin-bottom: 20px;
             object-fit: contain;
+            margin-bottom: 25px;
+            display: block;
         }
 
-        /* Sección de Testimonios y Videos */
+        .card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin: 0 0 12px 0;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            color: #556370;
+            margin: 0;
+        }
+
+        /* Videos Testimonios */
         .testimonials-section {
             background-color: #f0f7f0;
             padding: 90px 5%;
@@ -266,7 +277,7 @@
 
         .video-container {
             width: 100%;
-            aspect-ratio: 9/16; /* Formato vertical óptimo para testimonios de celular */
+            aspect-ratio: 9/16; 
             max-height: 500px;
             background-color: #000;
         }
@@ -284,7 +295,7 @@
             font-size: 1.1rem;
         }
 
-        /* Bloque Emocional de Responsabilidad Social */
+        /* Responsabilidad Social */
         .purpose-section {
             background-color: #eef5ee;
             text-align: center;
@@ -297,12 +308,25 @@
             margin: 0 auto;
         }
 
-        /* Bloque de Socios / Distribuidores */
+        /* Sección de Socios */
         .partner-section {
-            background: linear-gradient(135deg, rgba(16, 53, 28, 0.98) 0%, rgba(22, 74, 39, 0.95) 100%), url('images/hero-bg.webp') no-repeat center center/cover;
+            position: relative;
+            background-image: url('images/hero-bg.webp');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             color: var(--white);
             text-align: center;
             padding: 100px 5%;
+            z-index: 1;
+        }
+
+        .partner-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(16, 53, 28, 0.95) 0%, rgba(22, 74, 39, 0.92) 100%);
+            z-index: -1;
         }
 
         .partner-container {
@@ -322,7 +346,7 @@
             box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
         }
 
-        /* Matriz de precios */
+        /* Precios */
         .pricing-section {
             padding: 90px 5%;
         }
@@ -363,7 +387,6 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
-            letter-spacing: 0.5px;
         }
 
         .price {
@@ -400,9 +423,7 @@
             font-weight: 700;
         }
 
-        .features-list li.gift-item::before {
-            content: "🎁 ";
-        }
+        .features-list li.gift-item::before { content: "🎁 "; }
 
         footer {
             background-color: #0b1c11;
@@ -429,14 +450,6 @@
             transition: all 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            background-color: var(--whatsapp-dark);
-            transform: scale(1.05) translateY(-2px);
-        }
-
-        /* ----------------------------------------------------
-           ESTILOS PARA ANIMACIONES POR SCROLL
-        ------------------------------------------------------- */
         .scroll-animate {
             opacity: 0;
             transform: translateY(40px);
@@ -449,52 +462,45 @@
         }
 
         /* ----------------------------------------------------
-           RESPONSIVO: CORRECCIÓN DE MENÚ Y REJILLAS PARA CELULARES
+           CORRECCIÓN COMPLETA DE NAVEGACIÓN PARA MÓVILES
         ------------------------------------------------------- */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px 2%;
+            .menu-toggle {
+                display: block; /* Vuelve a aparecer el botón */
             }
 
             nav {
+                display: none; /* INICIA TOTALMENTE OCULTO */
                 flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
                 width: 100%;
-                gap: 10px;
+                background-color: var(--white);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                padding: 15px 0;
+                gap: 5px;
+                z-index: 9999;
+            }
+
+            /* Clase dinámica que se activa desde JS */
+            nav.mobile-open {
+                display: flex !important; 
             }
 
             nav a {
                 margin-left: 0;
-                font-size: 1.1rem;
-                padding: 5px 0;
+                font-size: 1.2rem;
+                padding: 12px 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #f5f5f5;
+                box-sizing: border-box;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            /* En celulares, los ingredientes se apilan en 1 sola columna de forma limpia */
-            .grid-ingredients {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .grid-ingredients .card:nth-child(1),
-            .grid-ingredients .card:nth-child(2),
-            .grid-ingredients .card:nth-child(3),
-            .grid-ingredients .card:nth-child(4),
-            .grid-ingredients .card:nth-child(5) {
-                grid-column: auto;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 992px) {
             .grid-layout { grid-template-columns: 1fr; gap: 40px; }
+            .hero h1 { font-size: 2.2rem; }
             .price-card.featured { transform: none; }
-            .grid-ingredients { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-            .grid-ingredients .card { grid-column: auto !important; }
         }
     </style>
 </head>
@@ -502,7 +508,8 @@
 
     <header>
         <a href="#" class="logo">MultyDrink</a>
-        <nav>
+        <button class="menu-toggle" id="menuBtn">☰ Menú</button>
+        <nav id="navMenu">
             <a href="#producto">El Producto</a>
             <a href="#ingredientes">5 Ingredientes</a>
             <a href="#testimonios">Testimonios</a>
@@ -539,28 +546,28 @@
             <div class="grid-ingredients">
                 <div class="card scroll-animate">
                     <img src="images/mucilago-cafe.webp" alt="Mucílago de Café">
-                    <h3 style="color: var(--primary-dark);">Mucílago de Café</h3>
-                    <p style="font-size: 0.95rem;">Fibra soluble con ácido clorogénico que regula el metabolismo y promueve la salud celular.</p>
+                    <h3>Mucílago de Café</h3>
+                    <p>Fibra soluble con ácido clorogénico que regula el metabolismo y promueve la salud celular.</p>
                 </div>
                 <div class="card scroll-animate">
                     <img src="images/ganoderma.jpg" alt="Ganoderma Lucidum">
-                    <h3 style="color: var(--primary-dark);">Ganoderma Lucidum</h3>
-                    <p style="font-size: 0.95rem;">Hongo ancestral que equilibra, protege y fortalece óptimamente el sistema inmunológico.</p>
+                    <h3>Ganoderma Lucidum</h3>
+                    <p>Hongo ancestral que equilibra, protege y fortalece óptimamente el sistema inmunológico.</p>
                 </div>
                 <div class="card scroll-animate">
                     <img src="images/te-negro.jpg" alt="Té Negro">
-                    <h3 style="color: var(--primary-dark);">Té Negro</h3>
-                    <p style="font-size: 0.95rem;">Sus teaflavinas optimizan las conexiones neuronales y aportán claridad mental.</p>
+                    <h3>Té Negro</h3>
+                    <p>Sus teaflavinas optimizan las conexiones neuronales y aportan claridad mental.</p>
                 </div>
                 <div class="card scroll-animate">
                     <img src="images/miel-agave.webp" alt="Miel de Agave">
-                    <h3 style="color: var(--primary-dark);">Miel de Agave</h3>
-                    <p style="font-size: 0.95rem;">Contiene inulina prebiótica que regenera la mucosa intestinal y mejora la digestión.</p>
+                    <h3>Miel de Agave</h3>
+                    <p>Contiene inulina prebiótica que regenera la mucosa intestinal y mejora la digestión.</p>
                 </div>
                 <div class="card scroll-animate">
                     <img src="images/extracto-uva.webp" alt="Extracto de Uva">
-                    <h3 style="color: var(--primary-dark);">Extracto de Uva</h3>
-                    <p style="font-size: 0.95rem;">Aporta potentes polifenoles que combaten los radicales libres y protegen las células.</p>
+                    <h3>Extracto de Uva</h3>
+                    <p>Aporta potentes polifenoles que combaten los radicales libres y protegen las células.</p>
                 </div>
             </div>
         </div>
@@ -568,14 +575,11 @@
 
     <section id="testimonios" class="testimonials-section">
         <h2 class="section-title scroll-animate" style="color: var(--primary-dark);">Testimonios que Inspiran</h2>
-        <p style="text-align: center; max-width: 600px; margin: -30px auto 40px auto; color: #555;" class="scroll-animate">Descubre las experiencias reales de personas que ya integraron MultyDrink a sus vidas.</p>
-        
         <div class="video-grid">
             <div class="video-card scroll-animate">
                 <div class="video-container">
                     <video controls poster="images/testimonio1-thumb.webp">
                         <source src="videos/testimonio1.mp4" type="video/mp4">
-                        Tu navegador no soporta la reproducción de este video.
                     </video>
                 </div>
                 <p class="testimonial-author">Energía y Rendimiento Diario</p>
@@ -586,7 +590,6 @@
                 <div class="video-container">
                     <video controls poster="images/testimonio2-thumb.webp">
                         <source src="videos/testimonio2.mp4" type="video/mp4">
-                        Tu navegador no soporta la reproducción de este video.
                     </video>
                 </div>
                 <p class="testimonial-author">Bienestar y Digestión Saludable</p>
@@ -599,7 +602,7 @@
         <div class="purpose-container scroll-animate">
             <h2 style="color: var(--primary-dark); font-size: 2.2rem; margin-bottom: 20px;">Un Propósito Mayor: Compartir Bienestar</h2>
             <p style="font-size: 1.2rem; color: #34495e; line-height: 1.7; margin-bottom: 30px;">
-                Llevar salud a los demás no es solo una oportunidad comercial; es una <strong>responsabilidad social</strong>. Cuando compartes bienestar auténtico con personas que sufren de cansancio, estrés o problemas digestivos, estás transformando activamente sus vidas. Creemos firmemente que hacer el bien regresa multiplicado, y por eso, esta hermosa labor de impacto social es recompensada con excelentes bonificaciones económicas.
+                Llevar salud a los demás no es solo una oportunidad comercial; es una <strong>responsabilidad social</strong>. Cuando compartes bienestar auténtico con personas que sufren de cansancio, estrés o problemas digestivos, estás transformando activamente sus vidas. Creemos firmemente que hacer el bien regresa multiplicado.
             </p>
             <a href="https://wa.me/573041222672?text=Hola%20Daniel%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20el%20prop%C3%B3sito%20y%20las%20bonificaciones." target="_blank" class="btn">Unirme al Movimiento de Salud</a>
         </div>
@@ -652,10 +655,10 @@
             <div class="discount-badge scroll-animate">RECIBE MÁS DEL 20% DE DESCUENTO</div>
             <h2 class="scroll-animate" style="font-size: 2.6rem; margin-bottom: 25px;">Conviértete en Socio Distribuidor</h2>
             <p class="scroll-animate" style="font-size: 1.25rem; max-width: 720px; margin: 0 auto 40px auto; opacity: 0.95; line-height: 1.7;">
-                Lleva un mensaje de bienestar y vitalidad a gran escala. Al unirte hoy a nuestra red obtendrás acceso preferencial a stock, márgenes amplios de ganancia y compras corporativas con un descuento exclusivo superior al 20%.
+                Lleva un mensaje de bienestar y vitalidad a gran escala. Obtén acceso preferencial a stock y compras corporativas con un descuento exclusivo superior al 20%.
             </p>
             <div class="scroll-animate">
-                <a href="https://wa.me/573041222672?text=Hola%20Daniel%2C%20quiero%20recibir%20informaci%C3%B3n%20para%20obtener%20el%20descuento%20de%20Socio%20Distribuidor." target="_blank" class="btn" style="background-color: var(--accent-color); font-size: 1.2rem;">
+                <a href="https://wa.me/573041222672?text=Hola%20Daniel%2C%20quiero%20recibir%20informaci%C3%B3n%20para%20obtener%20el%20descuento%20de%20Socio%20Distribuidor." target="_blank" class="btn">
                     Quiero Recibir Detalles como Socio
                 </a>
             </div>
@@ -672,13 +675,34 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // CORRECCIÓN: Lógica interactiva del menú restaurada por completo
+            const menuBtn = document.getElementById('menuBtn');
+            const navMenu = document.getElementById('navMenu');
+            const menuLinks = navMenu.querySelectorAll('a');
+
+            // Abrir / Cerrar al pulsar el botón de hamburguesa
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('mobile-open');
+            });
+
+            // Cerrar automáticamente al pulsar un enlace
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('mobile-open');
+                });
+            });
+
+            // Cerrar automáticamente si el usuario hace scroll hacia abajo para no obstruir la pantalla
+            window.addEventListener('scroll', function() {
+                if (navMenu.classList.contains('mobile-open')) {
+                    navMenu.classList.remove('mobile-open');
+                }
+            });
+
+            // Animación por Scroll (Intersection Observer)
             const animatedElements = document.querySelectorAll('.scroll-animate');
-            
-            const observerOptions = {
-                root: null, 
-                rootMargin: "0px",
-                threshold: 0.1
-            };
+            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
 
             const observer = new IntersectionObserver(function(entries, observer) {
                 entries.forEach(entry => {
