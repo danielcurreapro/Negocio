@@ -26,6 +26,7 @@
             overflow-x: hidden;
         }
 
+        /* Header con soporte responsivo para móviles */
         header {
             background-color: var(--white);
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
@@ -46,12 +47,18 @@
             letter-spacing: 1px;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             margin-left: 25px;
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -180,11 +187,24 @@
             display: block;
         }
 
-        /* Ajuste de cuadrícula para los 5 ingredientes */
+        /* CORRECCIÓN: Cuadrícula simétrica y estética para los 5 ingredientes */
         .grid-ingredients {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 25px;
+        }
+
+        /* Los primeros 3 toman 2 columnas cada uno (Fila 1) */
+        .grid-ingredients .card:nth-child(1),
+        .grid-ingredients .card:nth-child(2),
+        .grid-ingredients .card:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        /* Los últimos 2 toman 3 columnas cada uno para centrarse perfectamente abajo (Fila 2) */
+        .grid-ingredients .card:nth-child(4),
+        .grid-ingredients .card:nth-child(5) {
+            grid-column: span 3;
         }
 
         .card {
@@ -202,6 +222,49 @@
             height: 80px;
             margin-bottom: 15px;
             object-fit: contain;
+        }
+
+        /* Sección de Testimonios y Videos */
+        .testimonials-section {
+            background-color: #f0f7f0;
+            padding: 90px 5%;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 9/16; /* Formato vertical óptimo para testimonios de celular */
+            max-height: 500px;
+            background-color: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-top: 15px;
+            font-size: 1.1rem;
         }
 
         /* Bloque Emocional de Responsabilidad Social */
@@ -364,9 +427,56 @@
             transform: translateY(0);
         }
 
+        /* ----------------------------------------------------
+           RESPONSIVO: CORRECCIÓN DE MENÚ Y REJILLAS PARA CELULARES
+        ------------------------------------------------------- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 2%;
+            }
+
+            nav {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+
+            nav a {
+                margin-left: 0;
+                font-size: 1.1rem;
+                padding: 5px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            /* En celulares, los ingredientes se apilan en 1 sola columna de forma limpia */
+            .grid-ingredients {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .grid-ingredients .card:nth-child(1),
+            .grid-ingredients .card:nth-child(2),
+            .grid-ingredients .card:nth-child(3),
+            .grid-ingredients .card:nth-child(4),
+            .grid-ingredients .card:nth-child(5) {
+                grid-column: auto;
+            }
+        }
+
         @media (max-width: 992px) {
             .grid-layout { grid-template-columns: 1fr; gap: 40px; }
             .price-card.featured { transform: none; }
+            if (.grid-ingredients) {
+                /* Para tablets medianas, 1 columna por ingrediente */
+                .grid-ingredients { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+                .grid-ingredients .card { grid-column: auto !important; }
+            }
         }
     </style>
 </head>
@@ -377,6 +487,7 @@
         <nav>
             <a href="#producto">El Producto</a>
             <a href="#ingredientes">5 Ingredientes</a>
+            <a href="#testimonios">Testimonios</a>
             <a href="#comprar">Planes</a>
             <a href="#distribuidor">Ser Distribuidor</a>
         </nav>
@@ -433,6 +544,35 @@
                     <h3 style="color: var(--primary-dark);">Extracto de Uva</h3>
                     <p style="font-size: 0.95rem;">Aporta potentes polifenoles que combaten los radicales libres y protegen las células.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="testimonials-section">
+        <h2 class="section-title scroll-animate" style="color: var(--primary-dark);">Testimonios que Inspiran</h2>
+        <p style="text-align: center; max-width: 600px; margin: -30px auto 40px auto; color: #555;" class="scroll-animate">Descubre las experiencias reales de personas que ya integraron MultyDrink a sus vidas.</p>
+        
+        <div class="video-grid">
+            <div class="video-card scroll-animate">
+                <div class="video-container">
+                    <video controls poster="images/testimonio1-thumb.jpg">
+                        <source src="videos/testimonio1.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
+                    </video>
+                </div>
+                <p class="testimonial-author">Energía y Rendimiento Diario</p>
+                <p style="padding: 0 15px; font-size: 0.95rem; color: #666;">"Un cambio completo en mi vitalidad desde los primeros días de uso."</p>
+            </div>
+
+            <div class="video-card scroll-animate">
+                <div class="video-container">
+                    <video controls poster="images/testimonio2-thumb.jpg">
+                        <source src="videos/testimonio2.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
+                    </video>
+                </div>
+                <p class="testimonial-author">Bienestar y Digestión Saludable</p>
+                <p style="padding: 0 15px; font-size: 0.95rem; color: #666;">"Fácil de preparar, portátil y con resultados digestivos excelentes."</p>
             </div>
         </div>
     </section>
@@ -519,7 +659,7 @@
             const observerOptions = {
                 root: null, 
                 rootMargin: "0px",
-                threshold: 0.1 /* Sensibilidad de activación */
+                threshold: 0.1
             };
 
             const observer = new IntersectionObserver(function(entries, observer) {
