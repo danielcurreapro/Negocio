@@ -6,11 +6,11 @@
     <title>MultyDrink | Vitalidad Natural y Propósito con Salud</title>
     <style>
         :root {
-            --primary-color: #164a27;       
-            --primary-dark: #10351C;        
-            --accent-color: #ff9800;        
+            --primary-color: #164a27;       /* Verde botánico original */
+            --primary-dark: #10351C;        /* Verde profundo corporativo */
+            --accent-color: #ff9800;        /* Naranja de llamadas a la acción */
             --text-color: #2c3e50;
-            --light-bg: #f3f7f3;            
+            --light-bg: #f3f7f3;            /* Fondo suave texturizado */
             --white: #ffffff;
             --whatsapp-color: #25D366;
             --whatsapp-dark: #128C7E;
@@ -79,10 +79,12 @@
             cursor: pointer;
         }
 
-        /* Hero Banner */
+        /* CORRECCIÓN: Hero Banner (Sintaxis exacta para que la imagen cargue) */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1c5c32 100%), url('images/hero-bg.webp') no-repeat center center/cover;
+            /* La imagen cargará solo si existe en tu carpeta images/ */
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1c5c32 100%), 
+                        url('images/hero-bg.webp') no-repeat center center/cover;
             color: var(--white);
             padding: 120px 20px;
             text-align: center;
@@ -95,6 +97,7 @@
 
         .hero h1 {
             font-size: 3.2rem;
+            color: var(--white);
             margin-bottom: 25px;
             max-width: 850px;
             font-weight: 800;
@@ -106,9 +109,10 @@
             max-width: 650px;
             margin: 0 auto 40px auto;
             color: #e2ede5;
+            font-weight: 400;
         }
 
-        /* Botones */
+        /* Botones Estilizados */
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
@@ -160,8 +164,13 @@
             position: relative;
         }
 
-        .bg-dark-green .section-title { color: var(--white); }
-        .bg-white-pure .section-title { color: var(--primary-dark); }
+        .bg-dark-green .section-title {
+            color: var(--white);
+        }
+        
+        .bg-white-pure .section-title {
+            color: var(--primary-dark);
+        }
 
         .section-title::after {
             content: '';
@@ -200,12 +209,14 @@
             gap: 25px;
         }
 
+        /* Los primeros 3 toman 2 columnas cada uno (Fila 1) */
         .grid-ingredients .card:nth-child(1),
         .grid-ingredients .card:nth-child(2),
         .grid-ingredients .card:nth-child(3) {
             grid-column: span 2;
         }
 
+        /* Los últimos 2 toman 3 columnas cada uno para centrarse perfectamente abajo (Fila 2) */
         .grid-ingredients .card:nth-child(4),
         .grid-ingredients .card:nth-child(5) {
             grid-column: span 3;
@@ -221,14 +232,16 @@
             color: var(--text-color);
         }
 
+        /* CORRECCIÓN: Tamaño de imagen de ingrediente aumentado */
         .card img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
+            width: auto;
+            height: 120px; /* Aumentado de 80px a 120px */
+            max-width: 100%;
+            margin-bottom: 20px;
             object-fit: contain;
         }
 
-        /* Videos Testimonios */
+        /* Sección de Testimonios y Videos */
         .testimonials-section {
             background-color: #f0f7f0;
             padding: 90px 5%;
@@ -253,7 +266,7 @@
 
         .video-container {
             width: 100%;
-            aspect-ratio: 9/16; 
+            aspect-ratio: 9/16; /* Formato vertical óptimo para testimonios de celular */
             max-height: 500px;
             background-color: #000;
         }
@@ -271,7 +284,7 @@
             font-size: 1.1rem;
         }
 
-        /* Responsabilidad Social */
+        /* Bloque Emocional de Responsabilidad Social */
         .purpose-section {
             background-color: #eef5ee;
             text-align: center;
@@ -284,7 +297,7 @@
             margin: 0 auto;
         }
 
-        /* Sección de Socios */
+        /* Bloque de Socios / Distribuidores */
         .partner-section {
             background: linear-gradient(135deg, rgba(16, 53, 28, 0.98) 0%, rgba(22, 74, 39, 0.95) 100%), url('images/hero-bg.webp') no-repeat center center/cover;
             color: var(--white);
@@ -309,7 +322,7 @@
             box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
         }
 
-        /* Precios */
+        /* Matriz de precios */
         .pricing-section {
             padding: 90px 5%;
         }
@@ -350,6 +363,7 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         .price {
@@ -386,7 +400,9 @@
             font-weight: 700;
         }
 
-        .features-list li.gift-item::before { content: "🎁 "; }
+        .features-list li.gift-item::before {
+            content: "🎁 ";
+        }
 
         footer {
             background-color: #0b1c11;
@@ -413,6 +429,14 @@
             transition: all 0.3s ease;
         }
 
+        .whatsapp-float:hover {
+            background-color: var(--whatsapp-dark);
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        /* ----------------------------------------------------
+           ESTILOS PARA ANIMACIONES POR SCROLL
+        ------------------------------------------------------- */
         .scroll-animate {
             opacity: 0;
             transform: translateY(40px);
@@ -424,47 +448,46 @@
             transform: translateY(0);
         }
 
-        /* RESPONSIVO */
+        /* ----------------------------------------------------
+           RESPONSIVO: CORRECCIÓN DE MENÚ Y REJILLAS PARA CELULARES
+        ------------------------------------------------------- */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block; 
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 2%;
             }
 
             nav {
-                display: none; 
                 flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
                 width: 100%;
-                background-color: var(--white);
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                padding: 20px 0;
-                gap: 15px;
-            }
-
-            nav.mobile-open {
-                display: flex; 
+                gap: 10px;
             }
 
             nav a {
                 margin-left: 0;
-                font-size: 1.2rem;
-                padding: 10px 0;
-                width: 100%;
-                text-align: center;
-                border-bottom: 1px solid #f0f0f0;
+                font-size: 1.1rem;
+                padding: 5px 0;
             }
 
-            .grid-layout { grid-template-columns: 1fr; gap: 40px; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
 
+            /* En celulares, los ingredientes se apilan en 1 sola columna de forma limpia */
             .grid-ingredients {
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
             }
-            .grid-ingredients .card { grid-column: auto !important; }
+
+            .grid-ingredients .card:nth-child(1),
+            .grid-ingredients .card:nth-child(2),
+            .grid-ingredients .card:nth-child(3),
+            .grid-ingredients .card:nth-child(4),
+            .grid-ingredients .card:nth-child(5) {
+                grid-column: auto;
+            }
         }
 
         @media (min-width: 769px) and (max-width: 992px) {
@@ -479,8 +502,7 @@
 
     <header>
         <a href="#" class="logo">MultyDrink</a>
-        <button class="menu-toggle" id="menuBtn">☰ Menú</button>
-        <nav id="navMenu">
+        <nav>
             <a href="#producto">El Producto</a>
             <a href="#ingredientes">5 Ingredientes</a>
             <a href="#testimonios">Testimonios</a>
@@ -528,7 +550,7 @@
                 <div class="card scroll-animate">
                     <img src="images/te-negro.jpg" alt="Té Negro">
                     <h3 style="color: var(--primary-dark);">Té Negro</h3>
-                    <p style="font-size: 0.95rem;">Sus teaflavinas optimizan las conexiones neuronales y aportan claridad mental.</p>
+                    <p style="font-size: 0.95rem;">Sus teaflavinas optimizan las conexiones neuronales y aportán claridad mental.</p>
                 </div>
                 <div class="card scroll-animate">
                     <img src="images/miel-agave.webp" alt="Miel de Agave">
@@ -553,6 +575,7 @@
                 <div class="video-container">
                     <video controls poster="images/testimonio1-thumb.webp">
                         <source src="videos/testimonio1.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
                     </video>
                 </div>
                 <p class="testimonial-author">Energía y Rendimiento Diario</p>
@@ -563,6 +586,7 @@
                 <div class="video-container">
                     <video controls poster="images/testimonio2-thumb.webp">
                         <source src="videos/testimonio2.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
                     </video>
                 </div>
                 <p class="testimonial-author">Bienestar y Digestión Saludable</p>
@@ -648,22 +672,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const menuBtn = document.getElementById('menuBtn');
-            const navMenu = document.getElementById('navMenu');
-            const menuLinks = navMenu.querySelectorAll('a');
-
-            menuBtn.addEventListener('click', function() {
-                navMenu.classList.toggle('mobile-open');
-            });
-
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('mobile-open');
-                });
-            });
-
             const animatedElements = document.querySelectorAll('.scroll-animate');
-            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
+            
+            const observerOptions = {
+                root: null, 
+                rootMargin: "0px",
+                threshold: 0.1
+            };
 
             const observer = new IntersectionObserver(function(entries, observer) {
                 entries.forEach(entry => {
