@@ -82,7 +82,7 @@
         /* Hero Banner */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1c5c32 100%), url('images/hero-bg.jpg') no-repeat center center/cover;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1c5c32 100%), url('images/hero-bg.webp') no-repeat center center/cover;
             color: var(--white);
             padding: 120px 20px;
             text-align: center;
@@ -286,7 +286,7 @@
 
         /* Sección de Socios */
         .partner-section {
-            background: linear-gradient(135deg, rgba(16, 53, 28, 0.98) 0%, rgba(22, 74, 39, 0.95) 100%), url('images/hero-bg.jpg') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(16, 53, 28, 0.98) 0%, rgba(22, 74, 39, 0.95) 100%), url('images/hero-bg.webp') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
             padding: 100px 5%;
@@ -424,16 +424,14 @@
             transform: translateY(0);
         }
 
-        /* ----------------------------------------------------
-           CORRECCIÓN DEFINITIVA PARA MÓVILES (MENÚ COLAPSABLE)
-        ------------------------------------------------------- */
+        /* RESPONSIVO */
         @media (max-width: 768px) {
             .menu-toggle {
-                display: block; /* Muestra el botón de hamburguesa */
+                display: block; 
             }
 
             nav {
-                display: none; /* ESCONDE EL MENÚ POR DEFECTO */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
@@ -445,7 +443,6 @@
                 gap: 15px;
             }
 
-            /* Clase que se activa con JavaScript al presionar el botón */
             nav.mobile-open {
                 display: flex; 
             }
@@ -509,7 +506,7 @@
                 <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">Consultar por WhatsApp</a>
             </div>
             <div class="grid-image-container scroll-animate">
-                <img src="images/producto-principal.jpg" alt="MultyDrink Producto Principal">
+                <img src="images/producto-principal.webp" alt="MultyDrink Producto Principal">
             </div>
         </div>
     </section>
@@ -519,27 +516,27 @@
             <h2 class="section-title scroll-animate">5 Ingredientes Poderosos</h2>
             <div class="grid-ingredients">
                 <div class="card scroll-animate">
-                    <img src="images/mucilago-cafe.jpg" alt="Mucílago de Café">
+                    <img src="images/mucilago-cafe.webp" alt="Mucílago de Café">
                     <h3 style="color: var(--primary-dark);">Mucílago de Café</h3>
                     <p style="font-size: 0.95rem;">Fibra soluble con ácido clorogénico que regula el metabolismo y promueve la salud celular.</p>
                 </div>
                 <div class="card scroll-animate">
-                    <img src="images/ganoderma.jpg" alt="Ganoderma Lucidum">
+                    <img src="images/ganoderma.webp" alt="Ganoderma Lucidum">
                     <h3 style="color: var(--primary-dark);">Ganoderma Lucidum</h3>
                     <p style="font-size: 0.95rem;">Hongo ancestral que equilibra, protege y fortalece óptimamente el sistema inmunológico.</p>
                 </div>
                 <div class="card scroll-animate">
-                    <img src="images/te-negro.jpg" alt="Té Negro">
+                    <img src="images/te-negro.webp" alt="Té Negro">
                     <h3 style="color: var(--primary-dark);">Té Negro</h3>
                     <p style="font-size: 0.95rem;">Sus teaflavinas optimizan las conexiones neuronales y aportan claridad mental.</p>
                 </div>
                 <div class="card scroll-animate">
-                    <img src="images/miel-agave.jpg" alt="Miel de Agave">
+                    <img src="images/miel-agave.webp" alt="Miel de Agave">
                     <h3 style="color: var(--primary-dark);">Miel de Agave</h3>
                     <p style="font-size: 0.95rem;">Contiene inulina prebiótica que regenera la mucosa intestinal y mejora la digestión.</p>
                 </div>
                 <div class="card scroll-animate">
-                    <img src="images/extracto-uva.jpg" alt="Extracto de Uva">
+                    <img src="images/extracto-uva.webp" alt="Extracto de Uva">
                     <h3 style="color: var(--primary-dark);">Extracto de Uva</h3>
                     <p style="font-size: 0.95rem;">Aporta potentes polifenoles que combaten los radicales libres y protegen las células.</p>
                 </div>
@@ -554,7 +551,7 @@
         <div class="video-grid">
             <div class="video-card scroll-animate">
                 <div class="video-container">
-                    <video controls poster="images/testimonio1-thumb.jpg">
+                    <video controls poster="images/testimonio1-thumb.webp">
                         <source src="videos/testimonio1.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -564,7 +561,7 @@
 
             <div class="video-card scroll-animate">
                 <div class="video-container">
-                    <video controls poster="images/testimonio2-thumb.jpg">
+                    <video controls poster="images/testimonio2-thumb.webp">
                         <source src="videos/testimonio2.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -651,7 +648,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Lógica Menú de Hamburguesa
             const menuBtn = document.getElementById('menuBtn');
             const navMenu = document.getElementById('navMenu');
             const menuLinks = navMenu.querySelectorAll('a');
@@ -660,14 +656,12 @@
                 navMenu.classList.toggle('mobile-open');
             });
 
-            // Cerrar menú automáticamente al hacer clic en un enlace (Anclaje)
             menuLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     navMenu.classList.remove('mobile-open');
                 });
             });
 
-            // Lógica Animación Scroll
             const animatedElements = document.querySelectorAll('.scroll-animate');
             const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
 
