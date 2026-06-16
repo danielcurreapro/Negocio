@@ -9,8 +9,8 @@
             --primary-color: #2e7d32;
             --primary-dark: #1b5e20;
             --accent-color: #ff9800;
-            --text-color: #333333;
-            --light-bg: #f5f5f5;
+            --text-color: #2c3e50;
+            --light-bg: #f9fbf9;
             --white: #ffffff;
             --whatsapp-color: #25D366;
             --whatsapp-dark: #128C7E;
@@ -27,79 +27,95 @@
 
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 15px 20px;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 800;
             color: var(--primary-color);
             text-decoration: none;
+            letter-spacing: 1px;
         }
 
         nav a {
-            margin-left: 20px;
+            margin-left: 25px;
             text-decoration: none;
             color: var(--text-color);
-            font-weight: 500;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: var(--primary-color);
         }
 
+        /* Hero Banner con Imagen de Fondo */
         .hero {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            padding: 80px 20px;
+            position: relative;
+            background: linear-gradient(rgba(245, 250, 245, 0.85), rgba(200, 230, 200, 0.9)), url('images/hero-bg.jpg') no-repeat center center/cover;
+            padding: 100px 20px;
             text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary-dark);
             margin-bottom: 20px;
+            max-width: 800px;
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            color: #34495e;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 12px 30px;
+            padding: 14px 35px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 25px;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
             background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.4);
         }
 
         .btn-whatsapp {
             background-color: var(--whatsapp-color);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
             background-color: var(--whatsapp-dark);
+            box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
         }
 
         .section {
-            padding: 60px 20px;
+            padding: 80px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -107,8 +123,47 @@
         .section-title {
             text-align: center;
             color: var(--primary-dark);
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid de presentación de Producto e Ingredientes */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .grid-image-container {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .grid-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .grid-image-container img:hover {
+            transform: scale(1.03);
         }
 
         .grid {
@@ -119,39 +174,97 @@
 
         .card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e0e0e0;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            border: 1px solid #ebf2eb;
             text-align: center;
+            transition: transform 0.3s;
         }
 
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        /* Sección de Testimonios y Videos */
+        .testimonials-section {
+            background-color: #f0f7f0;
+            padding: 80px 5%;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Sección de Precios Actualizada */
         .pricing-section {
             background-color: var(--light-bg);
-            padding: 60px 20px;
+            padding: 80px 5%;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px;
             max-width: 1100px;
             margin: 0 auto;
+            align-items: center;
         }
 
         .price-card {
             background: var(--white);
-            border-radius: 15px;
-            padding: 35px 25px;
+            border-radius: 20px;
+            padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border: 2px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 2px solid #eef4ee;
             position: relative;
+            transition: all 0.3s ease;
         }
 
         .price-card.featured {
-            border-color: var(--accent-color);
+            border-color: var(--primary-color);
             transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(46, 125, 50, 0.15);
         }
 
         .badge {
@@ -161,30 +274,32 @@
             transform: translateX(-50%);
             background-color: var(--accent-color);
             color: var(--white);
-            padding: 5px 15px;
+            padding: 6px 20px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         .price {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-dark);
-            font-weight: bold;
+            font-weight: 800;
             margin: 20px 0;
         }
 
         .features-list {
             list-style: none;
             padding: 0;
-            margin: 20px 0 30px 0;
+            margin: 25px 0 35px 0;
             text-align: left;
         }
 
         .features-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+            margin-bottom: 12px;
+            padding-left: 28px;
             position: relative;
+            font-size: 1.05rem;
         }
 
         .features-list li::before {
@@ -192,41 +307,66 @@
             color: var(--primary-color);
             position: absolute;
             left: 0;
-            font-weight: bold;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .features-list li.gift-item {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .features-list li.gift-item::before {
+            content: "🎁";
         }
 
         footer {
-            background-color: #1e1e1e;
-            color: #aeaeae;
-            padding: 40px 20px;
+            background-color: #1b241c;
+            color: #bdc3c7;
+            padding: 50px 20px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         footer a {
             color: var(--white);
             text-decoration: none;
+            font-weight: 600;
         }
 
+        /* Botón de WhatsApp Flotante Fijo */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 30px;
+            right: 30px;
             background-color: var(--whatsapp-color);
             color: var(--white);
             border-radius: 50px;
-            padding: 15px 25px;
-            font-weight: bold;
+            padding: 16px 28px;
+            font-weight: 700;
+            font-size: 1.1rem;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
             z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            transition: all 0.3s ease;
         }
 
         .whatsapp-float:hover {
             background-color: var(--whatsapp-dark);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 992px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .price-card.featured {
+                transform: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -235,10 +375,10 @@
                 gap: 15px;
             }
             nav a {
-                margin: 0 10px;
+                margin: 0 12px;
             }
-            .price-card.featured {
-                transform: none;
+            .hero h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -248,9 +388,10 @@
     <header>
         <a href="#" class="logo">MultyDrink</a>
         <nav>
-            <a href="#beneficios">Beneficios</a>
+            <a href="#producto">El Producto</a>
             <a href="#ingredientes">Ingredientes</a>
-            <a href="#comprar">Comprar Ahora</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#comprar">Planes</a>
         </nav>
     </header>
 
@@ -260,44 +401,72 @@
         <a href="#comprar" class="btn">VER OPCIONES DE COMPRA</a>
     </section>
 
-    <section id="beneficios" class="section">
-        <h2 class="section-title">Beneficios que transforman</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Energía Natural</h3>
-                <p>Activa tu metabolismo y mantén tu vitalidad durante todo el día sin estimulantes artificiales.</p>
+    <section id="producto" class="section">
+        <div class="grid-layout">
+            <div>
+                <h2 style="color: var(--primary-dark); font-size: 2rem; margin-bottom: 20px;">¿Qué es MultyDrink?</h2>
+                <p>Una bebida botánica en formato sachet que combina 5 ingredientes de origen natural, diseñada para que complementes tu alimentación diaria de manera práctica, deliciosa y portátil.</p>
+                <p>Es la solución ideal para combatir la falta de energía, el daño celular y optimizar tu metabolismo de forma 100% segura.</p>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn" style="margin-top: 15px;">Consultar a un Asesor</a>
             </div>
-            <div class="card">
-                <h3>Sistema Inmune Fuerte</h3>
-                <p>Fortalece tus defensas naturales con Ganoderma Lucidum y componentes bioactivos.</p>
-            </div>
-            <div class="card">
-                <h3>Digestión Óptima</h3>
-                <p>La inulina prebiótica de la Miel de Agave alimenta tu flora intestinal y mejora la digestión.</p>
+            <div class="grid-image-container">
+                <img src="images/producto-principal.jpg" alt="MultyDrink Producto Principal Box">
             </div>
         </div>
     </section>
 
-    <section id="ingredientes" class="section">
-        <h2 class="section-title">5 Ingredientes Poderosos</h2>
+    <section id="ingredientes" class="section" style="border-top: 1px solid #f0f0f0;">
+        <h2 class="section-title">Ingredientes Botánicos Premium</h2>
         <div class="grid">
             <div class="card">
+                <img src="images/mucilago-cafe.jpg" alt="Mucílago de Café">
                 <h3>Mucílago de Café</h3>
-                <p>Regula el metabolismo y estimula la regeneración celular.</p>
+                <p>Fibra soluble rica en ácido clorogénico que ayuda a regular el metabolismo y estimula la salud celular.</p>
             </div>
             <div class="card">
+                <img src="images/ganoderma.jpg" alt="Ganoderma Lucidum">
                 <h3>Ganoderma Lucidum</h3>
-                <p>Hongo ancestral que equilibra y fortalece el sistema inmunológico.</p>
+                <p>El legendario hongo de la inmortalidad que equilibra, regula y fortalece de forma óptima el sistema inmune.</p>
             </div>
             <div class="card">
+                <img src="images/te-negro.jpg" alt="Té Negro">
                 <h3>Té Negro</h3>
-                <p>Mejora la función cognitiva, concentración y claridad mental.</p>
+                <p>Sus componentes bioactivos protegen el cerebro, optimizan la conexión neuronal y mejoran el enfoque mental.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="testimonials-section">
+        <h2 class="section-title">Experiencias y Testimonios Reales</h2>
+        <p style="text-align: center; max-width: 600px; margin: -30px auto 40px auto; color: #555;">Descubre cómo el uso diario de MultyDrink ha transformado la vitalidad de nuestros clientes.</p>
+        
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls poster="images/testimonio1-thumb.jpg">
+                        <source src="videos/testimonio1.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                </div>
+                <p class="testimonial-author">Testimonio de Cliente Satisfecho</p>
+                <p style="padding: 0 15px; font-size: 0.95rem; color: #666;">"Mayor vitalidad y mejor digestión desde la primera semana."</p>
+            </div>
+
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls poster="images/testimonio2-thumb.jpg">
+                        <source src="videos/testimonio2.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                </div>
+                <p class="testimonial-author">Energía en la Rutina Diaria</p>
+                <p style="padding: 0 15px; font-size: 0.95rem; color: #666;">"El reemplazo perfecto para los excesos de cafeína artificial."</p>
             </div>
         </div>
     </section>
 
     <section id="comprar" class="pricing-section">
-        <h2 class="section-title">Elige tu plan e invierte en tu energía</h2>
+        <h2 class="section-title">Elige tu plan e invierte en tu salud</h2>
         <div class="pricing-grid">
             <div class="price-card">
                 <h3>PACK INICIO</h3>
@@ -305,10 +474,11 @@
                 <div class="price">COP $ 120.000</div>
                 <ul class="features-list">
                     <li>1 Caja – 21 sobres</li>
+                    <li>7 días de consumo completo</li>
                     <li>Ideal para conocer el producto</li>
-                    <li>Envío GRATIS</li>
+                    <li class="gift-item">+ Obsequio Especial Incluido</li>
                 </ul>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">QUIERO 1 CAJA</a>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Inicio." target="_blank" class="btn btn-whatsapp">QUIERO 1 CAJA</a>
             </div>
 
             <div class="price-card featured">
@@ -318,10 +488,11 @@
                 <div class="price">COP $ 330.000</div>
                 <ul class="features-list">
                     <li>3 Cajas – 63 sobres</li>
-                    <li>Mantén constancia y ve resultados</li>
-                    <li>Envío GRATIS</li>
+                    <li>21 días de consumo constante</li>
+                    <li>Ideal para ver resultados reales</li>
+                    <li class="gift-item">+ Obsequio de Alta Vitalidad</li>
                 </ul>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">QUIERO 3 CAJAS</a>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Energia." target="_blank" class="btn btn-whatsapp">QUIERO 3 CAJAS</a>
             </div>
 
             <div class="price-card">
@@ -330,17 +501,18 @@
                 <div class="price">COP $ 550.000</div>
                 <ul class="features-list">
                     <li>6 Cajas – 126 sobres</li>
-                    <li>Máximo ahorro por caja</li>
-                    <li>Envío GRATIS</li>
+                    <li>42 días de tratamiento premium</li>
+                    <li>Máximo ahorro por volumen</li>
+                    <li class="gift-item">+ Obsequio Premium Sorpresa</li>
                 </ul>
-                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." target="_blank" class="btn btn-whatsapp">QUIERO 6 CAJAS</a>
+                <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20Pack%20Familiar." target="_blank" class="btn btn-whatsapp">QUIERO 6 CAJAS</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 MultyDrink. Todos los derechos reservados. | Compra segura por WhatsApp</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Este producto no es un medicamento. Producto con ingredientes de origen natural.</p>
+        <p>© 2026 MultyDrink. Todos los derechos reservados. | Despachos rápidos y atención personalizada por WhatsApp.</p>
+        <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.7;">Este producto no es un medicamento. Su uso es responsabilidad de quien lo consume de forma complementaria.</p>
     </footer>
 
     <a href="https://wa.me/573041222672?text=Hola%20buen%20d%C3%ADa%2C%20me%20interesa%20adquirir%20el%20kit." class="whatsapp-float" target="_blank">
