@@ -136,6 +136,25 @@
             width: 100%;
         }
 
+        nav a.nav-btn {
+            background: var(--accent-gradient);
+            color: var(--white) !important;
+            padding: 8px 22px;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.25);
+            margin-left: 25px;
+            transition: var(--transition);
+        }
+
+        nav a.nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 152, 0, 0.45);
+        }
+
+        nav a.nav-btn::after {
+            display: none;
+        }
+
         .menu-toggle {
             display: none;
             background: var(--primary-color);
@@ -983,6 +1002,14 @@
                 border-bottom: none;
             }
 
+            nav a.nav-btn {
+                margin: 15px auto;
+                width: 80%;
+                max-width: 280px;
+                border-bottom: none;
+                padding: 12px 0;
+            }
+
             .hero h1 { font-size: 2.4rem; }
             .hero p { font-size: 1.2rem; }
             .section-title { font-size: 2.2rem; margin-bottom: 40px; }
@@ -1047,7 +1074,7 @@
             <a href="#producto">El Producto</a>
             <a href="#ingredientes">5 Ingredientes</a>
             <a href="#testimonios">Testimonios</a>
-            <a href="#comprar">Planes</a>
+            <a href="#comprar" class="nav-btn">Compra Ahora</a>
             <a href="#negocio">Oportunidad</a>
             <a href="#faq">Preguntas</a>
         </nav>
