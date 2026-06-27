@@ -1,28 +1,980 @@
-<div id="systemeModal" class="custom-modal-overlay">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultyDrink | Vitalidad Natural y Propósito con Salud</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #164a27;       
+            --primary-dark: #10351c;        
+            --primary-light: #eef5ee;
+            --accent-color: #ff9800;        
+            --accent-hover: #e68a00;
+            --accent-gradient: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+            --text-color: #2c3e50;
+            --text-muted: #5f758d;
+            --light-bg: #f4f8f4;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(22, 74, 39, 0.05);
+            --shadow-lg: 0 20px 40px rgba(22, 74, 39, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(22, 74, 39, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        /* Ajustes de Contenedor Global */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Botones Base Modificados */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .btn-accent {
+            background: var(--accent-gradient);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* SECCIONES: Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--primary-dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 160px 0 100px 0;
+            background: linear-gradient(135deg, #f7faf7 0%, #eef5ee 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(22,74,39,0.04) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .tagline {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: var(--white);
+            border: 1px solid var(--glass-border);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 540px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* SECCIÓN DE PRODUCTO: BENEFICIOS */
+        .beneficios {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .beneficio-card {
+            background-color: var(--white);
+            padding: 40px 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .beneficio-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+        }
+
+        .beneficio-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .beneficio-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* SECCIÓN DE PRECIOS / OFERTAS */
+        .precios {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .price-card {
+            background-color: var(--white);
+            border-radius: 28px;
+            padding: 48px 36px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .price-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .price-card .desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .price-amount {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .price-amount span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-left: 4px;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 36px;
+        }
+
+        .price-features li {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .price-card .btn {
+            width: 100%;
+        }
+
+        /* SECCIÓN DE NEGOCIO: PLAN DE COMPENSACIÓN */
+        .negocio {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .business-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .business-content p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .compensation-plans {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .plan-box {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background-color: var(--light-bg);
+            border-radius: 18px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .plan-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .plan-text h4 {
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .plan-text p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .business-cta-box {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            padding: 48px;
+            border-radius: 32px;
+            color: var(--white);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .business-cta-box h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .business-cta-box p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            font-size: 1rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SECCIÓN DE TESTIMONIOS */
+        .testimonios {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 36px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        .user-details h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .user-details span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) */
+        .faq {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .faq-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-icon {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-answer p {
+            padding: 12px 0 6px 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-question h3 {
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--primary-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(2, 0.7fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* BOTÓN FLOTANTE WHATSAPP RECOSTA */
+        .wpp-floating {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .wpp-floating:hover {
+            transform: scale(1.1) translateY(-4px);
+        }
+
+        /* ANIMACIONES INTERACTION OBSERVER BASE */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE DESIGN - MEDIA QUERIES */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero-grid, .business-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-image-wrapper { order: -1; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 450px; }
+            .price-card.featured { transform: scale(1); }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: var(--transition);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            }
+            .nav-menu.open { left: 0; }
+            .menu-toggle { display: flex; }
+            .section-header h2 { font-size: 2rem; }
+            .hero { padding: 120px 0 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Multy<span>Drink</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active">Inicio</a></li>
+                <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+                <li><a href="#precios" class="nav-link">Productos</a></li>
+                <li><a href="#negocio" class="nav-link">Negocio</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="tagline">Bienvenido al Bienestar Inteligente</span>
+                <h1>Activar tu máximo rendimiento es ahora simple</h1>
+                <p>Destruimos la complejidad de la suplementación tradicional. Una mezcla inteligente de nutrientes naturales diseñados para tu enfoque, energía y vitalidad diaria en un solo gesto.</p>
+                <div class="hero-btns">
+                    <a href="#precios" class="btn btn-accent">Ver Packs de Productos</a>
+                    <a href="#negocio" class="btn btn-outline">Explorar el Negocio</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div style="width: 100%; max-width: 440px; height: 440px; background-color: var(--primary-color); border-radius: 32px; opacity: 0.15; display: flex; align-items: center; justify-content: center; font-size: 5rem;">🥤</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="beneficios scroll-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Diseñado para el Estilo de Vida Moderno</h2>
+                <p>Tu cuerpo no necesita procesos complejos, necesita efectividad pura. Descubre lo que MultyDrink hace por ti todos los días.</p>
+            </div>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">⚡</div>
+                    <h3>Energía Sostenida</h3>
+                    <p>Adiós a los picos y caídas de la cafeína artificial. Energía constante de origen herbal para rendir al máximo todo el día.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">🧠</div>
+                    <h3>Enfoque Láser</h3>
+                    <p>Nutrientes optimizados para la claridad mental, concentración profunda y agilidad en tus decisiones profesionales.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">🛡️</div>
+                    <h3>Inmunidad Inteligente</h3>
+                    <p>Refuerza las defensas naturales de tu organismo gracias a una carga balanceada de antioxidantes esenciales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios" class="precios scroll-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Elige Tu Pack de Rendimiento</h2>
+                <p>Selecciona la opción que mejor se adapte a tus metas de bienestar. Todos los packs incluyen un obsequio especial por lanzamiento.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Pack Personal</h3>
+                    <p class="desc">Ideal para probar el sistema por un mes completo.</p>
+                    <div class="price-amount">$45<span>/ USD</span></div>
+                    <ul class="price-features">
+                        <li>1 Caja de MultyDrink (30 raciones)</li>
+                        <li>Shaker Oficial de la marca</li>
+                        <li>Asesoría de uso en comunidad</li>
+                        <li>Obsequio especial de lanzamiento</li>
+                    </ul>
+                    <a href="https://wa.me/NUMERO_WHATSAPP?text=Hola%20Daniel,%20quiero%20el%20Pack%20Personal%20de%20MultyDrink" class="btn btn-whatsapp" target="_blank">Ordenar por WhatsApp</a>
+                </div>
+                <div class="price-card featured">
+                    <div class="badge-popular">Recomendado</div>
+                    <h3>Pack Duplicación</h3>
+                    <p class="desc">El favorito para parejas o quienes buscan un cambio real.</p>
+                    <div class="price-amount">$80<span>/ USD</span></div>
+                    <ul class="price-features">
+                        <li>2 Cajas de MultyDrink (60 raciones)</li>
+                        <li>2 Shakers Oficiales</li>
+                        <li>Plan de Bienestar Digital de Regalo</li>
+                        <li>Acceso VIP a Lanzamientos</li>
+                        <li>Obsequio especial incluido</li>
+                    </ul>
+                    <a href="https://wa.me/NUMERO_WHATSAPP?text=Hola%20Daniel,%20quiero%20el%20Pack%20Duplicacion%20Avanzado" class="btn btn-accent" target="_blank">Ordenar Pack Líder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="negocio" class="negocio scroll-animate">
+        <div class="container business-grid">
+            <div class="business-content">
+                <h2>Construye un Negocio Sólido y Duplicable</h2>
+                <p>No solo distribuimos un producto de alto impacto; creamos un ecosistema financiero diseñado para premiar el liderazgo y el crecimiento en equipo desde el primer día.</p>
+                <div class="compensation-plans">
+                    <div class="plan-box">
+                        <div class="plan-number">20%</div>
+                        <div class="plan-text">
+                            <h4>Bono Influencer Directo</h4>
+                            <p>Genera un generoso 20% de comisión inmediata sobre los puntos de volumen de cada nuevo socio o cliente que decida unirse directamente a través tuyo.</p>
+                        </div>
+                    </div>
+                    <div class="plan-box">
+                        <div class="plan-number">7%</div>
+                        <div class="plan-text">
+                            <h4>Bono Residual por Niveles</h4>
+                            <p>La verdadera libertad se construye en equipo. Cobra un potente 7% residual distribuido estratégicamente hasta el 7° nivel de profundidad de tu organización.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="business-cta-box">
+                <h3>Multiplica tu Impacto</h3>
+                <p>Únete hoy a nuestro equipo de expansión y accede al sistema automatizado de herramientas exclusivas para el crecimiento digital de tu red.</p>
+                <a href="#" class="btn btn-whatsapp">Quiero ser Socio Emprendedor</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonios scroll-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Historias de Éxito Reales</h2>
+                <p>Líderes y consumidores que ya simplificaron su día a día y están multiplicando sus resultados económicos.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Dejé de consumir tres suplementos diferentes por la mañana. Con un solo vaso tengo la energía y concentración que necesito para liderar mis mentorías."</p>
+                    <div class="user-info">
+                        <div class="user-img" style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👨‍💼</div>
+                        <div class="user-details">
+                            <h4>Carlos Mendoza</h4>
+                            <span>Networker Profesional</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"El Bono Influencer del 20% me permitió recuperar mi inversión en la primera semana. El producto se mueve solo porque la promesa de valor es clarísima."</p>
+                    <div class="user-info">
+                        <div class="user-img" style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👩‍💻</div>
+                        <div class="user-details">
+                            <h4>Elena Rostova</h4>
+                            <span>Líder de Expansión</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq scroll-animate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resolvemos tus dudas técnicas sobre el producto y el modelo de distribución.</p>
+            </div>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>¿Cómo se consume MultyDrink?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Solo disuelve una cucharada medidora en un vaso de agua fría (250ml) por las mañanas o antes de tus bloques de alta productividad. Mezcla por 15 segundos y listo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>¿Cuándo se pagan las comisiones del plan?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Los Bonos Influencer del 20% se calculan y liquidan de manera semanal, mientras que las regalías del bono residual del 7% se consolidan de forma mensual.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>MultyDrink</h3>
+                <p>Llevando el bienestar y la libertad financiera al siguiente nivel mediante la innovación en suplementación y redes de mercadeo.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#precios">Packs</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Políticas de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 MultyDrink Global. Todos los derechos reservados. Desarrollado para el sistema de duplicación autorizado.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/NUMERO_WHATSAPP" class="wpp-floating" target="_blank" aria-label="Contacto Directo WhatsApp">💬</a>
+
+    <div id="systemeModal" class="custom-modal-overlay">
         <div class="custom-modal-box">
             <button class="custom-modal-close" id="closeModalBtn" aria-label="Cerrar ventana">&times;</button>
             <div class="custom-modal-header">
                 <h3>¡Excelente decisión!</h3>
                 <p>Completa tus datos a continuación para registrarte en el Sistema Autoduplicable y activar tu negocio hoy mismo.</p>
             </div>
+            
             <div class="systeme-form-container">
-                <script id="form-script-tag-24541894" src="https://danielcurrea46.systeme.io/public/remote/page/4209209290b5a71411ae2d3e760f99c27ecdc9e8.js"></script>
+                <iframe id="systemeIframe" style="width:100%; height:100%; border:none; background:transparent;"></iframe>
             </div>
         </div>
     </div>
 
     <style>
         .custom-modal-overlay {
-            display: none; /* Oculto por defecto */
+            display: none; 
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(11, 26, 15, 0.6); /* Tono verde oscuro traslúcido */
+            background-color: rgba(11, 26, 15, 0.6); 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            z-index: 20000; /* Por encima de la cabecera y el botón flotante */
+            z-index: 20000; 
             justify-content: center;
             align-items: center;
             padding: 20px;
@@ -63,6 +1015,7 @@
             cursor: pointer;
             transition: var(--transition);
             line-height: 1;
+            z-index: 20001;
         }
 
         .custom-modal-close:hover {
@@ -72,7 +1025,7 @@
 
         .custom-modal-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .custom-modal-header h3 {
@@ -89,13 +1042,12 @@
             line-height: 1.5;
         }
 
-        /* Contenedor que aísla el comportamiento del script externo */
         .systeme-form-container {
             width: 100%;
-            min-height: 200px; /* Previene saltos bruscos de pantalla mientras inyecta */
+            height: 280px; 
+            overflow: hidden;
         }
 
-        /* Ajuste responsivo para celulares */
         @media (max-width: 480px) {
             .custom-modal-box {
                 padding: 35px 20px 25px 20px;
@@ -108,33 +1060,71 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            
+            // ==========================================
+            // LÓGICA DEL MENÚ RESPONSIVE (MOBILE)
+            // ==========================================
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if(menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('open');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+
+            // ==========================================
+            // LÓGICA DEL POP-UP MODAL (SYSTEME.IO AUTOMATION)
+            // ==========================================
             const modal = document.getElementById('systemeModal');
             const closeBtn = document.getElementById('closeModalBtn');
+            const iframe = document.getElementById('systemeIframe');
             
-            // 1. Identificar el botón original de la sección de negocios
-            // Buscamos el enlace dentro de la tarjeta de CTA final de la sección #negocio
+            // Localizamos el botón "Quiero ser Socio Emprendedor" de la caja de negocio
             const ctaBusinessBtn = document.querySelector('.business-cta-box .btn-whatsapp');
 
+            // Código HTML interno que cargará seguro en el iframe sin romper tu web principal
+            const iframeContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <style>
+                        body { margin: 0; padding: 0; background: transparent; font-family: sans-serif; display: flex; justify-content: center; }
+                        div { width: 100% !important; max-width: 100% !important; box-shadow: none !important; background: transparent !important; }
+                    </style>
+                </head>
+                <body>
+                    <script id="form-script-tag-24541894" src="https://danielcurrea46.systeme.io/public/remote/page/4209209290b5a71411ae2d3e760f99c27ecdc9e8.js"><\/script>
+                </body>
+                </html>
+            `;
+
             if (ctaBusinessBtn) {
-                // Modificamos el comportamiento del botón para que no abra WhatsApp de golpe, sino el Modal
                 ctaBusinessBtn.addEventListener('click', function(e) {
-                    e.preventDefault(); // Detiene la redirección inmediata a WhatsApp
+                    e.preventDefault(); // Detiene el comportamiento de enlace por defecto
+                    
+                    // Inyectamos el script limpio en el iframe justo al abrir para una carga fresca
+                    const doc = iframe.contentWindow.document;
+                    doc.open();
+                    doc.write(iframeContent);
+                    doc.close();
+
                     openSystemeModal();
                 });
             }
 
-            // Funciones de Control
             function openSystemeModal() {
                 modal.classList.add('modal-active');
-                document.body.style.overflow = 'hidden'; // Bloquea el scroll del fondo
+                document.body.style.overflow = 'hidden'; 
             }
 
             function closeSystemeModal() {
                 modal.classList.remove('modal-active');
-                document.body.style.overflow = ''; // Libera el scroll
+                document.body.style.overflow = ''; 
             }
 
-            // Eventos para cerrar (Click en X, click afuera del contenedor blanco o tecla Escape)
             closeBtn.addEventListener('click', closeSystemeModal);
             
             modal.addEventListener('click', function(e) {
@@ -148,5 +1138,47 @@
                     closeSystemeModal();
                 }
             });
+
+            // ==========================================
+            // COMPORTAMIENTO DEL ACORDEÓN FAQ
+            // ==========================================
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const answer = this.nextElementSibling;
+                    
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = null;
+                        item.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.faq-item').forEach(i => {
+                            i.classList.remove('active');
+                            i.querySelector('.faq-answer').style.maxHeight = null;
+                        });
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // ==========================================
+            // ANIMACIÓN POR SCROLL (Intersection Observer)
+            // ==========================================
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('animate-visible');
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach(el => observer.observe(el));
         });
     </script>
+</body>
+</html>
