@@ -1548,41 +1548,50 @@
             });
 
             // ==========================================
-            // LÓGICA EXIT-INTENT (DETECCIÓN DE SALIDA)
+            // LÓGICA EXIT-INTENT e UP-SCROLL PARA POP-UP
             // ==========================================
             const popupOverlay = document.getElementById('systemePopup');
             const closePopupBtn = document.getElementById('closePopupBtn');
             
-            // Bandera para asegurar que solo se muestre una vez por sesión de usuario
             let popupMostrado = false;
+            let ultimoScrollTop = 0; // Para medir la dirección del scroll
 
-            function mostrarPopupExitIntent(e) {
-                // Si el mouse sale por la parte superior (e.clientY < 20) y no se ha mostrado antes
+            // 1. Detección para Computadoras (Mouse sale por arriba)
+            function mostrarPopupMouseLeave(e) {
                 if (e.clientY < 20 && !popupMostrado) {
-                    popupMostrado = true;
-                    if (popupOverlay) {
-                        popupOverlay.classList.add('popup-active');
-                        document.body.style.overflow = 'hidden'; // Bloquear scroll de fondo
-                    }
+                    abrirPopup();
                 }
             }
-
-            // Escuchar el movimiento del mouse en computadoras
-            document.addEventListener('mouseleave', mostrarPopupExitIntent);
+            document.addEventListener('mouseleave', mostrarPopupMouseLeave);
             
-            // Respaldo para móviles: Mostrar automáticamente tras 25 segundos de inactividad o lectura
-            setTimeout(function() {
-                if (!popupMostrado && popupOverlay) {
-                    popupMostrado = true;
-                    popupOverlay.classList.add('popup-active');
-                    document.body.style.overflow = 'hidden';
+            // 2. Detección para Celulares (Scroll hacia arriba)
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Si el usuario hace scroll hacia arriba, ha bajado al menos 400px y no se ha mostrado el popup
+                if (scrollTop < ultimoScrollTop && scrollTop > 400 && !popupMostrado) {
+                    // Verificación de velocidad o intención de subida
+                    let diferencia = ultimoScrollTop - scrollTop;
+                    if (diferencia > 10) { // Un movimiento claro hacia arriba
+                        abrirPopup();
+                    }
                 }
-            }, 25000); 
+                ultimoScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+            }, { passive: true });
+
+            // Función única para abrir el modal de forma limpia
+            function abrirPopup() {
+                popupMostrado = true;
+                if (popupOverlay) {
+                    popupOverlay.classList.add('popup-active');
+                    document.body.style.overflow = 'hidden'; // Bloquea scroll de fondo
+                }
+            }
 
             function closeSystemePopup() {
                 if (popupOverlay) {
                     popupOverlay.classList.remove('popup-active');
-                    document.body.style.overflow = ''; // Habilitar scroll nuevamente
+                    document.body.style.overflow = ''; // Habilita scroll nuevamente
                 }
             }
 
