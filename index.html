@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MultyDrink | Vitalidad Natural y Propósito con Salud</title>
     
+    <!-- Fuentes Modernas Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,7 +42,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 85px; /* Ajuste para cabecera sticky */
+            scroll-padding-top: 85px; 
         }
 
         body {
@@ -931,7 +932,7 @@
         }
 
         /* ==================================================================
-           ESTILOS EXCLUSIVOS PARA EL POP-UP (MODAL DE SYSTEME.IO)
+           ESTILOS EXCLUSIVOS PARA EL POP-UP (MODAL EXIT-INTENT)
            ================================================================== */
         .custom-popup-overlay {
             display: none; 
@@ -1001,6 +1002,7 @@
             color: var(--primary-dark);
             margin-bottom: 10px;
             font-weight: 800;
+            line-height: 1.2;
         }
 
         .custom-popup-header p {
@@ -1141,6 +1143,7 @@
         const NUMERO_WHATSAPP = '573041222672';
     </script>
 
+    <!-- Overlay de Fondo para Menú Móvil -->
     <div class="menu-backdrop" id="menuBackdrop"></div>
 
     <header>
@@ -1168,7 +1171,7 @@
         <div class="grid-layout section" style="padding-top: 0; padding-bottom: 0;">
             <div class="scroll-animate">
                 <h2 style="color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 25px; font-weight: 800;">Bienestar Simplificado</h2>
-                <p style="font-size: 1.25rem; color: #1c2833; font-weight: 600; line-height: 1.7; margin-bottom: 20px;">MultyDrink is tu bienestar simplificado en un solo sobre. Es una poderosa bebida antioxidante diseñada para combatir la fatiga moderna y activar tu máximo rendimiento diario de forma natural y portátil.</p>
+                <p style="font-size: 1.25rem; color: #1c2833; font-weight: 600; line-height: 1.7; margin-bottom: 20px;">MultyDrink es tu bienestar simplificado en un solo sobre. Es una poderosa bebida antioxidante diseñada para combatir la fatiga moderna y activar tu máximo rendimiento diario de forma natural y portátil.</p>
                 <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 35px; line-height: 1.7;">Nuestro gran diferencial es que <strong>destruimos la complejidad</strong>: en lugar de tomar 10 suplementos diferentes, concentramos todo lo que tu cuerpo necesita en una sola fórmula inteligente. Bienestar absoluto, práctico y sin rodeos.</p>
                 <a href="https://wa.me/573041222672?text=Hola%2C%20me%20interesa%20adquirir%20el%20kit%20MultyDrink." target="_blank" class="btn btn-whatsapp">
                     Consultar por WhatsApp
@@ -1254,13 +1257,15 @@
         </div>
     </section>
 
+    <!-- SECCIÓN PROPÓSITO: AJUSTADA CON NEUROVENTAS HACIA LA ACCIÓN DIRECTA -->
     <section class="purpose-section">
         <div class="purpose-container scroll-animate">
             <h2 style="color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 25px; font-weight: 800;">Un Propósito Mayor: Compartir Bienestar</h2>
             <p style="font-size: 1.25rem; color: #34495e; line-height: 1.8; margin-bottom: 40px;">
                 Llevar salud a los demás no es solo una oportunidad comercial; es una <strong>responsabilidad social</strong>. Cuando compartes bienestar auténtico con personas que sufren de cansancio, estrés o problemas digestivos, estás transformando activamente sus vidas. Creemos firmemente que hacer el bien regresa multiplicado.
             </p>
-            <button class="btn" id="triggerPopupBtn">Unirme al Movimiento de Salud</button>
+            <!-- Ahora lleva suavemente al usuario a elegir su pack comercial sin interrupciones -->
+            <a href="#comprar" class="btn">Elegir Mi Pack de Bienestar</a>
         </div>
     </section>
 
@@ -1342,7 +1347,7 @@
             <div class="discount-badge scroll-animate">RECIBE MÁS DEL 20% DE DESCUENTO</div>
             <h2 class="scroll-animate" style="font-size: 2.8rem; margin-bottom: 25px; font-weight: 800;">Conviértete en Socio Distribuidor</h2>
             <p class="scroll-animate" style="font-size: 1.3rem; max-width: 740px; margin: 0 auto 45px auto; opacity: 0.95; line-height: 1.8;">
-                Lleva un mensaje de bienestar y vitalidad a gran escala. Obtén acceso preferencial a stock y compras corporativas con un descuento exclusivo superior al 20%.
+                Lleva un message de bienestar y vitalidad a gran escala. Obtén acceso preferencial a stock y compras corporativas con un descuento exclusivo superior al 20%.
             </p>
             <div class="scroll-animate">
                 <a href="https://wa.me/573041222672?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20para%20obtener%20el%20descuento%20de%20Socio%20Distribuidor%20MultyDrink." target="_blank" class="btn">
@@ -1455,18 +1460,24 @@
         <p class="credits">Desarrollado para redes de distribución y duplicación digital.</p>
     </footer>
 
+    <!-- Botón Flotante de WhatsApp -->
     <a href="https://wa.me/573041222672?text=Hola%2C%20me%20interesa%20adquirir%20el%20kit%20MultyDrink." class="whatsapp-float" target="_blank" id="floatWa">
         <span>Pedir por WhatsApp</span>
     </a>
 
+    <!-- ==================================================================
+         VENTANA EMERGENTE (POP-UP) - CONFIGURADA COMO EXIT-INTENT
+         ================================================================== -->
     <div id="systemePopup" class="custom-popup-overlay">
         <div class="custom-popup-box">
             <button class="custom-popup-close" id="closePopupBtn" aria-label="Cerrar ventana">&times;</button>
             <div class="custom-popup-header">
-                <h3>¡Únete al Movimiento!</h3>
-                <p>Por favor, completa el siguiente formulario para dar el primer paso hacia tu transformación y bienestar.</p>
+                <!-- Copys ajustados para neuroventas en intención de salida -->
+                <h3>¿Aún no estás listo para empezar?</h3>
+                <p>No te vayas con las manos vacías. Regístrate abajo y descubre cómo activar tu máximo rendimiento destruyendo por completo la complejidad de los suplementos tradicionales.</p>
             </div>
             
+            <!-- Contenedor donde se carga tu formulario de Systeme.io -->
             <div class="systeme-embed-container">
                 <script id="form-script-tag-24541894" src="https://danielcurrea46.systeme.io/public/remote/page/4209209290b5a71411ae2d3e760f99c27ecdc9e8.js"></script>
             </div>
@@ -1537,30 +1548,48 @@
             });
 
             // ==========================================
-            // LÓGICA DE CONTROL DEL POP-UP (SYSTEME.IO)
+            // LÓGICA EXIT-INTENT (DETECCIÓN DE SALIDA)
             // ==========================================
             const popupOverlay = document.getElementById('systemePopup');
-            const openPopupBtn = document.getElementById('triggerPopupBtn');
             const closePopupBtn = document.getElementById('closePopupBtn');
+            
+            // Bandera para asegurar que solo se muestre una vez por sesión de usuario
+            let popupMostrado = false;
 
-            if (openPopupBtn && popupOverlay) {
-                // Abrir Pop-up al hacer clic
-                openPopupBtn.addEventListener('click', function() {
-                    popupOverlay.classList.add('popup-active');
-                    document.body.style.overflow = 'hidden'; // Bloquear scroll de fondo
-                });
+            function mostrarPopupExitIntent(e) {
+                // Si el mouse sale por la parte superior (e.clientY < 20) y no se ha mostrado antes
+                if (e.clientY < 20 && !popupMostrado) {
+                    popupMostrado = true;
+                    if (popupOverlay) {
+                        popupOverlay.classList.add('popup-active');
+                        document.body.style.overflow = 'hidden'; // Bloquear scroll de fondo
+                    }
+                }
             }
 
+            // Escuchar el movimiento del mouse en computadoras
+            document.addEventListener('mouseleave', mostrarPopupExitIntent);
+            
+            // Respaldo para móviles: Mostrar automáticamente tras 25 segundos de inactividad o lectura
+            setTimeout(function() {
+                if (!popupMostrado && popupOverlay) {
+                    popupMostrado = true;
+                    popupOverlay.classList.add('popup-active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }, 25000); 
+
             function closeSystemePopup() {
-                popupOverlay.classList.remove('popup-active');
-                document.body.style.overflow = ''; // Habilitar scroll nuevamente
+                if (popupOverlay) {
+                    popupOverlay.classList.remove('popup-active');
+                    document.body.style.overflow = ''; // Habilitar scroll nuevamente
+                }
             }
 
             if (closePopupBtn) {
                 closePopupBtn.addEventListener('click', closeSystemePopup);
             }
 
-            // Cerrar si hacen clic fuera del cuadro blanco (en el fondo oscuro)
             if (popupOverlay) {
                 popupOverlay.addEventListener('click', function(e) {
                     if (e.target === popupOverlay) {
